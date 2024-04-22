@@ -1,33 +1,133 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
+  @tailwind components;
+  @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
+  body {
+  
+    background-color: #020420;
+   }
+   
+   body {
+       --sb-track-color: #020420;
+       --sb-thumb-color: #00dc82;
+       --sb-size: 5px;
+     }
+     
+     body::-webkit-scrollbar {
+       width: var(--sb-size)
+     }
+     
+     body::-webkit-scrollbar-track {
+       background: var(--sb-track-color);
+       border-radius: 0px;
+       -webkit-border-radius: 0px;
+       -moz-border-radius: 0px;
+       -ms-border-radius: 0px;
+       -o-border-radius: 0px;
+   }
+     
+     body::-webkit-scrollbar-thumb {
+       background: var(--sb-thumb-color);
+       border-radius: 0px;
+       -webkit-border-radius: 0px;
+       -moz-border-radius: 0px;
+       -ms-border-radius: 0px;
+       -o-border-radius: 0px;
+   }
+     
+     @supports not selector(::-webkit-scrollbar) {
+       body {
+         scrollbar-color: var(--sb-thumb-color)
+                          var(--sb-track-color);
+       }
+     }
+   .my-Ainme{ animation: myAnim 20s ease 1s infinite alternate forwards; -webkit-animation: myAnim 20s ease 1s infinite alternate forwards; }
+   @keyframes myAnim {
+     100% {
+       width: 0%;
+     }
+   75%{
+       width: 25%;
+   }
+   50%{
+       width: 50%;
+   }
+   25%{
+       width: 75%;
+   }
+     0% {
+           width: 100%;
+   
+     }
+   }
+   
+   
+   .dots{
+     background-image: url(../public//Images//dots.png);
+     background-repeat: repeat;
+   }
+   .scale-up-hor-right {
+     -webkit-animation: scale-up-hor-right 10s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite alternate forwards;
+             animation: scale-up-hor-right 10s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite alternate forwards;
+   }
+    @-webkit-keyframes scale-up-hor-right {
+     0% {
+       -webkit-transform: scaleX(0.4);
+               transform: scaleX(0.4);
+       -webkit-transform-origin: 100% 100%;
+               transform-origin: 100% 100%;
+     }
+     100% {
+       -webkit-transform: scaleX(1);
+               transform: scaleX(1);
+       -webkit-transform-origin: 100% 100%;
+               transform-origin: 100% 100%;
+     }
+   }
+   @keyframes scale-up-hor-right {
+     0% {
+       -webkit-transform: scaleX(0.4);
+               transform: scaleX(0.4);
+       -webkit-transform-origin: 100% 100%;
+               transform-origin: 100% 100%;
+     }
+     100% {
+       -webkit-transform: scaleX(1);
+               transform: scaleX(1);
+       -webkit-transform-origin: 100% 100%;
+               transform-origin: 100% 100%;
+     }
+   }
+   
+   .menu li > :not(ul, .menu-title, details, .btn):active, .menu li > :not(ul, .menu-title, details, .btn).active, .menu li > details > summary:active{
+     background-color: #ffffff00 !important;
+   }
+   :where(.menu li:not(.menu-title, .disabled) > :not(ul, details, .menu-title)):not(summary, .active, .btn).focus, :where(.menu li:not(.menu-title, .disabled) > :not(ul, details, .menu-title)):not(summary, .active, .btn):focus, :where(.menu li:not(.menu-title, .disabled) > :not(ul, details, .menu-title)):is(summary):not(.active, .btn):focus-visible, :where(.menu li:not(.menu-title, .disabled) > details > summary:not(.menu-title)):not(summary, .active, .btn).focus, :where(.menu li:not(.menu-title, .disabled) > details > summary:not(.menu-title)):not(summary, .active, .btn):focus, :where(.menu li:not(.menu-title, .disabled) > details > summary:not(.menu-title)):is(summary):not(.active, .btn):focus-visible{background-color: #ffffff00 !important;
+     background-color: #ffffff00 !important;
+     color: #00dc82 !important;
+   }
+   :where(.menu li:not(.menu-title, .disabled) > :not(ul, details, .menu-title)):not(summary, .active, .btn):focus{
+     background-color: #ffffff00 !important;
+     color: #00dc82 !important;
+   
+   }
+   
+   .myHover:hover .child-effect{
+     border: solid 4px #00dc82 !important;
+   } 
+   
+   .myHover:hover .child2{
+     border: solid 4px #00dc82 !important;
+   } 
+   .hoverChanger{
+     color: #00dc82 !important;
+   }
+   .myHover:hover h3 , .hoverChanger{
+     color: #020420 !important;
+   } 
+  
+   /* .embla__slide {
+    flex: 0 0 13%;
+    min-width: 0;
+  } */
