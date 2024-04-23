@@ -52,6 +52,7 @@ export default function Explore({ params }: any) {
       userIncrement(search)
     }
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inView])
 
   return (
