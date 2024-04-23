@@ -18,7 +18,7 @@ const {results} = await videoLink(params?.ID)
 const {cast} = await crew(params?.ID)
 let director = cast.find((item: any) => item.known_for_department === "Directing")
 const recommendations = await similar(params?.ID)
-console.log(recommendations.total_results)
+// console.log(recommendations.total_results)
   const btnCaption: string = "Watch Trailer"
   const title :string = "Recommendations"
 
@@ -136,7 +136,7 @@ console.log(recommendations.total_results)
                 </a>
                 </div>
                 {
-                  director? <div className='flex  items-center'>
+                  director? <div className='flex  items-center justify-center lg:justify-start my-3 w-full'>
                   <p className='bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent font-medium text-sm'>
                     Director : 
                   </p>

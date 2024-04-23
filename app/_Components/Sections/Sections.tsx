@@ -37,7 +37,7 @@ export default function Sections(props: any) {
                                             </p>
                                         </div>
 
-                                        <Image src={UrlImages + item?.poster_path} alt={item.original_title} width={350} height={350} className='md:min-h-[350px] skeleton   shadow-2xl rounded-2xl w-full  bg-gradient-to-l from-green to-yellow-300   hover:border-t-green hover:border-r-green hover:border-l-yellow-200  child-effect transition-all ' />
+                                        <Image src={UrlImages + item?.poster_path} alt={item.original_title} width={350} height={350} className='md:min-h-[350px] skeleton   shadow-2xl rounded-2xl w-full     hover:border-t-green hover:border-r-green hover:border-l-yellow-200  child-effect transition-all ' />
                                     </div>
                                     <div>
                                         <h3 className='mt-3 lg:ml-3 text-center lg:text-start text-white font-medium  lg:text-base text-sm '>
@@ -47,7 +47,7 @@ export default function Sections(props: any) {
                                         </h3>
                                     </div>
                                     <div className='flex justify-between items-center'>
-                                        <p className='hoverChanger lg:text-start text-center  lg:ml-3 text-[9px] font-semibold'>
+                                        <p className='hoverChanger lg:text-start text-center  ml-4 text-[9px] font-semibold'>
 
                                         {item?.release_date?.toString().slice(0, 4)}
                                         </p>
@@ -68,7 +68,7 @@ export default function Sections(props: any) {
                                             </p>
                                         </div>
 
-                                        <Image src={UrlImages + item?.poster_path} alt={item.original_title} width={350} height={350} className='md:min-h-[350px] skeleton  shadow-2xl rounded-2xl w-full  bg-gradient-to-l from-green to-yellow-300  hover:border-t-green hover:border-r-green hover:border-l-yellow-200  child-effect transition-all ' />
+                                        <Image src={UrlImages + item?.poster_path} alt={item.original_title} width={350} height={350} className='md:min-h-[350px] skeleton  shadow-2xl rounded-2xl w-full   hover:border-t-green hover:border-r-green hover:border-l-yellow-200  child-effect transition-all ' />
                                     </div>
                                     <div>
                                         <h3 className='mt-3 lg:ml-3 text-center lg:text-start text-white font-medium  lg:text-base text-sm '>
@@ -77,8 +77,8 @@ export default function Sections(props: any) {
                                             }
                                         </h3>
                                     </div>
-                                    <div className='flex justify-between items-center'>
-                                        <p className='hoverChanger lg:text-start text-center  lg:ml-3 text-[9px] font-semibold'>
+                                    <div className='flex justify-between items-center '>
+                                        <p className='hoverChanger lg:text-start text-center  ml-4 text-[9px] font-semibold'>
 
                                         {item?.release_date?.toString().slice(0, 4)}
                                         </p>

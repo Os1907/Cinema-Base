@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer';
 import bg from '../../../public/Images/bg.png'
 import Image from 'next/image'
@@ -23,20 +23,31 @@ export default function Explore({ params }: any) {
   let userSearch = async (e: string) => {
     const response = await moviesBySearch(e, pageNumber)
     setData(response.results)
+    if(e === undefined){
+      setData([])
+    }
   }
 
-
-  async function userIncrement(e: string) {
-    // await delay(3000);
-    setPageNumber(pageNumber + 1)
-    const response = await moviesBySearch(e, pageNumber)
-      .then(async (dataResponse) => {
-        setData(data => [...data, ...dataResponse.results]);
-      })
-      .catch((err) => console.log(err))
-  }
+  // async function userIncrement(e: string) {
+  //   // await delay(3000);
+  //   setPageNumber(pageNumber + 1)
+  //   const response = await moviesBySearch(e, pageNumber)
+  //     .then(async (dataResponse) => {
+  //       setData(data => [...data, ...dataResponse.results]);
+  //     })
+  //     .catch((err) => console.log(err))
+  // }
 
   useEffect(() => {
+    async function userIncrement(e: string) {
+      // await delay(3000);
+      setPageNumber(pageNumber + 1)
+      const response = await moviesBySearch(e, pageNumber)
+        .then(async (dataResponse) => {
+          setData(data => [...data, ...dataResponse.results]);
+        })
+        .catch((err) => console.log(err))
+    }
     if (inView) {
       userIncrement(search)
     }

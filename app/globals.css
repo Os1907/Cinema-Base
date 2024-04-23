@@ -126,7 +126,14 @@
    .myHover:hover h3 , .hoverChanger{
      color: #020420 !important;
    } 
-  
+   :where(.menu li:not(.menu-title, .disabled) > *:not(ul, details, .menu-title)):not(.active, .btn):hover, :where(.menu li:not(.menu-title, .disabled) > details > summary:not(.menu-title)):not(.active, .btn):hover{
+    background-color: transparent !important;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
    /* .embla__slide {
     flex: 0 0 13%;
     min-width: 0;
