@@ -36,7 +36,7 @@ export  async function Trend() {
   }
 }
 
-export async function getMovie(id: number) {
+export async function getMovie( id: number) {
   try {
     const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, options);
     const data = await response.json();
@@ -85,6 +85,25 @@ export async function moviesBySearch(name:string , page: number) {
 export async function crew( id: number) {
   try {
     const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/credits?language=en-US`, options);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+}
+export  async function topShows(page: number) {
+  try {
+    const response = await fetch(`https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=${page}`, options);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+}
+// https://api.themoviedb.org/3/tv/1396?language=en-US
+export async function getSeries( id: number) {
+  try {
+    const response = await fetch(`https://api.themoviedb.org/3/tv/${id}?language=en-US`, options);
     const data = await response.json();
     return data;
   } catch (err) {

@@ -11,7 +11,6 @@ export default async function Trending() {
     <>
     <section className='py-2'>
             <Sections value={data} title={title}  />
-            
         </section>
     
     

@@ -35,7 +35,7 @@ export default function Navbar() {
     <div className='flex justify-start  '>
    <Link href={'/'} className='z-50'>
      <p className='hover:shadow-green hover:shadow-2xl  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent font-extrabold text-2xl lg:ml-28  ml-5'>
-      Cinema base
+      Cinema Base
     </p>
     </Link> 
     </div>

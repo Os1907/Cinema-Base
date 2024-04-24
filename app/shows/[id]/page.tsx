@@ -1,33 +1,32 @@
+import { getSeries, similar, videoLink } from '@/app/Utilities/apis'
+import CastCarousel from '@/app/_Components/Carusol/CastCarousel'
+import Sections from '@/app/_Components/Sections/Sections'
+import Image from 'next/image'
 import React from 'react'
 import bg from '../../../public/Images/bg.png'
-import Image from 'next/image'
-import { TiMediaFastForwardOutline } from "react-icons/ti";
-import { Link } from "next-view-transitions"
-import Button from '@/app/_Components/Button/Button';
-import { crew, getMovie, similar, videoLink } from '@/app/Utilities/apis';
-import Sections from '@/app/_Components/Sections/Sections';
-import CastCarousel from '@/app/_Components/Carusol/CastCarousel';
-interface MovieProps {
+import { TiMediaFastForwardOutline } from 'react-icons/ti'
+import Button from '@/app/_Components/Button/Button'
+
+interface SeriesProps {
   params: {
-    ID: number
+    id: number
     
   }
 }
-const Movie: React.FC<MovieProps> =  async ({params}) => {
- const data = await getMovie(params?.ID)
-const {results} = await videoLink(params?.ID)
-const {cast} = await crew(params?.ID)
-let director = cast.find((item: any) => item.known_for_department === "Directing")
-const recommendations = await similar(params?.ID)
+const Series: React.FC<SeriesProps> =  async ({params}) => {
+ const data = await getSeries(params?.id)
+// const {results} = await videoLink(params?.ID)
+// console.log(data , params.id)
+// const {cast} = await crew(params?.ID)
+// let director = cast.find((item: any) => item.known_for_department === "Directing")
+// const recommendations = await similar(params?.id)
 // console.log(recommendations.total_results)
   const btnCaption: string = "Watch Trailer"
   const title :string = "Recommendations"
 
-  
-
   return (
     <>
-      <section className='  overflow-y-hidden bg-green  lg:pt-10 pt-5  pb-2 relative z-10  '>
+  <section className='  overflow-y-hidden bg-main  lg:pt-10 pt-5  pb-2 relative z-10  '>
         <Image src={bg} alt='' className='absolute  top-20  z-[2] opacity-10  ' />
         <Image src={bg} alt='' className='absolute h-auto lg:top-[-35%] top-[50%] z-[2] opacity-10 -rotate-180  ' />
         <div className='absolute w-full top-[-2%] bg-gradient-to-b from-main to-[#fff0] h-screen z-[1]  '>
@@ -53,13 +52,13 @@ const recommendations = await similar(params?.ID)
 <div className='text-center lg:text-start w-full'>
 
                 <h2 className=' hover:bg-gradient-to-r hover:from-yellow-200 hover:to-green hover:bg-clip-text hover:text-transparent transition-all cursor-pointer  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent  lg:text-5xl text-4xl font-extrabold relative z-10 '>
-                  {data?.title.toUpperCase()}
+                  {data?.title?.toUpperCase() || data?.name.toUpperCase()}
                 </h2>
 </div>
                 <div className='flex justify-center my-3 lg:justify-start items-center flex-wrap  w-full'>
                   <p className='text-[12px] lg:text-sm  font-medium bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
                    {
-                    data?.release_date
+                    data?.release_date || data?.first_air_date
                    }
                   </p>
                   <div className='lg:flex hidden  '>
@@ -69,13 +68,13 @@ const recommendations = await similar(params?.ID)
                   </p> )
           }
                   </div>
-                  
+{/*                   
                   <p className='text-[12px] lg:text-sm  font-medium mx-3 lg:mx-0 my-3 bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
                     <TiMediaFastForwardOutline className='inline mb-1 text-green mr-1' />
                     {
                     data?.runtime
                    }M
-                  </p>
+                  </p> */}
                   <div className='flex lg:hidden '>
                   {
             data?.genres.map((item:any)=><button key={item?.id} className='font-medium mx-1 text-main  bg-gradient-to-r from-green to-yellow-200 p-1 px-3 rounded-3xl text-[12px]  transition-all'>
@@ -126,28 +125,22 @@ const recommendations = await similar(params?.ID)
   data?.vote_average.toString().slice(0, 3)
 } <span className='ml-[-3px]  text-base font-medium'>/10</span>
                 </p>
-                {/* <p className='text-base mt-3 font-medium  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
-                  Director :  <span className='border-b border-green'>Michael Mohan</span>
-                </p> */}
+                {
+                  data.created_by[0].name ? <p className='text-base mt-3 font-medium  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
+                  Director :  <span className='text-sm font-semibold'>   {
+data?.created_by[0]?.name
+}</span>
+                </p> : ""
+                }
+                
                 </div>
-                <div className='w-full flex justify-center lg:justify-start'>
+                {/* <div className='w-full flex justify-center lg:justify-start'>
 
                 <a target="_blank" href={`https://www.youtube.com/watch?v=${results[0]?.key}`} className='my-3 '>
                   <Button value={btnCaption} component={<TiMediaFastForwardOutline className='inline mb-1 text-main text-xl ' />} />
                 </a>
-                </div>
-                {
-                  director? <div className='flex  items-center justify-center lg:justify-start my-3 w-full'>
-                  <p className='bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent font-medium text-sm'>
-                    Director : 
-                  </p>
-                  <p className='bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent font-bold ml-2 text-sm'>
-                  {
-director?.name
-}
-                  </p>
-                </div> : ""
-                }
+                </div>*/}
+                
                 
               </div>
             </div>
@@ -161,13 +154,17 @@ director?.name
        Movie Cast
         </h3>
         </div>
-        <CastCarousel data={cast} />
+        {/* <CastCarousel data={cast} />
         {
           recommendations.total_results > 0? <Sections value={recommendations} title={title}  /> : ""
-        }
+        } */}
       
 
+
+    
+    
     </>
   )
 }
-export default  Movie
+
+export default Series
