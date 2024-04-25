@@ -46,7 +46,7 @@ export default function HamburgerMenu() {
       <li onClick={()=>{ hidePage()  }} className={pathnName === "/shows" ? "font-semibold text-xl  transition-all  rounded-xl px-5 py-1   mx-5 text-main shadow-green shadow-2xl  focus:text-green  hover:border-0 bg-gradient-to-r from-green to-yellow-200   my-2 " : "my-2 font-semibold text-xl transition-all rounded-xl px-5 py-1   mx-5     focus:text-green   bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent"}> <Link href='/shows' className="rounded-3xl hover:bg-transparent transition-all hover:border-0 group"> <IoTv  className={pathnName === "/shows"  ? "text-main inline mb-1 mx-1" :"text-green inline mb-1 mx-1"} />TV Shows <div className="bg-gradient-to-r from-green to-yellow-200 h-[2px] w-0 group-hover:w-full transition-all duration-500"></div> </Link></li>
     </ul>
             
-    </div> : <div className={display ? 'hidden':'bg-main duration-1000 w-full transition-all  h-[50vh] absolute  z-40  justify-center items-center flex slide-in-bottom  flex-col'}>
+    </div> : <div className={display ? 'hidden':'bg-main duration-1000 w-full transition-all left-[-100%]  h-[50vh] absolute  z-40  justify-center items-center flex slide-in-bottom  flex-col'}>
     </div> 
     }
     </div>

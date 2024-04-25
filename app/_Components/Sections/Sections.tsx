@@ -10,13 +10,13 @@ export default function Sections(props: any) {
     const data = props.value
     const title = props.title
     const nav = props.nav
-    const UrlImages = urlImage
+  const  UrlImages: string = "https://image.tmdb.org/t/p/w500/";
     // console.log(data)
     return (
         <>
             <section  className=' min-h-screen   lg:pt-10 pt-5 lg:pb-16 pb-5  relative z-10  overflow-y-hidden '>
-                <Image src={bg} alt='' className='absolute  lg:top-[-8%] top-20 z-[0] opacity-10  ' />
-                <Image src={bg} alt='' className='absolute  lg:top-[50%] top-20 z-[0] opacity-10 -rotate-180  ' />
+                <Image src={bg} alt='texture' className='absolute  lg:top-[-8%] top-20 z-[0] opacity-10  ' />
+                <Image src={bg} alt='texture2' className='absolute  lg:top-[50%] top-20 z-[0] opacity-10 -rotate-180  ' />
                 <div className='lg:mx-24 mx-4 relative z-10 '>
                     <div className='flex justify-center relative items-center'>
 
@@ -39,7 +39,7 @@ export default function Sections(props: any) {
                                             </p>
                                         </div>
 
-                                        <Image src={UrlImages + item?.poster_path} alt={item.original_title && item.original_name } width={350} height={350} className='md:min-h-[350px] skeleton bg-gradient-to-tr from-green to-yellow-200   shadow-2xl rounded-2xl w-full     hover:border-t-green hover:border-r-green hover:border-l-yellow-200  child-effect transition-all ' />
+                                        <Image src={UrlImages + item?.poster_path} alt={item.original_title || item.original_name } width={350} height={350} className='md:min-h-[350px] skeleton bg-gradient-to-tr from-green to-yellow-200   shadow-2xl rounded-2xl w-full     hover:border-t-green hover:border-r-green hover:border-l-yellow-200  child-effect transition-all ' />
                                     </div>
                                     <div>
                                         <h3 className='mt-3 lg:ml-3 text-center lg:text-start text-white font-medium  lg:text-base text-sm '>
