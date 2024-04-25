@@ -10,7 +10,7 @@ export default function Sections(props: any) {
     const data = props.value
     const title = props.title
     const nav = props.nav
-  const  UrlImages: string = "https://image.tmdb.org/t/p/w500/";
+  const  UrlImages: string = "https://image.tmdb.org/t/p/w780/";
     // console.log(data)
     return (
         <>
