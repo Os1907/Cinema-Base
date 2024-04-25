@@ -5,13 +5,11 @@ import bg from '../../../public/Images/bg.png'
 import { Link } from "next-view-transitions"
 
 
-
 export default function Sections(props: any) {
     const data = props.value
     const title = props.title
     const nav = props.nav
   const  UrlImages: string = "https://image.tmdb.org/t/p/w500/";
-    // console.log(data)
     return (
         <>
             <section  className=' min-h-screen   lg:pt-10 pt-5 lg:pb-16 pb-5  relative z-10  overflow-y-hidden '>
@@ -44,7 +42,7 @@ export default function Sections(props: any) {
                                     <div>
                                         <h3 className='mt-3 lg:ml-3 text-center lg:text-start text-white font-medium  lg:text-base text-sm '>
                                             
-                            {     item.original_title  ||  item.name  }
+                            {     item.title ||  item.name  }
                                         </h3>
                                     </div>
                                     <div className='flex justify-between items-center'>
@@ -61,7 +59,7 @@ export default function Sections(props: any) {
                                 </Link>
                             </>
                             ) : data?.map((item: any) => <>
-                            <Link href={`/movie/${item.id}`}>
+                            <Link href={nav ? `/${nav}/${item.id}` :`/movie/${item.id}`}>
                                 <div key={item.id} className="col-span-1 hover:shadow-green hover:shadow-2xl hover:bg-green hover:pb-4  hover:scale-105 transition-all cursor-pointer  hover:rounded-2xl   myHover">
                                     <div className='relative'>
                                         <div className="bg-gradient-to-r from-green to-yellow-200 rounded-full lg:px-3 lg:py-3 p-1 md:p-2 absolute md:bottom-[-3%] lg:bottom-[-5%] bottom-[-5%] right-[5%] md:border-4 border-2  border-main2 child2 transition-all ">
@@ -75,14 +73,15 @@ export default function Sections(props: any) {
                                     <div>
                                         <h3 className='mt-3 lg:ml-3 text-center lg:text-start text-white font-medium  lg:text-base text-sm '>
                                             {
-                                                item.original_title
+                                                item.original_title ||  item.name
                                             }
                                         </h3>
                                     </div>
                                     <div className='flex justify-between items-center '>
                                         <p className='hoverChanger lg:text-start text-center  ml-4 text-[9px] font-semibold'>
 
-                                        {item?.release_date?.toString().slice(0, 4)}
+                                        {item?.release_date?.toString().slice(0, 4)
+                                        || item?.first_air_date?.toString().slice(0, 4)}
                                         </p>
                                         <p className='hoverChanger mr-4 text-center   text-[9px] font-semibold'>
                                             {item?.adult === false ? "+13" : "+18"}

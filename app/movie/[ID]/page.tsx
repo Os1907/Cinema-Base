@@ -17,9 +17,9 @@ const Movie: React.FC<MovieProps> =  async ({params}) => {
  const data = await getMovie(params?.ID)
 const {results} = await videoLink(params?.ID)
 const {cast} = await crew(params?.ID)
-let director = cast.find((item: any) => item.known_for_department === "Directing")
+let director = cast?.find((item: any) => item.known_for_department === "Directing")
 const recommendations = await similar(params?.ID)
-// console.log(recommendations.total_results)
+// console.log(cast)
   const btnCaption: string = "Watch Trailer"
   const title :string = "Recommendations"
 

@@ -16,7 +16,7 @@ export default async function TopRate({params}:any) {
             <section className='pb-10'>
                 <Sections value={data} title={title}  />
                 <div className='flex justify-center relative z-50 lg:mt-[-50px] mt-[-20px]'>
-                <Link href={`/toprate/${data.page}`}>
+                <Link href={`/toprate/${data.page}`} scroll={true}>
                  <Button value={btnCaption}/>
                  </Link>
             </div>

@@ -101,14 +101,33 @@ export  async function topShows(page: number) {
   }
 }
 // https://api.themoviedb.org/3/tv/1396?language=en-US
-export async function getSeries( id: number) {
+export async function getSeries( id: number , page?: string) {
   try {
-    const response = await fetch(`https://api.themoviedb.org/3/tv/${id}?language=en-US`, options);
+    const response = await fetch(`https://api.themoviedb.org/3/tv/${id}${page}?language=en-US`, options);
     const data = await response.json();
     return data;
   } catch (err) {
     console.error(err);
   }
 }
+export async function seriesBySearch(name:string , page: number) {
+  try {
+    const response = await fetch(`https://api.themoviedb.org/3/search/tv?query=${name}&include_adult=false&language=en-US&page=${page}`, options);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+}
+export  async function TrendSeries() {
+  try {
+    const response = await fetch('https://api.themoviedb.org/3/trending/tv/day?language=en-US', options);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+}
+
 export const urlImage: string = "https://image.tmdb.org/t/p/w500/";
 

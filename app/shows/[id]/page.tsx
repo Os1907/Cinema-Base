@@ -21,14 +21,15 @@ const Series: React.FC<SeriesProps> = async ({ params }) => {
   // const {cast} = await crew(params?.ID)
   // let director = cast.find((item: any) => item.known_for_department === "Directing")
   // const recommendations = await similar(params?.id)
-  // console.log(recommendations.total_results)
+  // console.log(data?.seasons)
+  // /season/{season_number}
   const btnCaption: string = "Watch Trailer"
   const title: string = "Recommendations"
 
   return (
     <>
       <section className='  overflow-y-hidden bg-main  lg:pt-10 pt-5  pb-2 relative z-10  '>
-        <Bg url={data?.backdrop_path}/>
+        <Bg url={data?.backdrop_path} />
         <div className='lg:mx-24 mx-4 relative z-10 '>
 
           <div className="grid grid-cols-6  lg:mb-32 gap-10">
@@ -139,14 +140,52 @@ const Series: React.FC<SeriesProps> = async ({ params }) => {
             </div>
 
           </div>
+          {
+            data?.seasons?.length ===  1 ? "" : <> <div className='w-full '>
+           <p className='font-extrabold text-6xl bg-gradient-to-r from-yellow-200 to-green bg-clip-text text-transparent  text-center my-4'>
+           Seasons
+           </p>
+           <div className="grid lg:grid-cols-1 md:grid-cols-3 grid-cols-2 pb-20 gap-x-2 lg:gap-y-2 gap-y-4">
+              {
+                data?.seasons?.slice(1).map((item: any)=> {
+                return<>
+                <div key={item?.id} className="col-span-1 rounded-3xl bg-main  grid grid-cols-5 lg:shadow-green lg:shadow-2xl border-green border lg:border-0 ">
+                <div className='lg:col-span-1 col-span-5 flex justify-center py-4 '>
+                <Image src={`https://image.tmdb.org/t/p/w500/${item?.poster_path}`} alt="" width={150} height={150} className='w-40 h-60 rounded-2xl shadow-green shadow-2xl ' />
+                </div>
+                <div className='lg:col-span-4 col-span-5 relative z-[50] py-2 flex items-center lg:items-start justify-center  flex-col'>
+                <Image src={bg} alt="" className='absolute top-0 w-full h-full object-cover lg:opacity-5 opacity-15' />
+                  <p className='text-[12px] lg:text-base  font-bold text-green'>
+                   Release Date : <span >{item?.air_date?.slice(0, 4)}</span>
+                  </p>
 
+                  <h5 className='my-1 text-[12px] lg:text-lg  font-bold text-green'>
+                    {item?.name}
+                  </h5>
+                  <p className='text-[12px] lg:text-base  font-normal text-green lg:mr-10 text-center lg:text-start '>
+                    {
+                      item?.overview
+                    }
+                  </p>
+                  <div className="bg-gradient-to-r from-green to-yellow-200 rounded-full lg:px-3 lg:py-3 p-1 md:p-2 absolute top-[90%] md:top-[85%] lg:top-0 right-0 md:border-4 border-2  border-main child2 transition-all ">
+                                            <p className='text-main text-[10px] font-bold  '>
+                                                {item?.vote_average?.toString().slice(0, 3)}
+                                            </p>
+                                        </div>
+                </div>
+            </div>
+                </>})
+              }
+            </div>
+            
+          </div>
+             </> 
+          }
+          
         </div>
       </section>
-      <div className='w-full z-50 '>
-        <h3 className='text-center bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent font-extrabold  text-3xl lg:text-5xl  my-3'>
-          Movie Cast
-        </h3>
-      </div>
+      
+      
       {/* <CastCarousel data={cast} />
         {
           recommendations.total_results > 0? <Sections value={recommendations} title={title}  /> : ""
