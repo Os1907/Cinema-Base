@@ -2,7 +2,9 @@ import { urlImage } from '@/app/Utilities/apis'
 import Image from 'next/image'
 import React from 'react'
 import bg from '../../../public/Images/bg.png'
+import bg2 from '../../../public/Images/ffflurry.svg'
 import { Link } from "next-view-transitions"
+import neon from '../../../public/Images/neon.svg'
 
 
 export default function Sections(props: any) {
@@ -12,9 +14,14 @@ export default function Sections(props: any) {
   const  UrlImages: string = "https://image.tmdb.org/t/p/w500/";
     return (
         <>
-            <section  className=' min-h-screen   lg:pt-10 pt-5 lg:pb-16 pb-5  relative z-10  overflow-y-hidden '>
-                <Image src={bg} alt='texture' className='absolute  lg:top-[-8%] top-20 z-[0] opacity-10  ' />
-                <Image src={bg} alt='texture2' className='absolute  lg:top-[50%] top-20 z-[0] opacity-10 -rotate-180  ' />
+            <section  className=' min-h-screen   lg:pt-10 pt-5 lg:pb-16 pb-5  relative z-10  overflow-hidden '>
+                <Image src={bg} alt='texture' className='absolute opacity-15   top-20 z-[1] ' /> 
+                {/* <Image src={bg2} alt='texture' className='absolute w-[40%] left-[-20%] top-[-4%] z-[0] ' />  */}
+                <Image src={bg} alt='texture2' className='absolute   opacity-15 lg:top-[50%] top-20 z-[1]  -rotate-180  ' />
+                {/* <Image src={bg2} alt='texture' className='absolute w-[40%] right-[-20%] top-[42%] z-[0] ' /> */}
+                {/* <Image src={bg2} alt='' className='absolute -rotate-90   w-full top-0 h-full  z-[0] opacity-70 child my-Ainme   '/> */}
+
+               
                 <div className='lg:mx-24 mx-4 relative z-10 '>
                     <div className='flex justify-center relative items-center'>
 

@@ -7,6 +7,7 @@ import bg from '../../../public/Images/bg.png'
 import { TiMediaFastForwardOutline } from 'react-icons/ti'
 import Button from '@/app/_Components/Button/Button'
 import Bg from '@/app/_Components/BackGround/Bg'
+import blur from '../../../public/Images/bbblurry.svg'
 
 interface SeriesProps {
   params: {
@@ -28,7 +29,7 @@ const Series: React.FC<SeriesProps> = async ({ params }) => {
 
   return (
     <>
-      <section className='  overflow-y-hidden bg-main  lg:pt-10 pt-5  pb-2 relative z-10  '>
+      <section className='  overflow-hidden bg-main  lg:pt-10 pt-5  pb-2 relative z-10  min-h-screen  '>
         <Bg url={data?.backdrop_path} />
         <div className='lg:mx-24 mx-4 relative z-10 '>
 
@@ -55,7 +56,7 @@ const Series: React.FC<SeriesProps> = async ({ params }) => {
                       data?.release_date || data?.first_air_date
                     }
                   </p>
-                  <div className='lg:flex hidden  '>
+                  <div className='lg:flex hidden  w-full justify-center lg:justify-start '>
                     {
                       data?.genres.map((item: any) => <p key={item?.id} className='  font-medium mx-1 text-main  bg-gradient-to-r from-green to-yellow-200 p-1 px-3 rounded-3xl text-[10px] lg:text-[12px]  transition-all'>
                         {item?.name}
@@ -69,7 +70,7 @@ const Series: React.FC<SeriesProps> = async ({ params }) => {
                     data?.runtime
                    }M
                   </p> */}
-                  <div className='flex lg:hidden '>
+                  <div className='flex lg:hidden  w-full  justify-center lg:justify-start '>
                     {
                       data?.genres.map((item: any) => <button key={item?.id} className='font-medium mx-1 text-main  bg-gradient-to-r from-green to-yellow-200 p-1 px-3 rounded-3xl text-[12px]  transition-all'>
                         {item?.name}
@@ -78,7 +79,7 @@ const Series: React.FC<SeriesProps> = async ({ params }) => {
                   </div>
 
                 </div>
-                <div className='flex items-center lg:items-start flex-col'>
+                <div className='flex items-center lg:items-start flex-col w-full  '>
                   <div className='bg-gradient-to-r from-green to-yellow-200  px-3  mb-3 rounded-3xl '>
 
                     <p className='text-[12px] lg:text-sm lg:text-start text-center  text-main font-medium '>
@@ -145,7 +146,7 @@ const Series: React.FC<SeriesProps> = async ({ params }) => {
            <p className='font-extrabold text-6xl bg-gradient-to-r from-yellow-200 to-green bg-clip-text text-transparent  text-center my-4'>
            Seasons
            </p>
-           <div className="grid lg:grid-cols-1 md:grid-cols-3 grid-cols-2 pb-20 gap-x-2 lg:gap-y-2 gap-y-4">
+           <div className="grid grid-cols-1  pb-20 gap-x-2 lg:gap-y-2 gap-y-4">
               {
                 data?.seasons?.slice(1).map((item: any)=> {
                 return<>
