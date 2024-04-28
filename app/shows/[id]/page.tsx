@@ -143,17 +143,21 @@ const Series: React.FC<SeriesProps> = async ({ params }) => {
                                     </div>
                           <div className='w-full bg-green    min-h-full top-0  slide-in-bottom  group-hover:flex  z-[100] absolute py-5 rounded-2xl hidden justify-center flex-col'>
                             
-                                    <div className='flex justify-between items-center'>
+                                        <div className='w-full my-2 '>
+
+                                        <h3 className='  text-white font-bold   text-base text-center'>
+                            {       item.name  }
+                                        </h3>
+                                        </div>
+                                        <div className='w-full flex justify-between items-center'>
+
                                         <p className='hoverChanger lg:text-start text-center  ml-4 text-sm font-bold'>
                                         {item?.air_date?.slice(0, 4)}
                                         </p>
-                                        <h3 className='  text-white font-bold   text-base '>
-                            {       item.name  }
-                                        </h3>
                                         <p className='hoverChanger mr-4 text-center   text-sm font-bold'>
                                             {item?.adult === false ? "+13" : "+18"}
                                         </p>
-                                    </div>
+                                        </div>
                               <p className='text-main font-bold my-2 text-center'>
                             Overview
                             </p>
