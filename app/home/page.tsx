@@ -22,11 +22,9 @@ export default async function HomeComponents() {
           <button className=' shadow-green shadow-2xl bg-green text-[12px] py-2 px-3 lg:text-sm lg:py-2 lg:px-3 text-main font-semibold mt-3 rounded-3xl hover:px-6 transition-all   hover:bg-gradient-to-r hover:from-green hover:to-yellow-200 '> 
           <Link href='/explore/1' className="rounded-3xl hover:bg-transparent transition-all hover:border-0">Find Now </Link>
           </button>
-     {/* <Image src={neon} alt='' className='absolute h-full top-0 left-[-40%] z-[1] -rotate-[160]  child  '/>
-     <Image src={neon} alt='' className='absolute h-full top-0 right-[-40%] z-[1] -rotate-180  child '/> */}
+     
      </div>
         <Image src={bg} alt='' className='absolute   w-full top-0 h-full  z-[0] opacity-70 child my-Ainme   '/>
-        {/* <Image src={bg} alt='' className='absolute h-full w-full top-0  z-[0] opacity-70 child my-Ainme  '/> */}
 
 
 

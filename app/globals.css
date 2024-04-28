@@ -42,24 +42,9 @@
                           var(--sb-track-color);
        }
      }
-   .my-Ainme{ animation: myAnim 15s ease 1s infinite alternate  forwards; -webkit-animation: myAnim 15s ease 1s infinite alternate  forwards; }
+   .my-Ainme{ animation: myAnim 5s ease 0s infinite alternate  forwards; -webkit-animation: myAnim 5s ease 0s infinite alternate  forwards; }
    @keyframes myAnim {
-    /*  100% {
-       width: 0%;
-     }
-   75%{
-       width: 25%;
-   }
-   50%{
-       width: 50%;
-   }
-   25%{
-       width: 75%;
-   } 
-     0% {
-           width: 100%;
-   
-     }*/
+
      0% {
       -webkit-transform: translateX(1000px) ;
               transform: translateX(1000px) ;
@@ -190,16 +175,19 @@
   }
 }
 .slide-in-bottom {
-	-webkit-animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	-webkit-animation: slide-in-bottom 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-bottom 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @-webkit-keyframes slide-in-bottom {
   0% {
-    -webkit-transform: translateY(1000px);
-            transform: translateY(1000px);
-    opacity: 0;
-  }
+            -webkit-transform: translateY(400px);
+            transform: translateY(400px);
+            opacity: 0;
+            -moz-transform: translateY(400px);
+            -ms-transform: translateY(400px);
+            -o-transform: translateY(400px);
+}
   100% {
     -webkit-transform: translateY(0);
             transform: translateY(0);
@@ -208,8 +196,8 @@
 }
 @keyframes slide-in-bottom {
   0% {
-    -webkit-transform: translateY(1000px);
-            transform: translateY(1000px);
+    -webkit-transform: translateY(400px);
+            transform: translateY(400px);
     opacity: 0;
   }
   100% {
@@ -218,3 +206,13 @@
     opacity: 1;
   }
 }
+
+
+
+
+  .Scroll-Edit::-webkit-scrollbar{
+    width: 0px !important;
+  }
+  .Scroll-Edit::-webkit-scrollbar-thumb{
+    background-color: #020420 !important;
+  }
