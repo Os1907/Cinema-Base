@@ -43,7 +43,7 @@ const Series: React.FC<SeriesProps> = async ({ params }) => {
                   </h2>
                 </div>
                 <div className='flex justify-center lg:justify-start w-full  '>
-                  <div className='bg-gradient-to-r from-green to-yellow-200  w-auto  px-3   rounded-3xl my-3 '>
+                  <div className='bg-gradient-to-r from-green to-yellow-200   px-3  rounded-3xl my-3 '>
 
                     <p className='text-[12px] lg:text-sm lg:text-start text-center  text-main font-medium '>
                       {
@@ -54,7 +54,7 @@ const Series: React.FC<SeriesProps> = async ({ params }) => {
                 </div>
                   
                 <div className='flex justify-center  lg:justify-start items-center lg:items-start lg:flex-wrap flex-col   w-full'>
-                  <p className='text-base font-bold my-2   bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
+                  <p className='text-base font-bold my-2  w-auto  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
                     {
                       data?.release_date || data?.first_air_date
                     }
