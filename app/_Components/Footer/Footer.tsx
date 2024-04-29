@@ -6,7 +6,7 @@ export default function Footer() {
     <>
     
 <footer className="bg-gradient-to-b from-main to-main2  w-full border-green border-t ">
-  <div className="mx-auto max-w-screen-xl py-8">
+  <div className=" max-w-screen-xl py-8 mx-4">
     <div className="sm:flex sm:items-center sm:justify-between">
       <div className="flex items-center sm:items-start flex-col">
       <p className=' bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent font-extrabold text-2xl '>
