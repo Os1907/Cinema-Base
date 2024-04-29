@@ -42,24 +42,22 @@ const Series: React.FC<SeriesProps> = async ({ params }) => {
                     {data?.title?.toUpperCase() || data?.name.toUpperCase()}
                   </h2>
                 </div>
-                <div className='flex justify-center lg:justify-start w-full  '>
-                  <div className='bg-gradient-to-r from-green to-yellow-200   px-3  rounded-3xl my-3 '>
+                <div className="w-full my-3 text-center lg:text-start">
 
-                    <p className='text-[12px] lg:text-sm lg:text-start text-center  text-main font-medium '>
+                    <p className='text-[12px] lg:text-sm  rounded-3xl   inline  bg-gradient-to-r from-green to-yellow-200 px-3 text-main font-medium '>
                       {
                         data?.tagline
                       }
                     </p>
-                  </div>
                 </div>
                   
-                <div className='flex justify-center  lg:justify-start items-center lg:items-start lg:flex-wrap flex-col   w-full'>
-                  <p className='text-base font-bold my-2  w-auto  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
+                  <p className='text-base lg:text-start text-center font-bold  w-full  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
                     {
                       data?.release_date || data?.first_air_date
                     }
                   </p>
-                  <div className='lg:flex hidden  w-full justify-center lg:justify-start my-3  '>
+                <div className='flex justify-center  lg:justify-start items-center lg:items-start lg:flex-wrap flex-col  my-3  w-full'>
+                  <div className='lg:flex hidden  w-full justify-center lg:justify-start  '>
                     {
                       data?.genres.map((item: any) => <p key={item?.id} className='  font-medium mr-2 text-main  bg-gradient-to-r from-green to-yellow-200 p-1 px-3 rounded-3xl text-[10px] lg:text-[12px]  transition-all'>
                         {item?.name}
