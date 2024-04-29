@@ -35,99 +35,93 @@ const Series: React.FC<SeriesProps> = async ({ params }) => {
             </div>
             <div className="lg:col-span-4 col-span-6 flex items-center  ">
 
-            <div className='flex justify-center relative items-start flex-col '>
-<div className='text-center lg:text-start w-full'>
+              <div className='flex justify-center relative items-start flex-col   '>
+                <div className='text-center lg:text-start w-full flex flex-col '>
 
-                <h2 className=' hover:bg-gradient-to-r hover:from-yellow-200 hover:to-green hover:bg-clip-text hover:text-transparent transition-all cursor-pointer  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent  lg:text-5xl text-4xl font-extrabold relative z-10 '>
-                  {data?.title.toUpperCase()}
-                </h2>
-</div>
-                <div className='flex justify-center my-3 lg:justify-start items-center flex-wrap  w-full'>
-                  <p className='text-[12px] lg:text-sm  font-medium bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
-                   {
-                    data?.release_date
-                   }
-                  </p>
-                  <div className='lg:flex hidden  '>
-          {
-            data?.genres.map((item:any)=><p key={item?.id} className='  font-medium mx-1 text-main  bg-gradient-to-r from-green to-yellow-200 p-1 px-3 rounded-3xl text-[10px] lg:text-[12px]  transition-all'>
-                    {item?.name}
-                  </p> )
-          }
-                  </div>
-                  
-                  
-                  <div className='flex lg:hidden '>
-                  {
-            data?.genres.map((item:any)=><button key={item?.id} className='font-medium mx-1 text-main  bg-gradient-to-r from-green to-yellow-200 p-1 px-3 rounded-3xl text-[12px]  transition-all'>
-                    {item?.name}
-                  </button> )
-          }
-                  </div>
-
-                </div>
-                <div className='flex items-center lg:items-start flex-col'>
-                  <div className='bg-gradient-to-r from-green to-yellow-200  px-3  mb-3 rounded-3xl '>
-
-                <p className='text-[12px] lg:text-sm lg:text-start text-center  text-main font-medium '>
-{
-  data?.tagline
-}
-                </p>
-                  </div>
-                <p className='text-sm lg:text-start text-center lg:text-base font-medium  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
-{
-  data?.overview
-}
-                </p>
-                <p className='text-sm lg:text-base font-medium mt-3 bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
-                  Country : {
-  data?.origin_country
-}
-                </p>
-                <div className='flex justify-center bg-gradient-to-r from-green to-yellow-200  px-2  rounded-3xl mt-3'>
-                  <div className='flex  items-center'>
-                    <p className='text-main font-medium text-[12px] lg:text-sm'>
-                      Status : 
-                    </p>
-                    <p className='text-main ml-2 text-[12px] lg:text-sm'>
-                    {
-  data?.status
-}
-                    </p>
-                  </div>
-                </div>
-                <p className=' text-[12px] lg:text-sm  font-medium mt-3 bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
-                  Original language : {
-  data?.original_language
-}
-                </p>
-                <p className='mt-3 text-4xl font-semibold bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
-                {
-  data?.vote_average.toString().slice(0, 3)
-} <span className='ml-[-3px]  text-base font-medium'>/10</span>
-                </p>
-                
-                </div>
-                <div className='w-full flex justify-center lg:justify-start'>
-
-                <a target="_blank" href={`https://www.youtube.com/watch?v=${results[0]?.key}`} className='my-3 '>
-                  <Button value={btnCaption} component={<TiMediaFastForwardOutline className='inline mb-1 text-main text-xl ' />} />
-                </a>
+                  <h2 className=' hover:bg-gradient-to-r hover:from-yellow-200 hover:to-green hover:bg-clip-text hover:text-transparent transition-all cursor-pointer  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent  lg:text-5xl text-4xl font-extrabold relative z-10 '>
+                    {data?.title?.toUpperCase() || data?.name.toUpperCase()}
+                  </h2>
                 </div>
                 {
-                  director? <div className='flex  items-center justify-center lg:justify-start my-3 w-full'>
-                  <p className='bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent font-medium text-sm'>
-                    Director : 
-                  </p>
-                  <p className='bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent font-bold ml-2 text-sm'>
-                  {
-director?.name
-}
-                  </p>
-                </div> : ""
+                  data?.tagline ? <div className="w-full my-3 text-center lg:text-start">
+
+                    <p className='text-[12px] lg:text-sm  rounded-3xl   inline  bg-gradient-to-r from-green to-yellow-200 px-3 text-main font-medium '>
+                      {
+                        data?.tagline
+                      }
+                    </p>
+                </div> : null 
                 }
                 
+                  
+                  <p className='text-base lg:text-start text-center font-bold  w-full  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
+                    {
+                      data?.release_date || data?.first_air_date
+                    }
+                  </p>
+                <div className='flex justify-center  lg:justify-start items-center lg:items-start lg:flex-wrap flex-col  my-3  w-full'>
+                  <div className='lg:flex hidden  w-full justify-center lg:justify-start  '>
+                    {
+                      data?.genres.map((item: any) => <p key={item?.id} className='  font-medium mr-2 text-main  bg-gradient-to-r from-green to-yellow-200 p-1 px-3 rounded-3xl text-[10px] lg:text-[12px]  transition-all'>
+                        {item?.name}
+                      </p>)
+                    }
+                  </div>
+                  <div className='flex lg:hidden  w-full  justify-center lg:justify-start mb-3 '>
+                    {
+                      data?.genres.map((item: any) => <p key={item?.id} className='font-medium mx-1 text-main text-center  bg-gradient-to-r from-green to-yellow-200 p-1 px-3 rounded-3xl lg:text-[12px] text-[10px]  transition-all'>
+                        {item?.name}
+                      </p>)
+                    }
+                  </div>
+
+                </div>
+                <div className='flex items-center lg:items-start flex-col w-full  '>
+                  <div className='w-full '>
+
+                  <p className='text-sm lg:text-start text-center lg:text-base font-medium  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
+                    {
+                      data?.overview
+                    }
+                  </p>
+                  </div>
+                  <div className='w-full'>
+
+                  <p className='text-sm lg:text-base text-center lg:text-start font-medium mt-3 bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
+                    Country : {
+                      data?.origin_country
+                    }
+                  </p>
+                  </div>
+                  <div className='flex justify-center bg-gradient-to-r from-green to-yellow-200  px-2  rounded-3xl mt-3'>
+                    <div className='flex  items-center w-full'>
+                      <p className='text-main font-medium text-[12px] lg:text-sm'>
+                        Status :
+                      </p>
+                      <p className='text-main ml-2 text-[12px] lg:text-sm'>
+                        {
+                          data?.status
+                        }
+                      </p>
+                    </div>
+                  </div>
+                  <div className="w-full ">
+
+                  <p className=' text-[12px] lg:text-sm text-center lg:text-start  font-medium mt-3 bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
+                    Original language : {
+                      data?.original_language
+                    }
+                  </p>
+                  </div>
+                  <div className='w-full '>
+
+                  <p className='mt-3 text-center lg:text-start text-4xl font-semibold bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
+                    {
+                      data?.vote_average.toString().slice(0, 3)
+                    } <span className='ml-[-3px]  text-base font-medium'>/10</span>
+                  </p>
+                </div>
+                </div>
               </div>
             </div>
 
