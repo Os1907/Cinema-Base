@@ -143,7 +143,11 @@ const recommendations = await similar(params?.ID)
                   </div>
 
                 </div>
-
+                <div className='w-full flex justify-center lg:justify-start'>
+                 <a target="_blank" href={`https://www.youtube.com/watch?v=${results[0]?.key}`} className='my-3 '>
+                    <Button value={btnCaption} component={<TiMediaFastForwardOutline className='inline mb-1 text-main text-xl ' />} />
+                   </a>
+                  </div>
               </div>
             </div>
 
