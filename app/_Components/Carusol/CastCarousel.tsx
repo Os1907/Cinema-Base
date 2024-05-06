@@ -27,10 +27,10 @@ const CastCarousel: React.FC<PropType> = (props,{params}:any) => {
         }
         
             <div className='flex flex-col items-center w-full  '>
-              <p className='text-green font-semibold text-[10px]  lg:text-[12px] text-center  transition-all'>
+              <p className='text-green font-semibold text-[9px]  lg:text-[12px] text-center  transition-all'>
                   {typeof item === 'string' ? item : (item as any).name}
               </p>
-              <p className='text-green font-normal text-[10px]  lg:text-[12px] text-center  transition-all'>
+              <p className='text-green font-normal text-[8px]  lg:text-[10px] text-center  transition-all'>
                   {typeof item === 'string' ? item : (item as any).character}
               </p>
             </div>
