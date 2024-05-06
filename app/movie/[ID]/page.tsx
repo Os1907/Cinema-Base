@@ -134,7 +134,16 @@ if (provider.results.hasOwnProperty(location?.country_code2)) {
                     }
                   </p>
                 </div>
-                <div className='flex gap-x-2'>
+                
+                <div className='flex gap-x-2 lg:flex-row flex-col items-center lg:justify-center  '>
+                 <div className="glass px-3 py-1 mt-2 flex items-center  ">
+
+                <p className=' text-[12px] lg:text-sm text-center lg:text-start  font-medium bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent mr-1'>
+                 Your country : {
+                    location?.country_code2
+                  }
+                  </p>
+                  </div> 
 
                 {
                   value?.flatrate? <div className="glass px-3 py-1 mt-2 flex items-center  ">

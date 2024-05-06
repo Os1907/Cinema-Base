@@ -127,7 +127,7 @@ if (provider.results.hasOwnProperty(location?.country_code2)) {
           }
         </p>
       </div>
-      <div className='flex gap-x-2'>
+      <div className='flex gap-x-2 lg:flex-row flex-col items-center lg:justify-center bg-sky-500 '>
 
       {
         value?.flatrate? <div className="glass px-3 py-1 mt-2 flex items-center  ">
