@@ -34,7 +34,7 @@ if (provider.results.hasOwnProperty(location?.country_code2)) {
 
   return (
     <>
-      <section className='  overflow-hidden bg-main  lg:pt-10 pt-5  pb-2 relative z-10  min-h-screen  '>
+      <section className='  overflow-hidden bg-main  lg:pt-10 pt-5  pb-2 relative z-10  lg:min-h-screen  '>
         <Bg url={photos} />
         <div className='lg:mx-24 mx-4 relative z-10 '>
           <div>
@@ -54,7 +54,7 @@ if (provider.results.hasOwnProperty(location?.country_code2)) {
 
     </div>
     {
-      data?.tagline ? <div className="w-full my-1 xl:my-3 text-center lg:text-start">
+      data?.tagline ? <div className="w-full my-1 xl:my-3 mt-3 text-center lg:text-start">
 
         <p className='text-[12px] lg:text-sm  rounded-3xl  glass  inline   px-3 text-green font-medium '>
           {
