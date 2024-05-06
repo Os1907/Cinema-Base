@@ -54,9 +54,9 @@ export async function videoLink(id: number) {
     console.error(err);
   }
 }
-export async function similar(id: number) {
+export async function similar(id: number , type:string) {
   try {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/recommendations?language=en-US`, options);
+    const response = await fetch(`https://api.themoviedb.org/3/${type}/${id}/recommendations?language=en-US`, options);
     const data = await response.json();
     return data;
   } catch (err) {
@@ -128,6 +128,38 @@ export  async function TrendSeries() {
     console.error(err);
   }
 }
+export async function image(id: number , type: string) {
+  try {
+    const response = await fetch(`https://api.themoviedb.org/3/${type}/${id}/images`, options);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+}
 
 export const urlImage: string = "https://image.tmdb.org/t/p/w500/";
+
+
+
+export async function locationNow() {
+  try {
+    const response = await fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=4dd2d3dd32be4832b3ad7a4686cd458c`);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+}
+export async function watchProvider(id: number , type: string) {
+  try {
+    const response = await fetch(`https://api.themoviedb.org/3/${type}/${id}/watch/providers`, options);
+
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+}
+
 

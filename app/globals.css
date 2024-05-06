@@ -2,7 +2,6 @@
   @tailwind components;
   @tailwind utilities;
 
-
   body {
   
     background-color: #020420;
@@ -42,6 +41,9 @@
                           var(--sb-track-color);
        }
      }
+
+
+    
    .my-Ainme{ animation: myAnim 5s ease 0s infinite alternate  forwards; -webkit-animation: myAnim 5s ease 0s infinite alternate  forwards; }
    @keyframes myAnim {
 
@@ -215,4 +217,64 @@
   }
   .Scroll-Edit::-webkit-scrollbar-thumb{
     background-color: #020420 !important;
+  }
+
+  .glass{
+    /* From https://css.glass */
+background: rgba(255, 255, 255, 0.015);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+.rounded-circle{ border-radius: 50% !important; -webkit-border-radius: 50% !important; -moz-border-radius: 50% !important; -ms-border-radius: 50% !important; -o-border-radius: 50% !important;
+}
+  .leftAnimation{
+    animation: Entrance 0.09s ease 0s 1 normal forwards;
+    -webkit-animation: Entrance 0.09s ease 0s 1 normal forwards;
+}
+  @keyframes Entrance {
+    0% {
+      animation-timing-function: ease-in;
+      opacity: 0;
+      transform: translateX(-250px);
+    }
+  
+    38% {
+      animation-timing-function: ease-out;
+      opacity: 1;
+      transform: translateX(0);
+    }
+  
+    55% {
+      animation-timing-function: ease-in;
+      transform: translateX(-68px);
+    }
+  
+    72% {
+      animation-timing-function: ease-out;
+      transform: translateX(0);
+    }
+  
+    81% {
+      animation-timing-function: ease-in;
+      transform: translateX(-28px);
+    }
+  
+    90% {
+      animation-timing-function: ease-out;
+      transform: translateX(0);
+    }
+  
+    95% {
+      animation-timing-function: ease-in;
+      transform: translateX(-8px);
+    }
+  
+    100% {
+      animation-timing-function: ease-out;
+      transform: translateX(0);
+    }
   }

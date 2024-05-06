@@ -17,10 +17,10 @@ export default function Navbar() {
 
       if (scrollPosition > 0) {
         scrollRef.current.classList.remove("relative")
-        scrollRef.current.classList.add("fixed" , "top-0"  ,"lg:right-[10%]" ,"lg:w-[80%]"  ,  "lg:rounded-full" , "lg:mt-4" , "z-50" , "shadow" ,"shadow-xl"  )
+        scrollRef.current.classList.add("fixed" , "top-0"  ,"lg:right-[10%]" ,"lg:w-[80%]"  ,  "lg:rounded-full" , "lg:mt-4" , "z-50" , "shadow" ,"shadow-xl" , )
     }
     if (scrollPosition == 0){
-        scrollRef.current.classList.remove("fixed" , "top-0"  ,"lg:right-[0]" ,"lg:w-[80%]"  ,  "lg:rounded-full" , "lg:mt-4" , "shadow" ,"shadow-xl" )
+        scrollRef.current.classList.remove("fixed" , "top-0"  ,"lg:right-[0]" ,"lg:w-[80%]"  ,  "lg:rounded-full" , "lg:mt-4" , "shadow" ,"shadow-xl" , )
     
     }
     return () => {
