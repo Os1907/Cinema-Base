@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { Sling as Hamburger } from 'hamburger-react'
 import bg from '../../../../public/Images/bg.png'
+import neon from '../../../../public/Images/bbblurry.svg'
 
 // import icon from './../../../../public/Images/Logo.png'
 import Image from 'next/image'
@@ -30,7 +31,6 @@ export default function HamburgerMenu() {
     if(pathnName.includes('/tvshows/1')){
       pathnName = '/shows'
     }
-    // console.log(pathnName)
   return (
     <>
 <div className=''>
@@ -42,17 +42,16 @@ export default function HamburgerMenu() {
     </div>
     {
         isOpen? 
-        <div className='bg-main  w-full h-[40vh] fixed top-0 left-0 z-[100] flex justify-center items-center slide-in-top flex-col border-b border-green'>
-        <Image src={bg} alt='' className='absolute h-full top-0  z-[0] opacity-15  child w-full '/>
+        <div className='bg-main gl ass   w-full h-[20vh] fixed top-[63px] non- Round overflow-y-hidden left-0 z-[100] flex justify-center items-center slide-in-top flex-col border-b  rounded -3xl rounded- t border-green'>
+        <Image src={bg} alt='' className='absolute  top-0  z-[0] opacity-15  child   '/>
         <ul className="flex flex-col px-1 z-[100] ">
-      <li onClick={()=>{ hidePage()  }} className={pathnName === "/home"  ? "font-semibold text-xl  transition-all hover:  rounded-xl px-5 py-1   mx-5 text-main shadow-green shadow-2xl  focus:text-green  hover:border-0 bg-gradient-to-r from-green to-yellow-200  my-2  " : "my-2 font-semibold text-xl transition-all rounded-xl px-5 py-1   mx-5     focus:text-green   bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent"}><Link href='/home' className="rounded-3xl  hover:bg-transparent transition-all hover:border-0 group"> <FaHome  className={pathnName === "/home"  ? "text-main inline mb-1" :"text-green inline mb-1"}/> Home <div className="bg-gradient-to-r from-green to-yellow-200 h-[2px] w-0 group-hover:w-full transition-all duration-500"></div></Link></li>
-      <li onClick={()=>{ hidePage()  }} className={pathnName === "/explore/1" ? "font-semibold text-xl  transition-all  rounded-xl px-5 py-1   mx-5 text-main shadow-green shadow-2xl  focus:text-green  hover:border-0 bg-gradient-to-r from-green to-yellow-200   my-2 " : "my-2 font-semibold text-xl transition-all rounded-xl px-5 py-1   mx-5     focus:text-green group  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent"}> <Link href='/explore/1' className="rounded-3xl hover:bg-transparent transition-all hover:border-0">  <MdTravelExplore  className={pathnName === "/explore/1"  ? "text-main inline mb-1" :"text-green inline mb-1"} /> Search <div className="bg-gradient-to-r from-green to-yellow-200 h-[2px] w-0 group-hover:w-full transition-all duration-500"></div></Link></li>
-      <li onClick={()=>{ hidePage()  }} className={pathnName === "/shows" ? "font-semibold text-xl  transition-all  rounded-xl px-5 py-1   mx-5 text-main shadow-green shadow-2xl  focus:text-green  hover:border-0 bg-gradient-to-r from-green to-yellow-200   my-2 " : "my-2 font-semibold text-xl transition-all rounded-xl px-5 py-1   mx-5     focus:text-green   bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent"}> <Link href='/shows' className="rounded-3xl hover:bg-transparent transition-all hover:border-0 group"> <IoTv  className={pathnName === "/shows"  ? "text-main inline mb-1 mx-1" :"text-green inline mb-1 mx-1"} />TV Shows <div className="bg-gradient-to-r from-green to-yellow-200 h-[2px] w-0 group-hover:w-full transition-all duration-500"></div> </Link></li>
+      <li onClick={()=>{ hidePage()  }} className={pathnName === "/home"  ? "font-semibold text-sm  transition-all hover:  rounded-xl px-5 py-1   mx-5 text-main shadow-green shadow-2xl  focus:text-green  hover:border-0 bg-gradient-to-r from-green to-yellow-200  my-2  " : "my-2 font-semibold text-sm transition-all rounded-xl px-5 py-1   mx-5     focus:text-green   bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent"}><Link href='/home' className="rounded-3xl  hover:bg-transparent transition-all hover:border-0 group"> <FaHome  className={pathnName === "/home"  ? "text-main inline mb-1" :"text-green inline mb-1"}/> Home <div className="bg-gradient-to-r from-green to-yellow-200 h-[2px] w-0 group-hover:w-full transition-all duration-500"></div></Link></li>
+      <li onClick={()=>{ hidePage()  }} className={pathnName === "/explore/1" ? "font-semibold text-sm  transition-all  rounded-xl px-5 py-1   mx-5 text-main shadow-green shadow-2xl  focus:text-green  hover:border-0 bg-gradient-to-r from-green to-yellow-200   my-2 " : "my-2 font-semibold text-sm transition-all rounded-xl px-5 py-1   mx-5     focus:text-green group  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent"}> <Link href='/explore/1' className="rounded-3xl hover:bg-transparent transition-all hover:border-0">  <MdTravelExplore  className={pathnName === "/explore/1"  ? "text-main inline mb-1" :"text-green inline mb-1"} /> Search <div className="bg-gradient-to-r from-green to-yellow-200 h-[2px] w-0 group-hover:w-full transition-all duration-500"></div></Link></li>
+      <li onClick={()=>{ hidePage()  }} className={pathnName === "/shows" ? "font-semibold text-sm  transition-all  rounded-xl px-5 py-1   mx-5 text-main shadow-green shadow-2xl  focus:text-green  hover:border-0 bg-gradient-to-r from-green to-yellow-200   my-2 " : "my-2 font-semibold text-sm transition-all rounded-xl px-5 py-1   mx-5     focus:text-green   bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent"}> <Link href='/shows' className="rounded-3xl hover:bg-transparent transition-all hover:border-0 group"> <IoTv  className={pathnName === "/shows"  ? "text-main inline mb-1 mx-1" :"text-green inline mb-1 mx-1"} />TV Shows <div className="bg-gradient-to-r from-green to-yellow-200 h-[2px] w-0 group-hover:w-full transition-all duration-500"></div> </Link></li>
     </ul>
             
     </div> : <></>
-    //  <div className={display ? 'hidden':'bg-main duration-1000 w-full transition-all left-[-100%]  h-[50vh] absolute hidden  z-40  justify-center items-center flex slide-in-bottom  flex-col'}>
-    // </div> 
+    
     }
     </div>
     

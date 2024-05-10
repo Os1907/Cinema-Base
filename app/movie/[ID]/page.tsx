@@ -21,7 +21,6 @@ const Movie: React.FC<MovieProps> = async ({ params }) => {
   const title: string = "Recommendations"
 
   const photos = await image(params?.ID, "movie")
-  // console.log(photos.logos.find((item: any) => item.iso_639_1 === "en"))
   let poster = photos.logos.find((item: any) => item.iso_639_1 === "en" && item.width <= 780)
   
   const location = await locationNow()
@@ -136,15 +135,6 @@ if (provider.results.hasOwnProperty(location?.country_code2)) {
                 </div>
                 
                 <div className='flex gap-x-2 lg:flex-row flex-col items-center lg:justify-center  '>
-                 <div className="glass px-3 py-1 mt-2 flex items-center  ">
-
-                <p className=' text-[12px] lg:text-sm text-center lg:text-start  font-medium bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent mr-1'>
-                 Your country : {
-                    location?.country_code2
-                  }
-                  </p>
-                  </div> 
-
                 {
                   value?.flatrate? <div className="glass px-3 py-1 mt-2 flex items-center  ">
 
@@ -201,8 +191,8 @@ there are no streaming services currently available for this in your country
               
             </div>
             
-            <div className='w-full flex justify-center lg:justify-start mt-2 lg:ml-2  mb-10'>
-              <div className=' rounded-circle hover:shadow-green shadow-green  shadow-2xl  transition-all hover:shadow-md group '>
+            <div className='w-full flex justify-center lg:justify-start mt-2 lg:ml-2  mb-10 relative z-[100]'>
+              <div className=' rounded-circle hover:shadow-green shadow-green lg:shadow-2xl  transition-all hover:shadow-lg group '>
 
               <a target="_blank" href={`https://www.youtube.com/watch?v=${results[0]?.key}`}className=' flex items-center   group-hover:size-auto  px-3 py-2 glass hover:scale-125   transition-all  justify-center hover:bg-green      '>
               <FaPlay  className='text-green text-sm lg:text-lg group-hover:text-main  '/>

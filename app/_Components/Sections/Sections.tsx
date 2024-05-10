@@ -1,10 +1,7 @@
-import { urlImage } from '@/app/Utilities/apis'
 import Image from 'next/image'
 import React from 'react'
 import bg from '../../../public/Images/bg.png'
-import bg2 from '../../../public/Images/ffflurry.svg'
 import { Link } from "next-view-transitions"
-import neon from '../../../public/Images/neon.svg'
 
 
 export default function Sections(props: any) {
@@ -14,14 +11,9 @@ export default function Sections(props: any) {
   const  UrlImages: string = "https://image.tmdb.org/t/p/w500/";
     return (
         <>
-            <section  className=' min-h-screen   lg:pt-10 pt-5 lg:pb-16 pb-5  relative z-10  overflow-hidden '>
+            <section  className=' min-h-screen bg-main   lg:pt-10 pt-5 lg:pb-16 pb-5  relative z-10  overflow-hidden '>
                 <Image src={bg} alt='texture' className='absolute opacity-15   top-20 z-[1] ' /> 
-                {/* <Image src={bg2} alt='texture' className='absolute w-[40%] left-[-20%] top-[-4%] z-[0] ' />  */}
                 <Image src={bg} alt='texture2' className='absolute   opacity-15 lg:top-[50%] top-20 z-[1]  -rotate-180  ' />
-                {/* <Image src={bg2} alt='texture' className='absolute w-[40%] right-[-20%] top-[42%] z-[0] ' /> */}
-                {/* <Image src={bg2} alt='' className='absolute -rotate-90   w-full top-0 h-full  z-[0] opacity-70 child my-Ainme   '/> */}
-
-               
                 <div className='lg:mx-24 mx-4 relative z-10 '>
                     <div className='flex justify-center relative items-center'>
 
@@ -30,7 +22,6 @@ export default function Sections(props: any) {
                         </h2>
 
                     </div>
-                   
                     <div className="grid lg:grid-cols-4 xl:grid-cols-5 md:grid-cols-3 grid-cols-2 my-5 gap-x-4 gap-y-6">
                         { 
                         data?.results? 
@@ -52,13 +43,13 @@ export default function Sections(props: any) {
                             {     item.title ||  item.name  }
                                         </h3>
                                     </div>
-                                    <div className='flex justify-between items-center'>
-                                        <p className='hoverChanger lg:text-start text-center  ml-4 text-[9px] font-semibold'>
+                                    <div className='flex justify-between items-center '>
+                                        <p className='hoverChanger lg:text-start text-center text-main2 ml-4 text-[9px] font-semibold'>
 
                                         {item?.release_date?.toString().slice(0, 4)
                                         || item?.first_air_date?.toString().slice(0, 4)}
                                         </p>
-                                        <p className='hoverChanger mr-4 text-center   text-[9px] font-semibold'>
+                                        <p className='hoverChanger mr-4 text-center text-main2  text-[9px] font-semibold'>
                                             {item?.adult === false ? "+13" : "+18"}
                                         </p>
                                     </div>
@@ -84,13 +75,13 @@ export default function Sections(props: any) {
                                             }
                                         </h3>
                                     </div>
-                                    <div className='flex justify-between items-center '>
-                                        <p className='hoverChanger lg:text-start text-center  ml-4 text-[9px] font-semibold'>
+                                    <div className='flex justify-between items-center  '>
+                                        <p className='hoverChanger lg:text-start text-center text-main2 ml-4 text-[9px] font-semibold'>
 
                                         {item?.release_date?.toString().slice(0, 4)
                                         || item?.first_air_date?.toString().slice(0, 4)}
                                         </p>
-                                        <p className='hoverChanger mr-4 text-center   text-[9px] font-semibold'>
+                                        <p className='hoverChanger mr-4 text-center text-main2  text-[9px] font-semibold'>
                                             {item?.adult === false ? "+13" : "+18"}
                                         </p>
                                     </div>

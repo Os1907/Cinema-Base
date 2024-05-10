@@ -12,7 +12,7 @@ export default async function Popular({params}:any ) {
     return (
         <>
 
-        <section className='py-2'>
+        <section>
             <Sections value={data} title={title}  />
             <div className='flex justify-center relative z-50 lg:mt-[-50px] mt-[-20px]'>
                 <Link href={`/popular/${data.page}`} scroll={true}>

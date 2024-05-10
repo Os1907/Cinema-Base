@@ -54,7 +54,7 @@ if (provider.results.hasOwnProperty(location?.country_code2)) {
 
     </div>
     {
-      data?.tagline ? <div className="w-full my-1 xl:my-3 mt-3 text-center lg:text-start">
+      data?.tagline ? <div className="w-full my-1 xl:my-3  text-center lg:text-start">
 
         <p className='text-[12px] lg:text-sm  rounded-3xl  glass  inline   px-3 text-green font-medium '>
           {
@@ -64,7 +64,7 @@ if (provider.results.hasOwnProperty(location?.country_code2)) {
       </div> : null
     }
 
-    <div className="flex w-full flex-col lg:flex-row items-center justify-center lg:justify-start gap-y-2">
+    <div className="flex w-full flex-col lg:flex-row items-center mt-2 justify-center lg:justify-start gap-y-2">
 
       <p className=' text-[12px] lg:text-sm lg:text-start text-center font-semibold text-green glass px-3 py-1 '>
         {

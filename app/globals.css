@@ -44,38 +44,41 @@
 
 
     
-   .my-Ainme{ animation: myAnim 5s ease 0s infinite alternate  forwards; -webkit-animation: myAnim 5s ease 0s infinite alternate  forwards; }
+   .my-Ainme{ animation: myAnim 5s ease 0s infinite   forwards; -webkit-animation: myAnim 5s ease 0s infinite   forwards; }
    @keyframes myAnim {
 
      0% {
-      -webkit-transform: translateX(1000px) ;
+       /* -webkit-transform: translateX(1000px) ;
               transform: translateX(1000px) ;
       -webkit-transform-origin: 0% 50%;
-              transform-origin: 0% 50%;
-      
-      opacity: 0;
+              transform-origin: 0% 50%;  */
+              width: 100%;
     }
-    50%{
-      transform: translateX(0px) ;
+  /*  50%{
+        transform: translateX(0px) ;
       -webkit-transform: translateX(0px) ;
       -moz-transform: translateX(0px) ;
       -ms-transform: translateX(0px) ;
-      -o-transform: translateX(0px) ;
-}
+      -o-transform: translateX(0px) ; 
+      width: 50%;
+
+
+}*/
     100% {
-              -webkit-transform: translateX(-1500px) ;
+              /* -webkit-transform: translateX(-1500px) ; 
               transform: translateX(-1500px) ;
               -webkit-transform-origin: 50% 50%;
               transform-origin: 50% 50%;
-              opacity: 1;
               -moz-transform: translateX(-2000px) ;
               -ms-transform: translateX(-2000px) ;
-              -o-transform: translateX(-2000px) ;
+              -o-transform: translateX(-2000px) ; */
+              width: 0%;
+
+
 }
   }
    
-   
-   
+ 
    .dots{
      background-image: url(../public//Images//dots.png);
      background-repeat: repeat;
@@ -278,3 +281,11 @@ border: 1px solid rgba(255, 255, 255, 0.12);
       transform: translateX(0);
     }
   }
+
+  .non-Round{
+    border-radius: 0% !important;
+    -webkit-border-radius: 0% !important;
+    -moz-border-radius: 0% !important;
+    -ms-border-radius: 0% !important;
+    -o-border-radius: 0% !important;
+}
