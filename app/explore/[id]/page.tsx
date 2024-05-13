@@ -56,7 +56,7 @@ export default function Explore({ params }: any) {
         <Image src={bg} alt='' className='absolute h-auto lg:top-[-30%] top-[50%] z-[2] opacity-10 -rotate-180  ' />
         <div className=' '>
           <div className=' flex justify-center my-5'>
-            <p className='uppercase bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent hover:bg-gradient-to-r hover:from-yellow-200 hover:to-green hover:bg-clip-text hover:text-transparent cursor-pointer lg:text-4xl text-3xl font-extrabold transition-all'>
+            <p className='uppercase bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent hover:bg-gradient-to-r hover:from-yellow-200 hover:to-green hover:bg-clip-text hover:text-transparent cursor-pointer lg:text-3xl text-2xl font-extrabold transition-all'>
               Explore your movie
             </p>
           </div>
@@ -66,7 +66,7 @@ export default function Explore({ params }: any) {
               userSearch(e.target.value)
               setSearch(e.target.value)
 
-            }} type="text" placeholder="Search for a movie" className=" input border-green text-green text-xl border-b border-t-0 border-l-0 border-r-0  w-full bg-transparent  rounded-none focus:outline-none focus:rounded-2xl  focus:border-green active:rounded-none focus-within:outline-none placeholder:text-[#09ff84b2]" />
+            }} type="text" placeholder="Search for a movie" className=" input border-green text-green text-sm lg:text-lg border-b border-t-0 border-l-0 border-r-0  w-full bg-transparent  rounded-none focus:outline-none focus:rounded-2xl  focus:border-green active:rounded-none focus-within:outline-none placeholder:text-[#09ff84b2]" />
 
           </div>
           <Sections value={data} title={title} />
