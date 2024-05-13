@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
 import Navbar from "./_Components/Navbar/Navbar";
 import { ViewTransitions } from "next-view-transitions";
 import Footer from "./_Components/Footer/Footer";
-const Vietnam = Poppins({ subsets: ["latin"] ,
+const Vietnam = Be_Vietnam_Pro({ subsets: ["latin"] ,
 weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"] ,
 });
 

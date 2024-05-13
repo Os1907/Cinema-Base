@@ -17,7 +17,7 @@ export default function Footer() {
       <div className=' flex flex-col items-center '>
 
       <p className=" text-center font-medium lg:text-sm text-[12px] text-green mt-0 lg:text-right">
-      Developed by : Osama Mohamed. 
+      Developed by  Osama Mohamed. 
       </p>
       <p className='text-green my-1 font-semibold lg:text-sm text-[12px]'>
         Thanks for  <SiThemoviedatabase  className="inline mb-1 "/>
