@@ -2,12 +2,24 @@ import Image from 'next/image'
 import React from 'react'
 import bg from '../../../public/Images/bg.png'
 import { Link } from "next-view-transitions"
+import { Interface } from 'readline'
+import { Movie } from '@/app/explore/[id]/page'
+
+interface prop {
+    value?:{
+            page: number,
+            results:  [{}]}
+    title:string,
+    nav?:string
+    component?:React.JSX.Element
+    data?:  Movie[];
+}
 
 
-export default function Sections(props: any) {
-    const data = props.value
-    const title = props.title
-    const nav = props.nav
+export default function Sections(props: prop) {
+    const { value, title, nav, component, data } = props;
+
+
   const  UrlImages: string = "https://image.tmdb.org/t/p/w500/";
     return (
         <>
@@ -24,8 +36,8 @@ export default function Sections(props: any) {
                     </div>
                     <div className="grid lg:grid-cols-4 xl:grid-cols-5 md:grid-cols-3 grid-cols-2 my-5 gap-x-4 gap-y-6">
                         { 
-                        data?.results? 
-                            data?.results.map((item: any) => <>
+                        value?.results? 
+                        value?.results.map((item: any) => <>
                             <Link href={nav ? `/${nav}/${item.id}` :`/movie/${item.id}`}>
                                 <div key={item.id} className="col-span-1  hover:shadow-green hover:shadow-2xl hover:bg-green hover:pb-4  hover:scale-105 transition-all cursor-pointer  hover:rounded-2xl   myHover">
                                     <div className='relative'>
@@ -56,9 +68,9 @@ export default function Sections(props: any) {
                                 </div>
                                 </Link>
                             </>
-                            ) : data?.map((item: any) => <>
+                            ) :   data?.map((item: any) => <>
                             <Link href={nav ? `/${nav}/${item.id}` :`/movie/${item.id}`}>
-                                <div key={item.id} className="col-span-1 hover:shadow-green hover:shadow-2xl hover:bg-green hover:pb-4  hover:scale-105 transition-all cursor-pointer  hover:rounded-2xl   myHover">
+                                <div key={item.id} className="col-span-1  hover:shadow-green hover:shadow-2xl hover:bg-green hover:pb-4  hover:scale-105 transition-all cursor-pointer  hover:rounded-2xl   myHover">
                                     <div className='relative'>
                                         <div className="bg-gradient-to-r from-green to-yellow-200 rounded-full lg:px-3 lg:py-3 p-1 md:p-2 absolute md:bottom-[-3%] lg:bottom-[-5%] bottom-[-5%] right-[5%] md:border-4 border-2  border-main2 child2 transition-all ">
                                             <p className='text-main text-[10px] font-bold  '>
@@ -66,16 +78,15 @@ export default function Sections(props: any) {
                                             </p>
                                         </div>
 
-                                        <Image src={UrlImages + item?.poster_path} alt={item.original_title} width={350} height={350} className='md:min-h-[350px] skeleton  shadow-2xl rounded-2xl w-full   hover:border-t-green hover:border-r-green hover:border-l-yellow-200  child-effect transition-all ' />
+                                        <Image src={UrlImages + item?.poster_path} alt={item.original_title || item.original_name } width={350} height={350} className='md:min-h-[350px] skeleton bg-gradient-to-tr from-green to-yellow-200   shadow-2xl rounded-2xl w-full     hover:border-t-green hover:border-r-green hover:border-l-yellow-200  child-effect transition-all ' />
                                     </div>
                                     <div>
                                         <h3 className='mt-3 lg:ml-3 text-center lg:text-start text-white font-medium  lg:text-base text-sm '>
-                                            {
-                                                item.original_title ||  item.name
-                                            }
+                                            
+                            {     item.title ||  item.name  }
                                         </h3>
                                     </div>
-                                    <div className='flex justify-between items-center  '>
+                                    <div className='flex justify-between items-center '>
                                         <p className='hoverChanger lg:text-start text-center text-main2 ml-4 text-[9px] font-semibold'>
 
                                         {item?.release_date?.toString().slice(0, 4)
@@ -87,9 +98,9 @@ export default function Sections(props: any) {
                                     </div>
                                 </div>
                                 </Link>
-                            </>
-                            ) 
-                        }
+                            </> 
+
+                            )}
 
                     </div>
                          {

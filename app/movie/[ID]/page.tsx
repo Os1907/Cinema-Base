@@ -10,10 +10,9 @@ import Bg from '@/app/_Components/BackGround/Bg'
 interface MovieProps {
   params: {
     ID: number
-
   }
 }
-const Movie: React.FC<MovieProps> = async ({ params }) => {
+const Movie = async ({ params }:MovieProps) => {
   const data = await getMovie(params?.ID)
   const { results } = await videoLink(params?.ID)
   const { cast } = await crew(params?.ID)

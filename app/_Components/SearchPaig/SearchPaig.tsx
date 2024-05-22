@@ -7,7 +7,7 @@ import { BiSolidMovie } from "react-icons/bi";
 
 
 export default function SearchPaig() {
-    let pathnName : string=usePathname()
+    let pathnName : string =usePathname()
   const [name, setname] = useState(pathnName)
   return (
 
@@ -25,7 +25,6 @@ export default function SearchPaig() {
       </Link>
       </div> 
     </div>
-
     
     
     </>

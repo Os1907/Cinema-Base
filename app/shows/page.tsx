@@ -9,10 +9,10 @@ export default async function page({params}:any) {
     const data = await topShows(params?.id > 0 && !undefined ? params.id : 1)
     const Trend = await TrendSeries()
     // console.log(data);
-    const title: String = "Top Rated Series"
+    const title: string = "Top Rated Series"
     const btnCaption :string= "All Top Rated Series"
     const nav : string ="shows"
-    const title2: String = "Trending Series"
+    const title2: string = "Trending Series"
 
   return (
     <>

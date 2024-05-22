@@ -5,9 +5,15 @@ import Button from '../_Components/Button/Button';
 import { Link } from "next-view-transitions"
 
 
-export default async function TopRate({params}:any) {
+interface id {
+    params: {
+      id: number
+  
+    }
+  }
+
+export default async function TopRate({params}:id) {
     const data = await topRated(params?.id > 0 && !undefined ? params.id : 1)
-    // console.log(data);
     const title: string = "Top Rated"
     const btnCaption :string= "All Top Rated Movies"
 

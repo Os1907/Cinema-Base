@@ -11,7 +11,7 @@ interface SeriesProps {
 
   }
 }
-const Series: React.FC<SeriesProps> = async ({ params }) => {
+const Series = async ({ params }:SeriesProps) => {
   const data = await getSeries(params?.id)
   const photos  = await image(params?.id ,"tv")
   const recommendations = await similar(params?.id , "tv")

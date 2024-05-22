@@ -4,6 +4,9 @@ import Popular from '../popular/page'
 import TopRate from '../toprate/page'
 import { Link } from 'next-view-transitions'
 export default async function HomeComponents() {
+  const value = {
+      id: 1
+  };
 
   return (
     <>
@@ -26,8 +29,8 @@ export default async function HomeComponents() {
         <div className='absolute top-0 bg-main  z-[2]  h-screen w-full my-Ainme '></div>
       </header>
       <Trending/>
-      <Popular/>
-      <TopRate/>
+      <Popular params={value}/>
+      <TopRate params={value}/>
      
 
     </>

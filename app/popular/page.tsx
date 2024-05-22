@@ -3,7 +3,12 @@ import React from 'react'
 import Sections from '../_Components/Sections/Sections'
 import Button from '../_Components/Button/Button'
 import { Link } from "next-view-transitions"
-export default async function Popular({params}:any ) {
+interface IId {
+    params: {
+      id: number
+    }
+  }
+export default async function Popular({params}:IId ) {
     
     const data = await popular(params?.id > 0 && !undefined ? params.id : 1)
     const title :string = "What's Popular "
