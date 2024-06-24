@@ -1,15 +1,17 @@
 'use client'
 import HamburgerMenu from './Hamburger/HamburgerMenu'
 import NavCenter from './NavCenter/NavCenter'
-import { Link } from "next-view-transitions"
-import {  useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
+import {  useCallback, useEffect, useRef, useState } from 'react'
 
 export default function Navbar() {
   
   const [scrollPosition, setScrollPosition] = useState(0);
-  const handleScroll = () => {
+
+
+  const handleScroll = useCallback(() => {
     setScrollPosition(window.scrollY);
-  };
+  },[setScrollPosition])
   const scrollRef=useRef<any>() 
 
   useEffect(()=>{

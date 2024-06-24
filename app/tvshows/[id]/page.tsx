@@ -3,7 +3,6 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer';
 import bg from '../../../public/Images/bg.png'
 import Image from 'next/image'
-import { usePathname } from 'next/navigation';
 import SearchPaig from '@/app/_Components/SearchPaig/SearchPaig';
 import {  seriesBySearch } from '@/app/Utilities/apis';
 import Sections from '@/app/_Components/Sections/Sections';

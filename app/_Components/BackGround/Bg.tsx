@@ -12,7 +12,6 @@ type BgProps = {
   const Bg: React.FC<BgProps> = ({ url }) => {
     const cover  = url
     
-    // console.log(cover.backdrops)
     const [emblaRef] = useEmblaCarousel({ loop: true } ,[
       Autoplay({ playOnInit: true, delay: 5000 })
     ])
@@ -21,7 +20,6 @@ type BgProps = {
       <div className="absolute w-full h-screen">
 
     <Image src={bg} alt='' className='absolute  top-20  z-[3] opacity-10  ' />
-        {/* <Image src={bg} alt='' className='absolute h-auto lg:top-[-35%] top-[50%] z-[3] opacity-10 -rotate-180  ' /> */}
         <div className='absolute w-full top-0 bg-gradient-to-b from-main red-700  to-[#fff0] h-20 z-[2]  '>
         </div>
         <div className='absolute w-full bottom-[2%] md:bottom-0  bg-gradient-to-t from-main  to-[#fff0] h-20 md:h-44 z-[5]  '>
@@ -56,17 +54,13 @@ type BgProps = {
       </div>
       
 
-          {/* <Image src={`https://image.tmdb.org/t/p/w1280/${cover}`} alt='movies' width={1000} height={350} className='w-full   blr opacity- 25' /> */}
         </div>
         
         <div className='absolute w-full bottom-[0%] bg-gradient-to-t from-main to-[#fff0] h-screen z-[3]  '>
         </div>
         <div className='absolute w-full left-[-25%] bg-gradient-to-r from-main to-[#fff0] h-screen z-[2]  '>
         </div>
-        {/* <div className='absolute w-full bottom-[50%] bg-gradient-to-t from-main via-red-600 to-[#fff0] h-screen z-[2]  '>
-        </div>
-        <div className='absolute w-full bottom-[-1%] bg-gradient-to-t from-main to-[#fff0] h-screen z-[2]  '>
-      </div> */}
+      
         </div>
     
     </>

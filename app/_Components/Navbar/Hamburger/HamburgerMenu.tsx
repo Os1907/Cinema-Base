@@ -1,19 +1,19 @@
 'use client'
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
 import { Sling as Hamburger } from 'hamburger-react'
 import bg from '../../../../public/Images/bg.png'
 import neon from '../../../../public/Images/bbblurry.svg'
 
 // import icon from './../../../../public/Images/Logo.png'
 import Image from 'next/image'
-import { Link } from "next-view-transitions"
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { FaHome } from 'react-icons/fa'
 import { MdTravelExplore } from 'react-icons/md'
 import { IoTv } from 'react-icons/io5'
 
 
-export default function HamburgerMenu() {
+ function HamburgerMenu() {
   const [isOpen, setOpen] = useState(false)
     const [display, setdisplay] = useState(true)
     
@@ -61,3 +61,5 @@ export default function HamburgerMenu() {
     </>
   )
 }
+
+export default memo(HamburgerMenu)

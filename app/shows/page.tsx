@@ -1,4 +1,4 @@
-import { Link } from 'next-view-transitions'
+import Link from 'next/link'
 import { TrendSeries, topShows } from '@/app/Utilities/apis'
 import React from 'react'
 import Sections from '../_Components/Sections/Sections'

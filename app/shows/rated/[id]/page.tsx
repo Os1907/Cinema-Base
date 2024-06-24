@@ -1,6 +1,6 @@
 import { topShows } from '@/app/Utilities/apis'
 import Sections from '@/app/_Components/Sections/Sections'
-import React from 'react'
+import React, { useEffect } from 'react'
 import ShowCounter from '../../Counter/ShowCounter'
 
 export default async function page({params}:any) {

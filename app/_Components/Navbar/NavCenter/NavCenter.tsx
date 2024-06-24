@@ -4,8 +4,8 @@ import { usePathname } from "next/navigation"
 import { FaHome } from "react-icons/fa"
 import { MdTravelExplore } from "react-icons/md";
 import { IoTv } from "react-icons/io5";
-import { useState } from "react"
-export default function NavCenter() {
+import { memo, useState } from "react"
+function NavCenter() {
   let pathnName : string=usePathname()
   const [name, setname] = useState(pathnName)
   if(pathnName == '/'){
@@ -32,3 +32,4 @@ export default function NavCenter() {
     </>
   )
 }
+export default  memo(NavCenter)

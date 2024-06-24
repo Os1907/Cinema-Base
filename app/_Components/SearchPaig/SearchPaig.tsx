@@ -1,12 +1,12 @@
 'use client'
-import { Link } from 'next-view-transitions'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
 import { IoTv } from "react-icons/io5";
 import { BiSolidMovie } from "react-icons/bi";
 
 
-export default function SearchPaig() {
+ function SearchPaig() {
     let pathnName : string =usePathname()
   const [name, setname] = useState(pathnName)
   return (
@@ -30,3 +30,5 @@ export default function SearchPaig() {
     </>
   )
 }
+
+export default memo(SearchPaig)

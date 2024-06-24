@@ -1,9 +1,10 @@
 'use client'
-import { Link } from "next-view-transitions"
+import Link from 'next/link'
 import { moviesBySearch } from '@/app/Utilities/apis'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { TbArrowBigLeftLinesFilled, TbArrowBigRightLinesFilled } from 'react-icons/tb' 
+import UseTop from '@/app/Hooks/UseTop'
 
 export default function ExploreCounter(props:any) {
     let pageCount: number = props?.value
@@ -11,7 +12,8 @@ export default function ExploreCounter(props:any) {
   const [rateCount, setrateCount] = useState(pageCount+1)
   const [decress, setdecress] = useState(pageCount-1)
      
-    
+  const top = UseTop()
+
   return (
     <>
     <div className='flex justify-center items-center  w-full  relative z-50   '>

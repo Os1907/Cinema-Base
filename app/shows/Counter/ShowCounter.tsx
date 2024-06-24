@@ -1,5 +1,6 @@
 'use client'
-import { Link } from 'next-view-transitions'
+import UseTop from '@/app/Hooks/UseTop'
+import Link from 'next/link'
 import React, { useState } from 'react'
 import { TbArrowBigLeftLinesFilled, TbArrowBigRightLinesFilled } from 'react-icons/tb'
 
@@ -7,6 +8,8 @@ export default function ShowCounter(props:any) {
     let pageCount: number = props?.value
     const [rateCount, setrateCount] = useState(pageCount+1)
     const [decress, setdecress] = useState(pageCount-1)
+ const top = UseTop()
+
   return (
     <>
     <div className='flex justify-center items-center  w-full  relative z-50   '>

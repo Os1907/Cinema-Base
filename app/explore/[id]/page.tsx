@@ -32,7 +32,7 @@ export default function Explore({ params }: IId) {
   let userSearch = async (e: string) => {
     const response = await moviesBySearch(e, pageNumber)
     setData(response.results)
-    console.log(response.results)
+    // console.log(response.results)
     if(e === undefined){
       setData([])
     }
