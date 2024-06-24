@@ -293,3 +293,119 @@ border: 1px solid rgba(255, 255, 255, 0.12);
 .green-bottom{
   border-bottom: #00dc82 2px solid !important;
 }
+
+
+/* .loader {
+  width: 0;
+  height: 10px;
+  display: inline-block;
+  position: relative;
+  background: #00dc82;
+  box-shadow: 0 0 10px #00dc82;
+  box-sizing: border-box;
+  animation: animFw 8s linear infinite;
+}
+  .loader::after,
+  .loader::before {
+    content: '';
+    width: 10px;
+    height: 1px;
+    background: #00dc82;
+    position: absolute;
+    top: 9px;
+    right: -2px;
+    opacity: 0;
+    transform: rotate(-45deg) translateX(0px);
+    box-sizing: border-box;
+    animation: coli1 0.3s linear infinite;
+  }
+  .loader::before {
+    top: -4px;
+    transform: rotate(45deg);
+    animation: coli2 0.3s linear infinite;
+  }
+
+@keyframes animFw {
+    0% {
+  width: 0;
+}
+    100% {
+  width: 100%;
+}
+  }
+
+@keyframes coli1 {
+    0% {
+  transform: rotate(-45deg) translateX(0px);
+  opacity: 0.7;
+}
+    100% {
+  transform: rotate(-45deg) translateX(-45px);
+  opacity: 0;
+}
+  }
+
+@keyframes coli2 {
+    0% {
+  transform: rotate(45deg) translateX(0px);
+  opacity: 1;
+}
+    100% {
+  transform: rotate(45deg) translateX(-45px);
+  opacity: 0.7;
+}
+  }
+   */
+
+   .loader {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    background: linear-gradient(0deg, #020420 33%, #00dc82 100%);
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  .loader::after {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #00dc82;
+  }
+  @keyframes rotation {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(360deg)}
+  } 
+
+
+
+
+
+  /* loader2 */
+  .loader2, .loader2:before {
+    display: inline-block;
+    border: 20px double transparent;
+    border-top-color: #00dc82;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+  .loader2 {
+    padding: 8px;
+    animation: wifiLoading 1s ease-in infinite;
+  }
+  .loader2:before {
+    content: '';
+    width: 0; height: 0;
+  }
+  @keyframes wifiLoading {
+    0% { border-style: none}
+    100% { border-style: double}
+  }
+        
