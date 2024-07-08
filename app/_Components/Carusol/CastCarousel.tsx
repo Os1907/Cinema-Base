@@ -41,17 +41,6 @@ const CastCarousel: React.FC<PropType> = (props,{params}:any) => {
 
 
 
-        {/* {
-          data?.genres.map((item: string | object)=> <div key={ typeof item === 'string' ? item : (item as any).id} className="embla__slide  mx-1">
-          <Link href={`/explore/1-${typeof item === 'string' ? item : (item as any).name}`}>
-          <div className='shadow-green  shadow-lg bg-gradient-to-r from-green cursor-pointer to-yellow-200 lg:px-10 px-5 py-4 lg:h-16 h-10 items-center rounded-2xl flex justify-center transition-all   hover:bg-gradient-to-r hover:from-green hover:to-yellow-200'>
-            <p className='text-main font-semibold lg:text-xl text-sm'>
-            {typeof item === 'string' ? item : (item as any).name}
-            </p>
-          </div>
-          </Link>
-        </div> )
-        } */}
        
        
         

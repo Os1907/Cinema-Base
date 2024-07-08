@@ -45,9 +45,9 @@ export async function getMovie( id: number) {
     console.error(err);
   }
 }
-export async function videoLink(id: number) {
+export async function videoLink(id: number, type:string) {
   try {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`, options);
+    const response = await fetch(`https://api.themoviedb.org/3/${type}/${id}/videos?language=en-US`, options);
     const data = await response.json();
     return data;
   } catch (err) {

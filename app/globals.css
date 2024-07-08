@@ -44,7 +44,6 @@
        }
      }
 
-
     
    .my-Ainme{ animation: myAnim 5s ease 0s infinite   forwards; -webkit-animation: myAnim 5s ease 0s infinite   forwards; }
    @keyframes myAnim {
