@@ -37,26 +37,27 @@ import { IoTv } from 'react-icons/io5'
 <div className=''>
 
 
-    <div onClick={()=>setdisplay(false)} className=' w-[50%]  flex justify-end lg:hidden z-[1223213]  fixed  right-0 top-2'>
+    <div onClick={()=>setdisplay(false)} className=' w-[50%]  flex justify-end lg:hidden z-[1223213]  fixed  right-0 top-5'>
 
     <Hamburger toggled={isOpen} toggle={setOpen}  size={20} color='#00dc82'  />
     </div>
+   
+    </div>
+    
     {
         isOpen? 
-        <div className='bg-main lg:hidden   non-Round w-full h-[10vh] fixed top-[63px]  overflow-y-hidden left-0 z-[100] flex justify-center items-center slide-in-top flex-col border-b   border-green'>
-        <Image src={bg} alt='' className='absolute  top-0  z-[0] opacity-15  child    '/>
-        <ul className="flex  justify-center  px-1 z-[100] w-full ">
-      <li onClick={()=>{ hidePage()  }} className={pathnName === "/home"  ? "font-semibold text-[12px]   transition-all hover:  rounded-xl px-5 py-1    text-main shadow-green shadow-2xl  focus:text-green  hover:border-0 bg-gradient-to-r from-green to-yellow-200  my-2  " : "my-2 font-semibold text-[12px] transition-all rounded-xl px-5 py-1        focus:text-green   bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent"}><Link href='/home' className="rounded-3xl  hover:bg-transparent transition-all hover:border-0 group  " > <FaHome  className={pathnName === "/home"  ? "text-main inline mb-1" :"text-green inline mb-1"}/> Home <div className="bg-gradient-to-r from-green to-yellow-200 h-[2px] w-0 group-hover:w-full transition-all duration-500"></div></Link></li>
-      <li onClick={()=>{ hidePage()  }} className={pathnName === "/explore/1" ? "font-semibold text-[12px]  transition-all  rounded-xl px-5 py-1    text-main shadow-green shadow-2xl  focus:text-green  hover:border-0 bg-gradient-to-r from-green to-yellow-200   my-2 " : "my-2 font-semibold text-[12px] transition-all rounded-xl px-5 py-1        focus:text-green group  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent"}> <Link href='/explore/1' className="rounded-3xl hover:bg-transparent transition-all hover:border-0 ">  <MdTravelExplore  className={pathnName === "/explore/1"  ? "text-main inline mb-1" :"text-green inline mb-1"} /> Search <div className="bg-gradient-to-r from-green to-yellow-200 h-[2px] w-0 group-hover:w-full transition-all duration-500"></div></Link></li>
-      <li onClick={()=>{ hidePage()  }} className={pathnName === "/shows" ? "font-semibold text-[12px]  transition-all  rounded-xl px-5 py-1    text-main shadow-green shadow-2xl  focus:text-green  hover:border-0 bg-gradient-to-r from-green to-yellow-200   my-2 " : "my-2 font-semibold text-[12px] transition-all rounded-xl px-5 py-1        focus:text-green   bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent"}> <Link href='/shows' className="rounded-3xl hover:bg-transparent transition-all hover:border-0 group "> <IoTv  className={pathnName === "/shows"  ? "text-main inline mb-1 mx-1" :"text-green inline mb-1 mx-1"} />TV Shows <div className="bg-gradient-to-r from-green to-yellow-200 h-[2px] w-0 group-hover:w-full transition-all duration-500"></div> </Link></li>
+        <div className=' lg:hidden rounded-full fixed top-14    w-full h-[10vh]   o left-0 z-[100] flex justify-center items-center slide-in-top flex-col  border-green'>
+  <div className="absolute top-0  mx-4  borderGlass z-[40] h-full w-full rounded-full left-0 mBlur   "></div>
+
+        <ul className="flex  justify-center  glas No  px-1 z-[100] w-full ">
+      <li onClick={()=>{ hidePage()  }} className={pathnName === "/home"  ? "font-semibold text-[12px]   transition-all hover:  rounded-xl px-5    text-main shadow-green shadow-2xl  focus:text-green  hover:border-0 bg-gradient-to-r from-green to-yellow-200   " : "font-semibold text-[12px] transition-all rounded-xl px-5        focus:text-green   bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent"}><Link href='/home' className="rounded-3xl  hover:bg-transparent transition-all hover:border-0 group  " > <FaHome  className={pathnName === "/home"  ? "text-main inline mb-1" :"text-green inline mb-1"}/> Home <div className="bg-gradient-to-r from-green to-yellow-200 h-[2px] w-0 group-hover:w-full transition-all duration-500"></div></Link></li>
+      <li onClick={()=>{ hidePage()  }} className={pathnName === "/explore/1" ? "font-semibold text-[12px]  transition-all  rounded-xl px-5    text-main shadow-green shadow-2xl  focus:text-green  hover:border-0 bg-gradient-to-r from-green to-yellow-200   " : "font-semibold text-[12px] transition-all rounded-xl px-5        focus:text-green group  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent"}> <Link href='/explore/1' className="rounded-3xl hover:bg-transparent transition-all hover:border-0 ">  <MdTravelExplore  className={pathnName === "/explore/1"  ? "text-main inline mb-1" :"text-green inline mb-1"} /> Search <div className="bg-gradient-to-r from-green to-yellow-200 h-[2px] w-0 group-hover:w-full transition-all duration-500"></div></Link></li>
+      <li onClick={()=>{ hidePage()  }} className={pathnName === "/shows" ? "font-semibold text-[12px]  transition-all  rounded-xl px-5    text-main shadow-green shadow-2xl  focus:text-green  hover:border-0 bg-gradient-to-r from-green to-yellow-200   " : "font-semibold text-[12px] transition-all rounded-xl px-5        focus:text-green   bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent"}> <Link href='/shows' className="rounded-3xl hover:bg-transparent transition-all hover:border-0 group "> <IoTv  className={pathnName === "/shows"  ? "text-main inline mb-1 mx-1" :"text-green inline mb-1 mx-1"} />TV Shows <div className="bg-gradient-to-r from-green to-yellow-200 h-[2px] w-0 group-hover:w-full transition-all duration-500"></div> </Link></li>
     </ul>
             
     </div> : <></>
     
     }
-    </div>
-    
-    
     
     </>
   )

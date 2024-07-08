@@ -1,51 +1,103 @@
 'use client'
-import HamburgerMenu from './Hamburger/HamburgerMenu'
+import {  usePathname } from 'next/navigation'
 import NavCenter from './NavCenter/NavCenter'
 import Link from 'next/link'
-import {  useCallback, useEffect, useRef, useState } from 'react'
+import {  useEffect, useRef, useState} from 'react'
+import { FaHome } from "react-icons/fa"
+import { MdTravelExplore } from "react-icons/md";
+import { IoTv } from "react-icons/io5";
 
 export default function Navbar() {
-  
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-
-  const handleScroll = useCallback(() => {
-    setScrollPosition(window.scrollY);
-  },[setScrollPosition])
   const scrollRef=useRef<any>() 
+  const Remo=useRef<any>()
 
-  useEffect(()=>{
-    window.addEventListener('scroll', handleScroll);
-
-      if (scrollPosition > 0) {
-        scrollRef.current.classList.remove("relative")
-        scrollRef.current.classList.add("fixed" , "top-0"   , "non-Round" , "green-bottom" )
-    }
-    if (scrollPosition == 0){
-        scrollRef.current.classList.remove("fixed" , "top-0"  , "green-bottom" )
-    
-    }
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  },[scrollPosition])
+  let pathnName : string=usePathname()
   
+  if(pathnName.slice(1, 2) === "m" || "s"  ) {
+    scrollRef?.current?.classList.remove("relative")
+  scrollRef?.current?.classList.add("fixed" , "lg:top-2"  ,"lg:right-[10%]" ,"lg:w-[80%]")
+  Remo?.current?.classList.add("w-full" , "borderGlass")
+
+  } 
+   
+
+  const changeNav=()=>{
+    if(window.scrollY > 0 ) {
+      scrollRef.current.classList.remove("relative")
+      scrollRef.current.classList.add("fixed"  ,"lg:right-[10%]" ,"lg:w-[80%]"    )
+      Remo.current.classList.add( "borderGlass")
+  }
+  else  {
+    Remo?.current?.classList.remove("borderGlass")
+    
+}
+
+}
+  window?.addEventListener('scroll', changeNav);
+
+
   return (
     <>
-<div ref={scrollRef}  className="navbar bg-main  z-[100] fixed ">
-  <div className="navbar-start w-full lg:w-[50%] justify-between ">
+<div ref={scrollRef}  className= "hidden lg:navbar lg:top-2   z-[100] top-3   fixed w-full lg:w-[80%]  lg:right-[10%]  ">
+  <div ref={Remo} className="absolute top-0  h-full w-full rounded-full left-0 mBlur"></div>
+  <div className="  navbar-start w-full lg:w-[50%] justify-between ">
     <div className='flex justify-start  '>
    <Link href={'/'} className='z-50' scroll={true}>
-     <p className='hover:shadow-green hover:shadow-2xl  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent font-extrabold text-2xl lg:ml-28  ml-5'>
+     <p className='  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent font-extrabold text-2xl lg:ml-28  ml-5'>
       Cinema Base
     </p>
     </Link> 
     </div>
-    <HamburgerMenu/>
   </div>
+  
   <NavCenter/>
+  
 </div>
 
+
+
+<div className='fixed lg:hidden  bottom-2  w-full    z-[999999]  '>
+    <ul className="flex  gap-x-2  justify-center  ">
+      <li className="relative ">
+<Link href={"/"}>
+
+      <p className='px-5 py-3  text-sm text-green z-50 relative'>
+
+      <FaHome  className= " inline mb-1" /> Home
+
+      </p>
+      <div  className="absolute top-0  h-full w-full rounded-full  mBlur borderGlass"></div>
+</Link>
+      </li>
+      <li className="relative ">
+      <Link href={"/explore/1"}>
+
+      <p className='px-5 py-3  text-sm text-green z-50 relative'>
+
+      <MdTravelExplore  className= " inline mb-1" /> Search
+      </p>
+      <div  className="absolute top-0  h-full w-full rounded-full  mBlur borderGlass"></div>
+
+      </Link>
+
+      </li>
+      <li className="relative  ">
+
+<Link href='/shows'>
+
+      <p className='px-5 py-3  text-sm text-green z-50 relative'>
+
+      <IoTv  className= " inline mb-1" /> Series 
+      </p>
+      <div  className="absolute top-0  h-full w-full rounded-full  mBlur borderGlass "></div>
+      </Link>
+
+
+      </li>
+
+
+    </ul>
+  </div>
 
 
 

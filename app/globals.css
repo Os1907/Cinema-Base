@@ -34,7 +34,9 @@
        -ms-border-radius: 0px;
        -o-border-radius: 0px;
    }
-     
+     .mBlur{
+      backdrop-filter: blur(25px);
+     }
      @supports not selector(::-webkit-scrollbar) {
        body {
          scrollbar-color: var(--sb-thumb-color)
@@ -54,24 +56,9 @@
               transform-origin: 0% 50%;  */
               width: 100%;
     }
-  /*  50%{
-        transform: translateX(0px) ;
-      -webkit-transform: translateX(0px) ;
-      -moz-transform: translateX(0px) ;
-      -ms-transform: translateX(0px) ;
-      -o-transform: translateX(0px) ; 
-      width: 50%;
 
-
-}*/
     100% {
-              /* -webkit-transform: translateX(-1500px) ; 
-              transform: translateX(-1500px) ;
-              -webkit-transform-origin: 50% 50%;
-              transform-origin: 50% 50%;
-              -moz-transform: translateX(-2000px) ;
-              -ms-transform: translateX(-2000px) ;
-              -o-transform: translateX(-2000px) ; */
+           
               width: 0%;
 
 
@@ -221,9 +208,11 @@
   .Scroll-Edit::-webkit-scrollbar-thumb{
     background-color: #020420 !important;
   }
+.borderGlass{
+border: 1px solid rgba(255, 255, 255, 0.12) !important;
 
+}
   .glass{
-    /* From https://css.glass */
 background: rgba(255, 255, 255, 0.015);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -234,6 +223,13 @@ border: 1px solid rgba(255, 255, 255, 0.12);
 
 .rounded-circle{ border-radius: 50% !important; -webkit-border-radius: 50% !important; -moz-border-radius: 50% !important; -ms-border-radius: 50% !important; -o-border-radius: 50% !important;
 }
+.glassNo{
+  background: rgba(255, 255, 255, 0.015);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+    }
   .leftAnimation{
     animation: Entrance 0.09s ease 0s 1 normal forwards;
     -webkit-animation: Entrance 0.09s ease 0s 1 normal forwards;
@@ -295,67 +291,6 @@ border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 
-/* .loader {
-  width: 0;
-  height: 10px;
-  display: inline-block;
-  position: relative;
-  background: #00dc82;
-  box-shadow: 0 0 10px #00dc82;
-  box-sizing: border-box;
-  animation: animFw 8s linear infinite;
-}
-  .loader::after,
-  .loader::before {
-    content: '';
-    width: 10px;
-    height: 1px;
-    background: #00dc82;
-    position: absolute;
-    top: 9px;
-    right: -2px;
-    opacity: 0;
-    transform: rotate(-45deg) translateX(0px);
-    box-sizing: border-box;
-    animation: coli1 0.3s linear infinite;
-  }
-  .loader::before {
-    top: -4px;
-    transform: rotate(45deg);
-    animation: coli2 0.3s linear infinite;
-  }
-
-@keyframes animFw {
-    0% {
-  width: 0;
-}
-    100% {
-  width: 100%;
-}
-  }
-
-@keyframes coli1 {
-    0% {
-  transform: rotate(-45deg) translateX(0px);
-  opacity: 0.7;
-}
-    100% {
-  transform: rotate(-45deg) translateX(-45px);
-  opacity: 0;
-}
-  }
-
-@keyframes coli2 {
-    0% {
-  transform: rotate(45deg) translateX(0px);
-  opacity: 1;
-}
-    100% {
-  transform: rotate(45deg) translateX(-45px);
-  opacity: 0.7;
-}
-  }
-   */
 
    .loader {
     width: 150px;

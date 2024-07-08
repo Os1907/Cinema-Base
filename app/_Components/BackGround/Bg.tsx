@@ -19,11 +19,11 @@ type BgProps = {
       <>
       <div className="absolute w-full h-screen">
 
-    <Image src={bg} alt='' className='absolute  top-20  z-[3] opacity-10  ' />
+    {/* <Image src={bg} alt='' className='absolute  top-20  z-3 opacity-10  ' />
         <div className='absolute w-full top-0 bg-gradient-to-b from-main red-700  to-[#fff0] h-20 z-[2]  '>
         </div>
         <div className='absolute w-full bottom-[2%] md:bottom-0  bg-gradient-to-t from-main  to-[#fff0] h-20 md:h-44 z-[5]  '>
-        </div>
+        </div> */}
         
         <div className='w-full absolute lg:top-0    z-[1]  h-screen flex justify-center'>
         <div  className="embla overflow-hidden w-full  relative z-50" ref={emblaRef}>

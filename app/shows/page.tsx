@@ -16,6 +16,8 @@ export default async function page({params}:any) {
 
   return (
     <>
+    <div className="lg:pt-10">
+
         <Sections value={Trend} title={title2} nav={nav} />
     
     <section className='pb-10'>
@@ -26,6 +28,7 @@ export default async function page({params}:any) {
                  </Link>
             </div>
           </section>
+    </div>
     
     
     </>

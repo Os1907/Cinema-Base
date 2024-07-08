@@ -9,7 +9,7 @@ export default async function Trending() {
     
   return (
     <>
-    <section className=''>
+    <section className='lg:pt-10'>
             <Sections value={data} title={title}  />
         </section>
     

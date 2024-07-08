@@ -40,9 +40,9 @@ if (provider.results.hasOwnProperty(location?.country_code2)) {
 
   return (
     <>
-      <section className='  overflow-hidden  lg:pt-10 pt-5  pb-2 relative z-10 h-auto lg:min-h-screen  '>
+      <section className='  overflow-hidden  lg:p t-10 pt -5  pb-2 relative z-10 h-auto lg:min-h-screen  '>
         <Bg url={photos} />
-        <div className='lg:mx-24 mx-4 relative z-10  '>
+        <div className='lg:mx-24 mx-4 relative z-10 lg:mt-32 '>
 
 
           <div className="w-full  h-auto flex flex-col justify-center mt-32 lg:mt-5 ">
@@ -216,28 +216,6 @@ there are no streaming services currently available for this in your country
         </div>
 
       </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <div className='w-full z-50 '>
         <h3 className='text-center bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent font-extrabold  text-3xl lg:text-5xl  my-3'>
           Movie Cast

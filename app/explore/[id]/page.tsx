@@ -59,6 +59,8 @@ export default function Explore({ params }: IId) {
   
   return (
     <>
+    <div className='lg:pt-20'>
+
     <SearchPaig/>
       <section className=' min-h-screen overflow-y-hidden  bg-main lg:pt-10 pt-5  pb-2 relative z-10  '>
         <Image src={bg} alt='' className='absolute h-auto lg:top-[-30%] top-[50%] z-[2] opacity-10 -rotate-180  ' />
@@ -83,6 +85,7 @@ export default function Explore({ params }: IId) {
           </div>}
         </div>
       </section>
+    </div>
     </>
   )
 }

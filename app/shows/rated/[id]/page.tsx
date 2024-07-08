@@ -10,7 +10,7 @@ export default async function page({params}:any) {
 
   return (
     <>
-    <section className='py-2'>
+    <section className='lg:pt-10'>
             <Sections value={data} nav={nav}  title={title} component={<ShowCounter value={data.page}/>}  />
         </section>
     

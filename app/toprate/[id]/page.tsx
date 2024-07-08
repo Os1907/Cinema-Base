@@ -8,7 +8,7 @@ export default async  function ChildRate({params}:any ) {
     const title :string = "Top Rated "
     return (
         <>
-        <section className='py-2'>
+        <section className='lg:pt-10'>
             <Sections value={data} title={title} component={<CounterPopular value={data.page}/>}  />
         </section>
 
