@@ -289,7 +289,7 @@ there are no streaming services currently available for this in your country
       </div>
       <CastCarousel data={cast} />
       {
-        recommendations.total_results > 0 ? <Sections value={recommendations} title={title} /> : ""
+         recommendations?.results?.length > 0 ?  <Sections value={recommendations} title={title} /> : ""
       }
 
 
