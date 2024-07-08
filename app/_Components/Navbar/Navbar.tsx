@@ -22,7 +22,7 @@ export default function Navbar() {
    
 
   const changeNav=()=>{
-    if(window.scrollY > 0 ) {
+    if(window?.scrollY > 0 ) {
       scrollRef.current.classList.remove("relative")
       scrollRef.current.classList.add("fixed"  ,"lg:right-[10%]" ,"lg:w-[80%]"    )
       Remo.current.classList.add( "borderGlass")
