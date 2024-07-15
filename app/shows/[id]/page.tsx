@@ -21,7 +21,7 @@ const Series = async ({ params }:SeriesProps) => {
   const title: string = "Recommendations"
   const nav : string ="shows"
 
-  let poster = photos.logos.find((item: any) => item.iso_639_1 === "en" && item.width <= 780)
+  let poster = photos.logos.find((item: any) => item.iso_639_1 === "en" )
   
   const location = await locationNow()
 
@@ -40,12 +40,13 @@ return (
 
           <div className='flex justify-center  relative items-start flex-col   '>
             <div className='items-center  lg:items-start w-full flex flex-col  '>
-              {
+            <Image src={`https://image.tmdb.org/t/p/w500/${poster?.file_path}`} alt='movies' width={350} height={350} className=' mt-10 h-auto lg:w-[20%] w-[35%] lg:h-auto' />
+              {/* {
 
                 poster?.file_path ? <Image src={`https://image.tmdb.org/t/p/original/${poster?.file_path}`} alt='movies' width={350} height={350} className=' mt-10 h-auto lg:w-[20%] w-[35%] lg:h-auto' /> : <h2 className=' hover:bg-gradient-to-r hover:from-yellow-200 hover:to-green hover:bg-clip-text hover:text-transparent transition-all cursor-pointer  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent  lg:text-6xl text-3xl font-extrabold relative z-10 text-center lg:text-start '>
                   {data?.title?.toUpperCase() || data?.name.toUpperCase()}
                 </h2>
-              }
+              } */}
           
 
             </div>
@@ -71,14 +72,14 @@ return (
               <div className='flex justify-center mx-2  lg:justify-start items-center lg:items-start lg:flex-wrap flex-col my-1 xl:my-3  '>
                 <div className='lg:flex hidden  w-full justify-center lg:justify-start  flex-wrap gap-y-2 '>
                   {
-                    data?.genres.map((item: any) => <p key={item?.id} className='  font-medium mr-2 text-green   mBlur  borderGlass   p-1 px-3 rounded-3xl text-[10px] lg:text-[12px]  transition-all'>
+                    data?.genres.map((item: any) => <p key={item?.id+Math.random()} className='  font-medium mr-2 text-green   mBlur  borderGlass   p-1 px-3 rounded-3xl text-[10px] lg:text-[12px]  transition-all'>
                       {item?.name}
                     </p>)
                   }
                 </div>
                 <div className='flex lg:hidden  w-full  justify-center lg:justify-start mb-1 xl:mb-2 flex-wrap gap-y-2'>
                   {
-                    data?.genres.map((item: any) => <p key={item?.id} className='font-medium mx-1 text-green text-center   mBlur  borderGlass   p-1 px-3 rounded-3xl lg:text-[12px] text-[10px]  transition-all'>
+                    data?.genres.map((item: any) => <p key={item?.id+item?.name+"212movie"} className='font-medium mx-1 text-green text-center   mBlur  borderGlass   p-1 px-3 rounded-3xl lg:text-[12px] text-[10px]  transition-all'>
                       {item?.name}
                     </p>)
                   }

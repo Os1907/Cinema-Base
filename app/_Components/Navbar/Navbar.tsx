@@ -40,7 +40,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div ref={scrollRef} className="hidden lg:navbar lg:top-2 z-[100] top-3 fixed w-full lg:w-[80%] lg:right-[10%]">
+      <div ref={scrollRef} className="hidden lg:navbar lg:top-2 z-[99999999990] top-3 fixed w-full lg:w-[80%] lg:right-[10%]">
         <div ref={Remo} className="absolute top-0 h-full w-full rounded-full left-0 mBlur"></div>
         <div className="navbar-start w-full lg:w-[50%] justify-between">
           <div className="flex justify-start">
@@ -59,26 +59,26 @@ export default function Navbar() {
         <ul className="flex gap-x-2 justify-center">
           <li className="relative">
             <Link href="/">
-              <p className="px-5 py-3 text-sm font-semibold text-main z-50 relative">
+              <p className="px-5 py-3 text-sm font-semibold text-green z-50 relative">
                 <FaHome className="inline mb-1" /> Home
               </p>
-              <div className="absolute top-0 h-full w-full rounded-full bg-green mBlur borderGlass"></div>
+              <div className="absolute top-0 h-full w-full rounded-full  glass borderGlass"></div>
             </Link>
           </li>
           <li className="relative">
             <Link href="/explore/1">
-              <p className="px-5 py-3 text-sm font-semibold text-main z-50 relative">
+              <p className="px-5 py-3 text-sm font-semibold text-green z-50 relative">
                 <MdTravelExplore className="inline mb-1" /> Search
               </p>
-              <div className="absolute top-0 h-full w-full rounded-full bg-green mBlur borderGlass"></div>
+              <div className="absolute top-0 h-full w-full rounded-full  glass borderGlass"></div>
             </Link>
           </li>
           <li className="relative">
             <Link href="/shows">
-              <p className="px-5 py-3 text-sm font-semibold text-main z-50 relative">
+              <p className="px-5 py-3 text-sm font-semibold text-green z-50 relative">
                 <IoTv className="inline mb-1" /> Series
               </p>
-              <div className="absolute top-0 h-full w-full rounded-full bg-green mBlur borderGlass"></div>
+              <div className="absolute top-0 h-full w-full rounded-full  glass borderGlass"></div>
             </Link>
           </li>
         </ul>

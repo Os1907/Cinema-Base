@@ -3,12 +3,14 @@ import React from 'react'
 export default function Lodaing() {
   return (
     <>
-      <div className="flex flex-col gap-4 w-52">
-        <div className="skeleton h-32 w-full"></div>
-        <div className="skeleton h-4 w-28"></div>
-        <div className="skeleton h-4 w-full"></div>
-        <div className="skeleton h-4 w-full"></div>
-      </div>
+       <section className='  overflow-hidden  lg:pt-10 pt-5  pb-2 relative z-10 h-auto min-h-screen  '>
+        <div className='lg:mx-24 mx-4 relative z-10 flex mt-52 justify-center   gap-y-4'>
+
+        <span className="loader  lg:mr-3 "></span> 
+
+         </div>
+
+      </section>
 
     </>
   )

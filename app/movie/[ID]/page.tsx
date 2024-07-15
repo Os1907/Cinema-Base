@@ -21,9 +21,9 @@ const Movie = async ({ params }:MovieProps) => {
   const title: string = "Recommendations"
 
   const photos = await image(params?.ID, "movie")
-  // console.log(photos);
+  // console.log(photos.logos[0].file_path);
 
-  let poster = photos.logos.find((item: any) => item.iso_639_1 === "en" && item.width <= 780)
+  let poster = photos.logos.find((item: any) => item.iso_639_1 === "en" || item.iso_639_1=== 'ru')
   
   const location = await locationNow()
 
@@ -52,12 +52,13 @@ if (provider.results.hasOwnProperty(location?.country_code2)) {
 
             <div className='flex justify-center  relative items-start flex-col   '>
               <div className='items-center  lg:items-start w-full flex flex-col  '>
-                {
+              <Image src={`https://image.tmdb.org/t/p/w500/${poster?.file_path ? poster?.file_path :  photos.logos[0]?.file_path}`} alt={`${ data?.tagline}`} width={350} height={350} className=' mt-10 h-auto lg:w-[20%] w-[40%] lg:h-auto' /> 
+                {/* {
 
-                  poster?.file_path ? <Image src={`https://image.tmdb.org/t/p/original/${poster?.file_path}`} alt='movies' width={350} height={350} className=' mt-10 h-auto lg:w-[20%] w-[35%] lg:h-auto' /> : <h2 className=' hover:bg-gradient-to-r hover:from-yellow-200 hover:to-green hover:bg-clip-text hover:text-transparent transition-all cursor-pointer  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent  lg:text-6xl text-3xl font-extrabold relative z-10 text-center lg:text-start '>
+                  poster?.file_path ? <Image src={`https://image.tmdb.org/t/p/w500/${poster?.file_path}`} alt='movies' width={350} height={350} className=' mt-10 h-auto lg:w-[20%] w-[35%] lg:h-auto' /> : <h2 className=' hover:bg-gradient-to-r hover:from-yellow-200 hover:to-green hover:bg-clip-text hover:text-transparent transition-all cursor-pointer  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent  lg:text-6xl text-3xl font-extrabold relative z-10 text-center lg:text-start '>
                     {data?.title?.toUpperCase() || data?.name.toUpperCase()}
                   </h2>
-                }
+                } */}
             
 
               </div>
@@ -169,7 +170,7 @@ there are no streaming services currently available for this in your country
 
                       return <>
                         
-                      <Image key={item?.logo_path} src={`https://image.tmdb.org/t/p/original${item?.logo_path}`}  width={50} height={50} alt="" className='size-5 lg:size-7 rounded-full mx-1' />
+                      <Image key={item?.logo_path+ item?.id+"2122"} src={`https://image.tmdb.org/t/p/original${item?.logo_path}`}  width={50} height={50} alt="" className='size-5 lg:size-7 rounded-full mx-1' />
                       </>
                     })
                   }

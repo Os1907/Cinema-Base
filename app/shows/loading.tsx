@@ -7,7 +7,6 @@ const loading = () => {
         <div className='lg:mx-24 mx-4 relative z-10 flex items-center flex-col  gap-y-4'>
 
               <span className="loader mt-20 "></span> 
-            
          </div>
 
       </section>
