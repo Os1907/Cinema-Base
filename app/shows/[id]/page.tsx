@@ -28,6 +28,11 @@ const Series = async ({ params }:SeriesProps) => {
   const provider: {results: string} = await watchProvider(params?.id, "tv")
 
 
+  let value: any
+  
+  if (provider.results.hasOwnProperty(location?.country_code2)) {
+    value = provider.results[location?.country_code2];
+  }
 
 return (
   <>
@@ -124,7 +129,46 @@ return (
                   }
                 </p>
               </div>
-       
+              <div className='flex gap-x-2 lg:flex-row flex-col items-center lg:justify-center  '>
+                {
+                  value?.flatrate? <div className=" mBlur  borderGlass rounded-3xl px-3 py-1 mt-2 flex items-center  ">
+
+                  <p className=' text-[12px] lg:text-sm text-center lg:text-start  font-medium bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent mr-1'>
+                  Stream 
+                  </p>
+                  {
+                    value?.flatrate?.map((item: any)=>{
+
+                      return <>
+                      <Image key={item?.logo_path} src={`https://image.tmdb.org/t/p/original${item?.logo_path}`}  width={50} height={50} alt="" className='size-5 lg:size-7 rounded-full mx-1' />
+                      </>
+                    })
+                  }
+                </div> : <div className=" mBlur  borderGlass rounded-3xl px-3 py-1 mt-2 flex items-center  ">
+
+<p className=' text-[10px] lg:text-sm text-center lg:text-start  font-medium bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent mr-1'>
+there are no streaming services currently available for this in your country
+</p>
+</div>
+                }
+                {
+                  value?.buy? <div className=" mBlur  borderGlass rounded-3xl px-3 py-1 mt-2 flex items-center  ">
+
+                  <p className=' text-[12px] lg:text-sm text-center lg:text-start  font-medium bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent mr-1'>
+                    Buy  
+                  </p>
+                  {
+                    value?.buy?.map((item: any)=>{
+
+                      return <>
+                        
+                      <Image key={item?.logo_path+ item?.id+"2122"} src={`https://image.tmdb.org/t/p/original${item?.logo_path}`}  width={50} height={50} alt="" className='size-5 lg:size-7 rounded-full mx-1' />
+                      </>
+                    })
+                  }
+                </div> : null
+                }
+                </div>
              
               <div className='w-full ml-2 '>
 
