@@ -290,9 +290,9 @@ border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 
-/* 
+
    .loader {
-    /* width: 150px;
+     width: 150px;
     height: 150px;
     border-radius: 50%;
     display: inline-block;
@@ -313,10 +313,10 @@ border: 1px solid rgba(255, 255, 255, 0.12);
     height: 44px;
     border-radius: 50%;
     background: #00dc82;
-  } */
+  }
 
 
-
+/*
   
   /* .loader {
     height:30px;
@@ -348,17 +348,16 @@ border: 1px solid rgba(255, 255, 255, 0.12);
    */
 
 
-   /* HTML: <div class="loader"></div> */
-/* HTML: <div class="loader"></div> */
+/*    
 .loader {
   width: 220px;
-  height: 30px;
+  height: 10px;
   border-radius: 20px;
   background:
    linear-gradient(#00dc82 0 0) 0/0% no-repeat
    #020420;
   animation: l2 2s infinite steps(10);
-}
+} */
 @keyframes l2 {
     100% {background-size:110%}
 }

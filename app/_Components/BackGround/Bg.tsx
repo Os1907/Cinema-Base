@@ -25,7 +25,7 @@ type BgProps = {
       <div className="embla__container md:flex  hidden  ">
         {
           cover?.backdrops?.map((item: any) => <div key={item?.file_path} className="embla__slide  flex-[0_0_100%]">
-          <Image src={`https://image.tmdb.org/t/p/original/${item?.file_path}`} alt='movies' width={1000} height={350} className='w-full   blr opacity- 25' />
+          <Image src={`https://image.tmdb.org/t/p/original/${item?.file_path}`} alt='movies' width={1000} height={350} className='w-full   ' />
           <div className='absolute w-full bottom-0 bg-gradient-to-t from-main  to-[#fff0] h-20 z-[51]  '>
           </div>
           </div>
@@ -35,12 +35,10 @@ type BgProps = {
       </div>
        <div className="embla__container flex  md:hidden  ">
         {
-          cover?.posters?.map((item: any) => <div key={item?.file_path} className="embla__slide relative  flex-[100%_0_0]">
-          <Image src={`https://image.tmdb.org/t/p/original/${item?.file_path}`} alt='movies' width={1000} height={350} className='w-full   blr opacity- 25' />
+          cover?.posters?.map((item: any) => <div key={item?.file_path} className="embla__slide   flex-[100%_0_0]">
+          <Image src={`https://image.tmdb.org/t/p/original/${item?.file_path}`} alt='movies' width={1000} height={350} className='w-full  ' />
           <div className='absolute w-full bottom-0 bg-gradient-to-t from-main via-main  to-[#fff0] h-[50%] z-[55]  '>
           </div>
-          {/* <div className='absolute w-full bottom-[2%] sm:bottom-[35%] bg-gradient-to-t from-main via-main to-[#fff0] h-64 z-[60]  '>
-        </div> */}
           </div>
 
 

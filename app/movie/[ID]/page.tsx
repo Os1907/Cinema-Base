@@ -21,19 +21,16 @@ const Movie = async ({ params }:MovieProps) => {
   const title: string = "Recommendations"
 
   const photos = await image(params?.ID, "movie")
-  // console.log(photos.logos[0].file_path);
 
-  let poster = photos.logos.find((item: any) => item.iso_639_1 === "en" || item.iso_639_1=== 'ru')
+  let poster = photos.logos.find((item: any) => item.iso_639_1 === "en" || item.iso_639_1=== 'ru' || item.iso_639_1=== 'jp')
   
   const location = await locationNow()
 
   const provider: {results: string} = await watchProvider(params?.ID, "movie")
 
-
 let value: any
 
 if (provider.results.hasOwnProperty(location?.country_code2)) {
-  // console.log(`The object has its own property 'EG'.`);
   value = provider.results[location?.country_code2];
 }
 
@@ -45,25 +42,20 @@ if (provider.results.hasOwnProperty(location?.country_code2)) {
     <>
       <section className='    lg:p t-10  relative z-[70] h-auto lg:min-h-screen  '>
         <Bg url={photos} />
-        <div className='lg:mx-24 mx-4 relative z-[999999] pt-80 lg:pt-16 '>
+        <div className='lg:mx-24 mx-4 relative z-[999999] pt-80  lg:pt-16 '>
 
 
           <div className="w-full  h-auto flex flex-col justify-center mt-32 lg:mt-5 ">
 
             <div className='flex justify-center  relative items-start flex-col   '>
-              <div className='items-center  lg:items-start w-full flex flex-col  '>
+              <div className='items-center  lg:items-start w-full flex flex-col my-3 '>
               <Image src={`https://image.tmdb.org/t/p/w500/${poster?.file_path ? poster?.file_path :  photos.logos[0]?.file_path}`} alt={`${ data?.tagline}`} width={350} height={350} className=' mt-10 h-auto lg:w-[20%] w-[40%] lg:h-auto' /> 
-                {/* {
-
-                  poster?.file_path ? <Image src={`https://image.tmdb.org/t/p/w500/${poster?.file_path}`} alt='movies' width={350} height={350} className=' mt-10 h-auto lg:w-[20%] w-[35%] lg:h-auto' /> : <h2 className=' hover:bg-gradient-to-r hover:from-yellow-200 hover:to-green hover:bg-clip-text hover:text-transparent transition-all cursor-pointer  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent  lg:text-6xl text-3xl font-extrabold relative z-10 text-center lg:text-start '>
-                    {data?.title?.toUpperCase() || data?.name.toUpperCase()}
-                  </h2>
-                } */}
+               
             
 
               </div>
               {
-                data?.tagline ? <div className="w-full lg:w-auto  my-3 text-center lg:text-start">
+                data?.tagline ? <div className="w-full lg:w-auto  mb-3 text-center lg:text-start">
 
                   <p className='text-[12px] lg:text-sm     mBlur  borderGlass rounded-3xl inline-block    px-3 text-green font-medium '>
                     {
@@ -226,62 +218,11 @@ there are no streaming services currently available for this in your country
           </div>
 
 
-
-
-
-
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         <div className='absolute w-full h-full  top-0 bg-gradient-to-t from-main to-[#ffffff00] z-[3]  '>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       </section> 
       <div className='w-full z-10  '>
         <h3 className='text-center bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent font-extrabold  text-3xl lg:text-5xl  my-3'>
