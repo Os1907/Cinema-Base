@@ -1,0 +1,81 @@
+
+
+.swiper-slide {
+  width:13rem;
+  height: 19%;
+  
+}
+@media (min-width: 1024px) {
+  .swiper-slide {
+    width:17rem;
+    height: 20%;
+    
+  }
+}
+
+.swiper-slide img {
+  width: 100%;
+  object-fit: cover; 
+}
+
+
+.slider-controler {
+  position: relative;
+  bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+@media (min-width: 1024px) {
+  .swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: var(--swiper-pagination-bottom, 8px);
+  top: var(--swiper-pagination-top, auto);
+  
+ display: flex !important;
+ justify-content: center;
+ align-items: center;
+padding-left: 9rem;
+padding-right: 9rem;
+}
+.swiper-pagination {
+  position: relative ;
+  bottom: 1rem;
+}
+}
+
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: var(--swiper-pagination-bottom, 8px);
+  top: var(--swiper-pagination-top, auto);
+  display: none ;
+}
+.swiper-paginatio{
+
+ display: none ;
+
+}
+
+
+
+
+.swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #4ae285;
+  --tw-shadow-color: #4ae285;
+  box-shadow: 0 25px 50px -12px #4ae285;
+}
+.swiper-pagination-bullet{
+  background-color: #4ae285 !important;
+}
+.padding{
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}

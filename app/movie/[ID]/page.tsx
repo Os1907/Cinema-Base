@@ -57,7 +57,7 @@ if (provider.results.hasOwnProperty(location?.country_code2)) {
               {
                 data?.tagline ? <div className="w-full lg:w-auto  mb-3 text-center lg:text-start">
 
-                  <p className='text-[12px] lg:text-sm     mBlur  borderGlass rounded-3xl inline-block    px-3 text-green font-medium '>
+                  <p className='text-[12px] lg:text-sm     mBlur  borderGlass rounded-3xl inline-block    px-3  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent font-medium '>
                     {
                       data?.tagline
                     }
@@ -67,7 +67,7 @@ if (provider.results.hasOwnProperty(location?.country_code2)) {
 
               <div className="flex w-full flex-col lg:flex-row items-center justify-center lg:justify-start gap-y-2">
 
-                <p className=' text-[12px] lg:text-sm lg:text-start text-center font-semibold text-green  mBlur  borderGlass rounded-3xl px-3 py-1 '>
+                <p className=' text-[12px] lg:text-sm lg:text-start text-center font-semibold  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent  mBlur  borderGlass rounded-3xl px-3 py-1 '>
                   {
                     data?.release_date?.slice(0, 4) || data?.first_air_date?.slice(0, 4)
                   }
@@ -76,14 +76,14 @@ if (provider.results.hasOwnProperty(location?.country_code2)) {
                 <div className='flex justify-center mx-2  lg:justify-start items-center lg:items-start lg:flex-wrap flex-col my-1 xl:my-3  '>
                   <div className='lg:flex hidden  w-full justify-center lg:justify-start  flex-wrap gap-y-2 '>
                     {
-                      data?.genres.map((item: any) => <p key={item?.id} className='  font-medium mr-2 text-green   mBlur  borderGlass   p-1 px-3 rounded-3xl text-[10px] lg:text-[12px]  transition-all'>
+                      data?.genres.map((item: any) => <p key={item?.id} className='  font-medium mr-2  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent   mBlur  borderGlass   p-1 px-3 rounded-3xl text-[10px] lg:text-[12px]  transition-all'>
                         {item?.name}
                       </p>)
                     }
                   </div>
                   <div className='flex lg:hidden  w-full  justify-center lg:justify-start mb-1 xl:mb-2 flex-wrap gap-y-2'>
                     {
-                      data?.genres.map((item: any) => <p key={item?.id} className='font-medium mx-1 text-green text-center   mBlur  borderGlass   p-1 px-3 rounded-3xl lg:text-[12px] text-[10px]  transition-all'>
+                      data?.genres.map((item: any) => <p key={item?.id} className='font-medium mx-1  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent text-center   mBlur  borderGlass   p-1 px-3 rounded-3xl lg:text-[12px] text-[10px]  transition-all'>
                         {item?.name}
                       </p>)
                     }
@@ -103,10 +103,10 @@ if (provider.results.hasOwnProperty(location?.country_code2)) {
 
                 <div className='flex   w-full justify-center lg:justify-start   rounded-3xl mt-2'>
                   <div className='flex  items-center   mBlur  borderGlass rounded-3xl px-3 py-1'>
-                    <p className='text-green font-medium text-[12px] lg:text-sm'>
+                    <p className=' bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent font-medium text-[12px] lg:text-sm'>
                       Status :
                     </p>
-                    <p className='text-green ml-2 text-[12px] lg:text-sm'>
+                    <p className=' bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent ml-2 text-[12px] lg:text-sm'>
                       {
                         data?.status
                       }
@@ -191,7 +191,7 @@ there are no streaming services currently available for this in your country
 
               <a target="_blank" href={`https://www.youtube.com/watch?v=${results[0]?.key}`}className=' flex items-center   group-hover:size-auto  px-3 py-2  mBlur  borderGlass rounded-3xl hover:scale-125   transition-all  justify-center hover:bg-green      '>
               <BsGooglePlay  className='text-green text-sm lg:text-lg group-hover:text-main  '/>
-              <p className='text-green text-[12px] lg:text-sm font-semibold  group-hover:text-main mx-1'>
+              <p className=' bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent text-[12px] lg:text-sm font-semibold  group-hover:text-main mx-1'>
               Watch Trailer
               </p>
               </a>
@@ -203,8 +203,8 @@ there are no streaming services currently available for this in your country
 
               <a target="_blank" href={`https://www.youtube.com/watch?v=${results[0]?.key}`}className=' flex flex-col gap-y-3 items-center     justify-center '>
               <Image  src={`https://image.tmdb.org/t/p/original/${photos?.posters[0]?.file_path} `} width={50} height={50} alt="" className='w-28 rounded-3xl mb-3 group-hover:inline hidden transition-all  borderGlass ' />
-              <p className='text-white text-[12px] lg:text-sm font-semibold   '>
-              <BsGooglePlay  className='text-white text-2xl inline  mx-1 '/>
+              <p className=' bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent text-[12px] lg:text-sm font-semibold   '>
+              <BsGooglePlay  className='text-green text-2xl inline  mx-1 '/>
               Watch Trailer
               </p>
               </a>
@@ -224,7 +224,7 @@ there are no streaming services currently available for this in your country
         <div className='absolute w-full h-full  top-0 bg-gradient-to-t from-main to-[#ffffff00] z-[3]  '>
         </div>
       </section> 
-      <div className='w-full z-10  '>
+      <div className='w-full z-10 bg-main  '>
         <h3 className='text-center bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent font-extrabold  text-3xl lg:text-5xl  my-3'>
           Movie Cast
         </h3>

@@ -2,18 +2,9 @@ import Image from 'next/image'
 import React from 'react'
 import bg from '../../../public/Images/bg.png'
 import { Link } from "next-view-transitions"
-import { Interface } from 'readline'
-import { Movie } from '@/app/explore/[id]/page'
+import { prop } from '@/app/Utilities/Interface/interfaces'
 
-interface prop {
-    value?:{
-            page: number,
-            results:  [{}]}
-    title:string,
-    nav?:string
-    component?:React.JSX.Element
-    data?:  Movie[];
-}
+
 
 
 export default function Sections(props: prop) {

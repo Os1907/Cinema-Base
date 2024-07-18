@@ -18,7 +18,7 @@ const CastCarousel = (props: { data: ItemType[] }) => {
     Autoplay({ playOnInit: true, delay: 3000 })
   ])
   return (
-    <div  className="embla overflow-hidden   relative z-50" ref={emblaRef}>
+    <div  className="embla overflow-hidden bg-main  relative z-50" ref={emblaRef}>
       <div className="embla__container flex   ">
         
         

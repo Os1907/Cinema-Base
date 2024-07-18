@@ -10,10 +10,10 @@ const config: Config = {
   theme: {
     extend: {
       colors:{
-       green:"#00dc82",
-       main:"#020420",
-       main2:"#080d25"
-      },
+        green:"#00dc82",
+        main:"#020420",
+        main2:"#080d25"
+       },
      },
    },
    plugins: [require("daisyui")],

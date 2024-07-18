@@ -128,6 +128,31 @@
    .myHover:hover h3 , .hoverChanger{
      color: #020420 !important;
    } 
+
+
+/*  */
+.my-Hover .child-effect{
+  border: solid 4px #00dc82 !important;
+} 
+
+.my-Hover .child2{
+  border: solid 4px #00dc82 !important;
+} 
+.hoverChanger{
+  color: #00dc82 !important;
+}
+.my-Hover h3 , .hoverChanger{
+  color: #020420 !important;
+} 
+
+
+
+
+
+
+
+
+   
    :where(.menu li:not(.menu-title, .disabled) > *:not(ul, details, .menu-title)):not(.active, .btn):hover, :where(.menu li:not(.menu-title, .disabled) > details > summary:not(.menu-title)):not(.active, .btn):hover{
     background-color: transparent !important;
     border-radius: 10px;
@@ -316,48 +341,7 @@ border: 1px solid rgba(255, 255, 255, 0.12);
   }
 
 
-/*
-  
-  /* .loader {
-    height:30px;
-    aspect-ratio: 4;
-    display: grid;
-    animation: l31-0 1s infinite; 
-  }
-  .loader:before,
-  .loader:after {
-    content: "";
-    grid-area: 1/1;
-    --_g: no-repeat radial-gradient(farthest-side,#00dc82 94%,#0000);
-    background:
-      var(--_g) left,
-      var(--_g) right;
-    background-size: 25% 100%;
-  }
-  .loader:after {
-    transform: rotate(0) translate(37.5%) rotate(0);
-    animation: inherit;
-    animation-name: l31-1; 
-  }
-  @keyframes l31-0 {
-    100% {transform:translate(37.5%)}
-  }
-  @keyframes l31-1 {
-    100% {transform:rotate(-.5turn) translate(37.5%) rotate(.5turn)}
-  }
-   */
 
-
-/*    
-.loader {
-  width: 220px;
-  height: 10px;
-  border-radius: 20px;
-  background:
-   linear-gradient(#00dc82 0 0) 0/0% no-repeat
-   #020420;
-  animation: l2 2s infinite steps(10);
-} */
 @keyframes l2 {
     100% {background-size:110%}
 }
@@ -397,3 +381,10 @@ border: 1px solid rgba(255, 255, 255, 0.12);
     100% { border-style: double}
   }
         
+
+
+
+
+
+
+  
