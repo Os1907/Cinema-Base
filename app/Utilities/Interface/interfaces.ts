@@ -1,3 +1,7 @@
+export interface Movie {
+    title: string;
+    releaseDate: Date;
+  }
 export interface prop {
     value?:{
             page: number,
