@@ -1,7 +1,5 @@
-export interface Movie {
-    title: string;
-    releaseDate: Date;
-  }
+import { Movie } from "@/app/explore/[id]/page";
+
 export interface prop {
     value?:{
             page: number,
