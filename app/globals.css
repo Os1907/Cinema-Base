@@ -382,9 +382,25 @@ border: 1px solid rgba(255, 255, 255, 0.12);
   }
         
 
+  .dot{
+    position: relative;
+padding-bottom: 0.25rem;
+  }
 
 
+  .dot::before{
+    content: '';
+    background: rgb(0,0,0);
+background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(74,226,133,1) 100%);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 1.5rem;
+  }
 
 
-
-  
+  .liner{
+    background-image: radial-gradient(78.57% 78.57% at 50.65% .84%,#020420 0,#00dc82 0, #020420 100%);
+  }

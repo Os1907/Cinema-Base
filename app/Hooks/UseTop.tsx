@@ -6,7 +6,6 @@ export default function UseTop() {
         window.scrollTo(0, 0);
       }
       useEffect(()=>{
-        
         windowTop()
       },[])
       return windowTop

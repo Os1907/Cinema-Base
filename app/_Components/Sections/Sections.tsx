@@ -20,7 +20,7 @@ export default function Sections(props: prop) {
                 <div className='lg:mx-24 mx-4 relative z-10 '>
                     <div className='flex justify-center relative items-center'>
 
-                        <h2 className=' text-center hover:bg-gradient-to-r hover:from-yellow-200 hover:to-green hover:bg-clip-text hover:text-transparent transition-all cursor-pointer border-b  pb-3 border-green bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent  lg:text-5xl text-2xl md:text-3xl font-extrabold relative z-10 '>
+                        <h2 className='dot text-center hover:bg-gradient-to-r hover:from-yellow-200 hover:to-green hover:bg-clip-text hover:text-transparent transition-all cursor-pointer   bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent  lg:text-5xl text-3xl font-extrabold relative z-10 '>
                             {title?.toUpperCase()}
                         </h2>
 

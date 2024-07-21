@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 import Trending from '../trending/page'
 import Popular from '../popular/page'
 import TopRate from '../toprate/page'
@@ -13,8 +13,8 @@ export default async function HomeComponents() {
 
   return (
     <>
-    <SwiperHome/>
       <MainHome />
+    <SwiperHome/>
         <Popular params={value} />
         <TopRate params={value} />
         <Trending />
