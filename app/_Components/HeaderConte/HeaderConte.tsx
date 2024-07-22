@@ -7,12 +7,8 @@ import MainHome from '../MainHome/MainHome'
 export default function HeaderConte() {
   return (
     <>
-    {
-        <HeaderSwiper /> && < SwiperHome /> ? <>
         <HeaderSwiper />
        <SwiperHome /> 
-       </>  : <MainHome/> 
-    }
     
     
     
