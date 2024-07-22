@@ -37,7 +37,7 @@ function SwiperHome() {
       <Image src={bg} alt='texture2' className='absolute lg:hidden block opacity-15 top-[50%] z-[1] -rotate-180' />
       <div>
         <div className='flex justify-center relative items-center pt-3'>
-          <h2 className='dot uppercase text-center hover:bg-gradient-to-r hover:from-yellow-200 hover:to-green hover:bg-clip-text hover:text-transparent transition-all cursor-pointer    bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent lg:text-5xl text-3xl font-extrabold relative z-10'>
+          <h2 className='dot uppercase text-center hover:bg-gradient-to-r hover:from-yellow-200 hover:to-green hover:bg-clip-text hover:text-transparent transition-all cursor-pointer    bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent lg:text-5xl text-2xl  md:text-3xl font-extrabold relative z-10'>
  Trending now for you
           </h2>
         </div>
