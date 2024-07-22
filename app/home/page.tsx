@@ -5,8 +5,8 @@ import TopRate from '../toprate/page'
 import 'swiper/css';
 import MainHome from '../_Components/MainHome/MainHome'
 import SwiperHome from '../_Components/Swiper/SwiperHome'
-import HeaderSwiper from '../_Components/HeaderSwiper/HeaderSwiper';
-import HeaderConte from '../_Components/HeaderConte/HeaderConte';
+// import HeaderSwiper from '../_Components/HeaderSwiper/HeaderSwiper';
+// import HeaderConte from '../_Components/HeaderConte/HeaderConte';
 export default async function HomeComponents() {
 
   const value = {
@@ -16,8 +16,9 @@ export default async function HomeComponents() {
   return (
     <>
         {/* <HeaderSwiper />
-        <SwiperHome /> */}
-        <HeaderConte />
+        {/* <HeaderConte /> */}
+        <MainHome/>
+        <SwiperHome /> 
       <div className="-mt-16 md:mt-0">
 
       <Popular params={value} />
