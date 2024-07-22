@@ -340,8 +340,6 @@ border: 1px solid rgba(255, 255, 255, 0.12);
     background: #00dc82;
   }
 
-
-
 @keyframes l2 {
     100% {background-size:110%}
 }
@@ -404,3 +402,32 @@ background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(74,226,133,1) 100%);
   .liner{
     background-image: radial-gradient(78.57% 78.57% at 50.65% .84%,#020420 0,#00dc82 0, #020420 100%);
   }
+
+
+
+  .gradient{
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 68%, rgba(2,4,32,1) 88%);
+  }
+@media (min-width: 1024px) {
+  .top_up{
+    margin-top: -18rem !important;
+  }
+}
+  
+  @media (min-width: 1150px) {
+    .top_up{
+      margin-top: -20rem !important;
+    }
+  }
+  @media (min-width: 1280px) {
+    .top_up{
+      margin-top: -25rem !important;
+
+    }
+  }
+  @media (min-width: 1536px) {
+    .top_up{
+      margin-top: -30rem !important;
+  }
+}

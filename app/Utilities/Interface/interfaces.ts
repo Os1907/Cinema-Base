@@ -28,3 +28,9 @@ export interface resultsMovie {
     vote_average: number;
     vote_count: number;
 }
+export interface ItemType {
+    profile_path?: string; 
+    id?: number; 
+    name?: string; 
+  }
+  

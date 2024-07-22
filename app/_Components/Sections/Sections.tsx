@@ -14,7 +14,7 @@ export default function Sections(props: prop) {
   const  UrlImages: string = "https://image.tmdb.org/t/p/w500/";
     return (
         <>
-            <section  className=' min-h-screen bg-main   lg:pt-10 pt-5 lg:pb-16 pb-5  relative z-10  overflow-hidden '>
+            <section  className=' min-h-screen bg- main   lg:pt-10 pt-5 lg:pb-16 pb-5  relative z-10  overflow-hidden '>
                 <Image src={bg} alt='texture' className='absolute opacity-15   top-20 z-[1] ' /> 
                 <Image src={bg} alt='texture2' className='absolute   opacity-15 lg:top-[50%] top-20 z-[1]  -rotate-180  ' />
                 <div className='lg:mx-24 mx-4 relative z-10 '>

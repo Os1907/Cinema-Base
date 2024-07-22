@@ -1,0 +1,13 @@
+
+.swiper-slide-header {
+  width:100% !important;
+
+}
+
+.swiper-slide-headere img {
+  width: 100% !important;
+  object-fit: cover !important; 
+  height: 100% !important;
+  
+}
+

@@ -32,20 +32,18 @@ function SwiperHome() {
   }, []);
 
   return (
-    <div className="lg:min-h-[80vh] relative bg-main overflow-hidden lg:p t-24 flex flex-col justify-center items-center">
-      <Image src={bg} alt='texture' className='absolute opacity-15 top-0 z-[1]' />
-      <Image src={bg} alt='texture2' className='absolute lg:hidden block opacity-15 top-[50%] z-[1] -rotate-180' />
+
+    <div className="   relative overflow-hidden -mt-32 md:-mt-64  top_up lg:p t-24 flex flex-col justify-center items-center">
+      <Image src={bg} alt='texture' className='absolute opacity-15 top-0 md:top-[-10%] z-[1]' />
+      <Image src={bg} alt='texture2' className='absolute sm:hidden block opacity-15 top-[50%] z-[1] -rotate-180' />
       <div>
-        <div className='flex justify-center relative items-center pt-3'>
-          <h2 className='dot uppercase text-center hover:bg-gradient-to-r hover:from-yellow-200 hover:to-green hover:bg-clip-text hover:text-transparent transition-all cursor-pointer    bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent lg:text-5xl text-2xl  md:text-3xl font-extrabold relative z-10'>
- Trending now for you
-          </h2>
-        </div>
+       
         <Swiper
           effect={'coverflow'}
           grabCursor={true}
           centeredSlides={true}
           slidesPerView={'auto'}
+          initialSlide={20}
           coverflowEffect={{
             rotate: 5,
             stretch: 0,
@@ -58,10 +56,10 @@ function SwiperHome() {
             clickable: true,
           }}
           autoplay={{
-            delay: 1500,
+            delay: 4000,
           }}
           modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
-          className="min-h-[70vh] padding " >
+          className=" padding " >
           {items?.map((item) => (
             <SwiperSlide key={item.id}>
               {({ isActive }) => (
@@ -76,7 +74,7 @@ function SwiperHome() {
                       <Image src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} alt={`${item.title}`} width={350} height={350} className='md:min-h-[350px] skeleton bg-gradient-to-tr from-green to-yellow-200 shadow-2xl rounded-2xl w-full hover:border-t-green hover:border-r-green hover:border-l-yellow-200 child-effect transition-all' />
                     </div>
                     <div>
-                      <h3 className='mt-3 lg:ml-3 text-center lg:text-start text-white font-medium lg:text-base text-sm'>
+                      <h3 className='mt-3 lg:ml-3 text-center lg:text-start text-white font-medium lg:text-base text-[12px] md:text-sm'>
                         {item.title || item.name}
                       </h3>
                     </div>
