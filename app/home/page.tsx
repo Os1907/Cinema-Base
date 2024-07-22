@@ -14,11 +14,9 @@ export default async function HomeComponents() {
 
   return (
     <>
-      <div className="min-h-screen">
         <HeaderSwiper />
         <SwiperHome />
-      </div>
-      <div className="-mt-32 sm:-mt-12 md:mt-0">
+      <div className="-mt-16 md:mt-0">
 
       <Popular params={value} />
       </div>
