@@ -3,6 +3,7 @@ import { TrendSeries, topShows } from '@/app/Utilities/apis'
 import React from 'react'
 import Sections from '../_Components/Sections/Sections'
 import Button from '../_Components/Button/Button'
+import Navbar from '../_Components/Navbar/Navbar'
 
 
 export default async function page({params}:any) {
@@ -16,6 +17,7 @@ export default async function page({params}:any) {
 
   return (
     <>
+    <Navbar/>
     <div className="lg:pt-10">
 
         <Sections data={Trend?.results} title={title2} nav={nav} />

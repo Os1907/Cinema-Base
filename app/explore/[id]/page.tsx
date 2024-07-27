@@ -5,6 +5,7 @@ import bg from '../../../public/Images/bg.png'
 import Image from 'next/image'
 import { multiBySearch } from '../../Utilities/apis'
 import Sections from '../../_Components/Sections/Sections'
+import Navbar from '@/app/_Components/Navbar/Navbar';
 interface IId {
   params: {
     id: number
@@ -57,6 +58,7 @@ export default function Explore({ params }: IId) {
 
   return (
     <>
+    <Navbar/>
       <div className='lg:pt-20 pt-4 bg-main'>
 
         <section className=' min-h-screen overflow-y-hidden  bg-main lg:pt-10 pt-5  pb-2 relative z-10  '>

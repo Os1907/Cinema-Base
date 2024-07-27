@@ -436,6 +436,14 @@ background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(74,226,133,1) 100%);
 
 
 
-w{
-  color:#ffffff
+.naVglass{
+background: rgb(255 255 255 / 5%);
+/* border-radius: 16px; */
+/* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+backdrop-filter: blur(15px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
+
+

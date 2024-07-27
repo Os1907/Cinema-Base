@@ -48,8 +48,11 @@ if (provider.results.hasOwnProperty(location?.country_code2)) {
   return (
     <>
       <section className='    lg:p t-10  relative z-[70] h-auto lg:min-h-screen  '>
+        <div className=''>
+
         <Bg url={photos} />
-        <div className='lg:mx-24 mx-4 relative z-[999999] pt-80  lg:pt-16 '>
+        </div>
+        <div className='lg:mx-24 mx-4 relative z-[999999] pt-[15rem] md:pt-96 lg:pt-16 '>
 
 
           <div className="w-full  h-auto flex flex-col justify-center mt-32 lg:mt-5 ">
