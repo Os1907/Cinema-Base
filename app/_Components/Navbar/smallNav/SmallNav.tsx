@@ -7,7 +7,8 @@ export default function SmallNav() {
   return (
     <>
     <div className="fixed _tran slate -translate-x-1/2 left-1/2  lg:hidden bottom-2 w-2/3 z-[999999] ">
-        <ul className="flex gap-x-2 justify-center mBlur borderGlass  rounded-full text-[12px] ">
+        <ul className="flex gap-x-2 justify-center  shadow-lg shadow-green rounded-full text-[12px] ">
+          <div className="absolute top-0 h-full w-full rounded-full  glass borderGlass"></div>
           <li className="relative  rounded-full  ">
             <Link href="/">
               <p className="p-3  font-semibold text-green z-50 relative">

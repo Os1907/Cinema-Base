@@ -1,7 +1,5 @@
 'use client'
 import Link from 'next/link'
-import { multiBySearch } from '@/app/Utilities/apis'
-
 import React, { useEffect, useState } from 'react'
 import { TbArrowBigLeftLinesFilled, TbArrowBigRightLinesFilled } from 'react-icons/tb' 
 import UseTop from '@/app/Hooks/UseTop'
