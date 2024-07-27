@@ -14,6 +14,7 @@ interface SeriesProps {
 }
 const Series = async ({ params }:SeriesProps) => {
   const data = await getSeries(params?.id)
+
   const photos  = await image(params?.id ,"tv")
   const { results } = await videoLink(params?.id , "tv")
 
@@ -21,7 +22,15 @@ const Series = async ({ params }:SeriesProps) => {
   const title: string = "Recommendations"
   const nav : string ="shows"
 
-  let poster = photos.logos.find((item: any) => item.iso_639_1 === "en" )
+  let poster = photos.logos.filter((item: any) => item.iso_639_1 != "he" ).sort((a:any, b:any) => {
+    if (a.iso_639_1?.startsWith("en") && !b.iso_639_1?.startsWith("en")) {
+      return -1; 
+    }
+    if (b.iso_639_1?.startsWith("en") && !a.iso_639_1?.startsWith("en")) {
+      return 1; 
+    }
+    return 0;
+  });
   
   const location = await locationNow()
 
@@ -45,14 +54,13 @@ return (
 
           <div className='flex justify-center  relative items-start flex-col   '>
             <div className='items-center  lg:items-start w-full flex flex-col  '>
-            <Image src={`https://image.tmdb.org/t/p/w500/${poster?.file_path}`} alt='movies' width={350} height={350} className=' mt-10 h-auto lg:w-[20%] w-[35%] lg:h-auto' />
-              {/* {
-
-                poster?.file_path ? <Image src={`https://image.tmdb.org/t/p/original/${poster?.file_path}`} alt='movies' width={350} height={350} className=' mt-10 h-auto lg:w-[20%] w-[35%] lg:h-auto' /> : <h2 className=' hover:bg-gradient-to-r hover:from-yellow-200 hover:to-green hover:bg-clip-text hover:text-transparent transition-all cursor-pointer  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent  lg:text-6xl text-3xl font-extrabold relative z-10 text-center lg:text-start '>
-                  {data?.title?.toUpperCase() || data?.name.toUpperCase()}
-                </h2>
-              } */}
-          
+              {
+                poster[0]?.file_path ?      <Image src={`https://image.tmdb.org/t/p/w500/${poster[0].file_path}`} alt='movies' width={350} height={350} className=' mt-10 h-auto lg:w-[20%] w-[35%] lg:h-auto' />   : <p className='text-3xl lg:text-5xl pt-2 3 pb-4     mBlur  borderGlass rounded-3xl inline-block    px-3 text-green font-extrabold lg:mt-10 '>
+                {
+                  data?.original_name
+                }
+              </p>
+              }
 
             </div>
             {
@@ -236,60 +244,62 @@ there are no streaming services currently available for this in your country
               </p>
               <div className="grid lg:grid-cols-4 xl:grid-cols-5 md:grid-cols-3 grid-cols-2 my-5  gap-x-4 gap-y-6">
                 {
-                  data?.seasons?.slice(1).map((item: any) => {
+                  data?.seasons?.map((item: any) => {
                     return <>
-                    
-                      <div key={item.id} className="col-span-1 relative hover:overflow-y-scroll Scroll-Edit  hover:shadow-green hover:shadow-2xl hover:bg-green hover:pb-4  hover:scale-105 transition-all cursor-pointer  hover:rounded-2xl group   myHover z-[99999]">
-                                    <div className='relative'>
-                                        <div className="bg-gradient-to-r z-50 from-green to-yellow-200 rounded-full lg:px-3 lg:py-3 p-1 md:p-2 absolute md:bottom-[-3%] lg:bottom-[-5%] bottom-[-5%] right-[5%] md:border-4 border-2  border-main2 child2 transition-all ">
-                                            <p className='text-main text-[10px] font-bold  '>
-                                                {item?.vote_average?.toString().slice(0, 3)}
-                                            </p>
-                                        </div>
-                                        {
-                                          item?.poster_path ? <Image 
-                                          src={`https://image.tmdb.org/t/p/w500/${item?.poster_path}`} 
-                                          alt={item.original_name }
-                                           width={350} height={350} 
-                                           className='md:min-h-[350px] group-hover:blur-2xl  skeleton bg-gradient-to-tr from-green to-yellow-200   shadow-2xl rounded-2xl w-full     hover:border-t-green hover:border-r-green hover:border-l-yellow-200  child-effect transition-all ' 
-                                           /> : <p className='md:min-h-[350px] group-hover:blur-2xl h-72 glass skeleton  shadow-2xl rounded-2xl w-full ' 
-                                            > </p>
-                                        }
-                                        
-                                    </div>
-                                    <div>
-                                        <h3 className='mt-3 lg:ml-3 text-center lg:text-start text-white font-medium  lg:text-base text-sm '>
-                            {       item.name  }
-                                        </h3>
-                                    </div>
-                          <div className='w-full bg-green    min-h-full top-0  slide-in-bottom  group-hover:flex  z-[100] absolute py-5 rounded-2xl hidden justify-center flex-col'>
-                            
-                                        <div className='w-full my-2 '>
-
-                                        <h3 className='  text-white font-bold  text-sm  lg:text-base text-center'>
-                            {       item.name  }
-                                        </h3>
-                                        </div>
-                                        <div className='w-full flex justify-between items-center'>
-
-                                        <p className='hoverChanger lg:text-start text-center  ml-4 text-[12px] lg:text-sm  font-bold'>
-                                        {item?.air_date?.slice(0, 4)}
-                                        </p>
-                                        <p className='hoverChanger mr-4 text-center   text-[12px] lg:text-sm  font-bold'>
-                                            {item?.adult === false ? "+13" : "+18"}
-                                        </p>
-                                        </div>
-                              <p className='text-main font-bold my-2 text-center'>
-                            Overview
-                            </p>
-                            <p className='text-main xl:text-sm text-[12px] mx-2 text-center '>
-                              {
-                                item.overview
-                              }
-                            </p>
-
+                    {
+                      item?.poster_path != null ?  <div key={item.id} className="col-span-1 relative hover:overflow-y-scroll Scroll-Edit  hover:shadow-green hover:shadow-2xl hover:bg-green hover:pb-4  hover:scale-105 transition-all cursor-pointer  hover:rounded-2xl group   myHover z-[99999]">
+                      <div className='relative'>
+                          <div className="bg-gradient-to-r z-50 from-green to-yellow-200 rounded-full lg:px-3 lg:py-3 p-1 md:p-2 absolute md:bottom-[-3%] lg:bottom-[-5%] bottom-[-5%] right-[5%] md:border-4 border-2  border-main2 child2 transition-all ">
+                              <p className='text-main text-[10px] font-bold  '>
+                                  {item?.vote_average?.toString().slice(0, 3)}
+                              </p>
                           </div>
-                                </div>
+                          {
+                            item?.poster_path ? <Image 
+                            src={`https://image.tmdb.org/t/p/w500/${item?.poster_path}`} 
+                            alt={item.original_name }
+                             width={350} height={350} 
+                             className='md:min-h-[350px] group-hover:blur-2xl  skeleton bg-gradient-to-tr from-green to-yellow-200   shadow-2xl rounded-2xl w-full     hover:border-t-green hover:border-r-green hover:border-l-yellow-200  child-effect transition-all ' 
+                             /> : <p className='md:min-h-[350px] group-hover:blur-2xl h-72 glass skeleton  shadow-2xl rounded-2xl w-full ' 
+                              > </p>
+                          }
+                          
+                      </div>
+                      <div>
+                          <h3 className='mt-3 lg:ml-3 text-center lg:text-start text-white font-medium  lg:text-base text-sm '>
+              {       item.name  }
+                          </h3>
+                      </div>
+            <div className='w-full bg-green    min-h-full top-0  slide-in-bottom  group-hover:flex  z-[100] absolute py-5 rounded-2xl hidden justify-center flex-col'>
+              
+                          <div className='w-full my-2 '>
+
+                          <h3 className='  text-white font-bold  text-sm  lg:text-base text-center'>
+              {       item.name  }
+                          </h3>
+                          </div>
+                          <div className='w-full flex justify-between items-center'>
+
+                          <p className='hoverChanger lg:text-start text-center  ml-4 text-[12px] lg:text-sm  font-bold'>
+                          {item?.air_date?.slice(0, 4)}
+                          </p>
+                          <p className='hoverChanger mr-4 text-center   text-[12px] lg:text-sm  font-bold'>
+                              {item?.adult === false ? "+13" : "+18"}
+                          </p>
+                          </div>
+                <p className='text-main font-bold my-2 text-center'>
+              Overview
+              </p>
+              <p className='text-main xl:text-sm text-[12px] mx-2 text-center '>
+                {
+                  item.overview
+                }
+              </p>
+
+            </div>
+                  </div> : null
+                    }
+                     
 
 
 
@@ -306,7 +316,7 @@ there are no streaming services currently available for this in your country
 
 
     {
-        recommendations?.results?.length > 0 ? <Sections value={recommendations} title={title} nav={nav}  /> : null
+        recommendations?.results?.length > 0 ? <Sections data={recommendations?.results} title={title} nav={nav}  /> : null
       }
 
 

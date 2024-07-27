@@ -9,7 +9,7 @@ export default async  function ChildRate({params}:any ) {
     return (
         <>
         <section className='lg:pt-10'>
-            <Sections value={data} title={title} component={<CounterPopular value={data.page}/>}  />
+            <Sections data={data?.results} title={title} component={<CounterPopular value={data.page}/>}  />
         </section>
 
         </>

@@ -12,7 +12,7 @@ export default async  function ChildPopular({params}:any ) {
         <>
 
         <section className='lg:py-10'>
-            <Sections value={data} title={title} component={<CounterPopular value={data.page}/>}  />
+            <Sections data={data.results} title={title} component={<CounterPopular value={data.page}/>}  />
         </section>
 
         </>

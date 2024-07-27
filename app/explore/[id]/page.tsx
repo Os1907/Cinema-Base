@@ -3,10 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer';
 import bg from '../../../public/Images/bg.png'
 import Image from 'next/image'
-import { moviesBySearch } from '../../Utilities/apis'
+import { multiBySearch } from '../../Utilities/apis'
 import Sections from '../../_Components/Sections/Sections'
-import { usePathname } from 'next/navigation';
-import SearchPaig from '@/app/_Components/SearchPaig/SearchPaig';
 interface IId {
   params: {
     id: number
@@ -31,9 +29,8 @@ export default function Explore({ params }: IId) {
   // ======={...Functions}====
 
   let userSearch = async (e: string) => {
-    const response = await moviesBySearch(e, pageNumber)
+    const response = await multiBySearch(e, pageNumber)
     setData(response.results)
-    // console.log(response.results)
     if (e === undefined) {
       setData([])
     }
@@ -43,7 +40,7 @@ export default function Explore({ params }: IId) {
     async function userIncrement(e: string) {
       // await delay(3000);
       setPageNumber(pageNumber + 1)
-      const response = await moviesBySearch(e, pageNumber)
+      const response = await multiBySearch(e, pageNumber)
         .then(async (dataResponse) => {
           setData(data => [...data, ...dataResponse.results]);
         })
@@ -62,20 +59,19 @@ export default function Explore({ params }: IId) {
     <>
       <div className='lg:pt-20 pt-4 bg-main'>
 
-        <SearchPaig />
         <section className=' min-h-screen overflow-y-hidden  bg-main lg:pt-10 pt-5  pb-2 relative z-10  '>
           <Image src={bg} alt='' className='absolute h-auto lg:top-[-30%] top-[50%] z-[2] opacity-10 -rotate-180  ' />
           <div className=' '>
             <div className=' flex justify-center my-5'>
               <p className='uppercase bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent hover:bg-gradient-to-r hover:from-yellow-200 hover:to-green hover:bg-clip-text hover:text-transparent cursor-pointer lg:text-3xl text-2xl font-extrabold transition-all'>
-                Explore your movie
+                Explore your  Movie or Series
               </p>
             </div>
             <div className='lg:mx-28 mx-4 z-[100] relative'>
               <input onKeyUp={(e: any) => {
                 userSearch(e.target.value)
                 setSearch(e.target.value)
-              }} type="text" placeholder="Search for a movie" className=" input border-green text-green text-sm lg:text-lg border-b border-t-0 border-l-0 border-r-0  w-full bg-transparent  rounded-none focus:outline-none focus:rounded-2xl  focus:border-green active:rounded-none focus-within:outline-none placeholder:text-[#09ff84b2]" />
+              }} type="text" placeholder="Search Movie or Series" className=" input border-green text-green text-sm lg:text-lg border-b border-t-0 border-l-0 border-r-0  w-full bg-transparent  rounded-none focus:outline-none focus:rounded-2xl  focus:border-green active:rounded-none focus-within:outline-none placeholder:text-[#09ff84b2]" />
             </div>
             <Sections data={data} title={title} />
             {data.length === 0 ? "" : <div ref={ref} className='flex justify-center items-center'>

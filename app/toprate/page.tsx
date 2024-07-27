@@ -20,7 +20,7 @@ export default async function TopRate({params}:id) {
     return (
         <>
             <section className='py-10'>
-                <Sections value={data} title={title}  />
+                <Sections data={data?.results} title={title}  />
                 <div className='flex justify-center relative z-50 lg:mt-[-50px] mt-[-20px]'>
                 <Link href={`/toprate/${data.page}`} scroll={true}>
                  <Button value={btnCaption}/>

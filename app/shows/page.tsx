@@ -18,10 +18,10 @@ export default async function page({params}:any) {
     <>
     <div className="lg:pt-10">
 
-        <Sections value={Trend} title={title2} nav={nav} />
+        <Sections data={Trend?.results} title={title2} nav={nav} />
     
     <section className='pb-10'>
-                <Sections value={data} title={title} nav={nav} />
+                <Sections data={data?.results} title={title} nav={nav} />
                 <div className='flex justify-center relative z-50 lg:mt-[-50px] mt-[-20px]'>
                 <Link href={`/shows/rated/${data.page}`} scroll={true}>
                 <Button value={btnCaption}/>

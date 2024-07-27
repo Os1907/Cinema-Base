@@ -4,7 +4,9 @@
 
   body {
   
+    /* background-color: #020420; */
     background-color: #020420;
+
    }
    
    body {
@@ -430,4 +432,10 @@ background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(74,226,133,1) 100%);
     .top_up{
       margin-top: -30rem !important;
   }
+}
+
+
+
+w{
+  color:#ffffff
 }

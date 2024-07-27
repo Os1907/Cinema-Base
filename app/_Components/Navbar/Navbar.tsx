@@ -4,9 +4,7 @@ import { usePathname } from 'next/navigation';
 import NavCenter from './NavCenter/NavCenter';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
-import { FaHome } from 'react-icons/fa';
-import { MdTravelExplore } from 'react-icons/md';
-import { IoTv } from 'react-icons/io5';
+import SmallNav from './smallNav/SmallNav';
 
 export default function Navbar() {
   const scrollRef = useRef<any>();
@@ -54,35 +52,7 @@ export default function Navbar() {
 
         <NavCenter />
       </div>
-
-      <div className="fixed lg:hidden bottom-2 w-full z-[999999]">
-        <ul className="flex gap-x-2 justify-center">
-          <li className="relative">
-            <Link href="/">
-              <p className="px-5 py-3 text-sm font-semibold text-green z-50 relative">
-                <FaHome className="inline mb-1" /> Home
-              </p>
-              <div className="absolute top-0 h-full w-full rounded-full  glass borderGlass"></div>
-            </Link>
-          </li>
-          <li className="relative">
-            <Link href="/explore/1">
-              <p className="px-5 py-3 text-sm font-semibold text-green z-50 relative">
-                <MdTravelExplore className="inline mb-1" /> Search
-              </p>
-              <div className="absolute top-0 h-full w-full rounded-full  glass borderGlass"></div>
-            </Link>
-          </li>
-          <li className="relative">
-            <Link href="/shows">
-              <p className="px-5 py-3 text-sm font-semibold text-green z-50 relative">
-                <IoTv className="inline mb-1" /> Series
-              </p>
-              <div className="absolute top-0 h-full w-full rounded-full  glass borderGlass"></div>
-            </Link>
-          </li>
-        </ul>
-      </div>
+    <SmallNav/>
     </>
   );
 }

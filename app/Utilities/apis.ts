@@ -72,9 +72,9 @@ export async function moviesList() {
     console.error(err);
   }
 }
-export async function moviesBySearch(name:string , page: number) {
+export async function multiBySearch(name:string , page: number) {
   try {
-    const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${name}&include_adult=false&language=en-US&page=${page}`, options);
+    const response = await fetch(`https://api.themoviedb.org/3/search/multi?query=${name}&include_adult=false&language=en-US&page=${page}`, options);
     const data = await response.json();
     return data;
   } catch (err) {

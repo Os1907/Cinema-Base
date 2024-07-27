@@ -22,8 +22,15 @@ const Movie = async ({ params }:MovieProps) => {
 
   const photos = await image(params?.ID, "movie")
 
-  let poster = photos.logos.find((item: any) => item.iso_639_1 === "en" || item.iso_639_1=== 'ru' || item.iso_639_1=== 'jp')
-  
+  let poster = photos.logos.filter((item: any) => item.iso_639_1 != "he" ).sort((a:any, b:any) => {
+    if (a.iso_639_1?.startsWith("en") && !b.iso_639_1?.startsWith("en")) {
+      return -1; 
+    }
+    if (b.iso_639_1?.startsWith("en") && !a.iso_639_1?.startsWith("en")) {
+      return 1; 
+    }
+    return 0;
+  });
   const location = await locationNow()
 
   const provider: {results: string} = await watchProvider(params?.ID, "movie")
@@ -48,12 +55,16 @@ if (provider.results.hasOwnProperty(location?.country_code2)) {
           <div className="w-full  h-auto flex flex-col justify-center mt-32 lg:mt-5 ">
 
             <div className='flex justify-center  relative items-start flex-col   '>
-              <div className='items-center  lg:items-start w-full flex flex-col my-3 '>
-              <Image src={`https://image.tmdb.org/t/p/w500/${poster?.file_path ? poster?.file_path :  photos.logos[0]?.file_path}`} alt={`${ data?.tagline}`} width={350} height={350} className=' mt-10 h-auto lg:w-[20%] w-[40%] lg:h-auto' /> 
-               
-            
+            <div className='items-center  lg:items-start w-full flex flex-col my-3 '>
+              {
+                poster[0]?.file_path ?      <Image src={`https://image.tmdb.org/t/p/w500/${poster[0].file_path}`} alt='movies' width={350} height={350} className=' mt-10 h-auto lg:w-[20%] w-[35%] lg:h-auto' />   : <p className='text-3xl lg:text-5xl pt-2 3 pb-4     mBlur  borderGlass rounded-3xl inline-block    px-3 text-green font-extrabold lg:mt-10 '>
+                {
+                  data?.original_name
+                }
+              </p>
+              }
 
-              </div>
+            </div>
               {
                 data?.tagline ? <div className="w-full lg:w-auto  mb-3 text-center lg:text-start">
 
@@ -231,7 +242,7 @@ there are no streaming services currently available for this in your country
       </div>
       <CastCarousel data={cast} />
       {
-         recommendations?.results?.length > 0 ?  <Sections value={recommendations} title={title} /> : ""
+         recommendations?.results?.length > 0 ?  <Sections data={recommendations?.results} title={title} /> : "No Recommendations"
       }
 
 

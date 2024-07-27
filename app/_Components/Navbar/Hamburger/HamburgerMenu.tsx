@@ -3,8 +3,6 @@ import React, { memo, useState } from 'react'
 import { Sling as Hamburger } from 'hamburger-react'
 import bg from '../../../../public/Images/bg.png'
 import neon from '../../../../public/Images/bbblurry.svg'
-
-// import icon from './../../../../public/Images/Logo.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
