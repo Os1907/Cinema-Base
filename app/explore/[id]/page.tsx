@@ -63,7 +63,7 @@ export default function Explore({ params }: IId) {
           <Image src={bg} alt='' className='absolute h-auto lg:top-[-30%] top-[50%] z-[2] opacity-10 -rotate-180  ' />
           <div className=' '>
             <div className=' flex justify-center my-5'>
-              <p className='uppercase bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent hover:bg-gradient-to-r hover:from-yellow-200 hover:to-green hover:bg-clip-text hover:text-transparent cursor-pointer lg:text-3xl text-2xl font-extrabold transition-all'>
+              <p className='uppercase bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent hover:bg-gradient-to-r hover:from-yellow-200 hover:to-green hover:bg-clip-text hover:text-transparent cursor-pointer lg:text-3xl text-2xl font-extrabold transition-all text-center'>
                 Explore your  Movie or Series
               </p>
             </div>
