@@ -7,8 +7,8 @@ import { TbSmartHome } from 'react-icons/tb';
 export default function SmallNav() {
   return (
     <>
-    <div className="fixed  -translate-x-1/2 left-1/2  lg:hidden bottom-4 w-2/3 z-[999999] ">
-        <ul className="flex gap-x-2 justify-center  shad ow-2xl shad ow-green rounded-full text-[12px] font-semibold uppercase ">
+    <div className="fixed  -translate-x-1/2 left-1/2  lg:hidden bottom-4 w-[80%] z-[999999] ">
+        <ul className="flex gap-x-2 justify-around  shad ow-2xl shad ow-green rounded-full text-[12px] font-semibold uppercase ">
           <div className="absolute top-0 h-full w-full rounded-full  bg-green"></div>
           <li className="relative  rounded-full  ">
             <Link href="/">
