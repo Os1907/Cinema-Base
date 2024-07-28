@@ -1,7 +1,7 @@
 'use client'
 import { Link } from "next-view-transitions"
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { TbArrowBigLeftLinesFilled, TbArrowBigRightLinesFilled } from 'react-icons/tb' 
 
 export default function CounterPopular(props:any) {
@@ -9,7 +9,9 @@ export default function CounterPopular(props:any) {
   const [rateCount, setrateCount] = useState(pageCount+1)
   const [decress, setdecress] = useState(pageCount-1)
      
-    
+  useEffect(()=>{
+    window.scrollTo({top: 0});
+},[pageCount])
   return (
     <>
     <div className='flex justify-center items-center  w-full  relative z-50   '>

@@ -11,7 +11,9 @@ export default function ExploreCounter(props:any) {
   const [decress, setdecress] = useState(pageCount-1)
      
   const top = UseTop()
-
+  useEffect(()=>{
+    window.scrollTo({top: 0});
+},[pageCount])
   return (
     <>
     <div className='flex justify-center items-center  w-full  relative z-50   '>
