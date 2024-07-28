@@ -40,16 +40,15 @@ function SwiperHome() {
        
         <Swiper
           effect={'coverflow'}
-          grabCursor={true}
           centeredSlides={true}
           slidesPerView={'auto'}
           initialSlide={20}
           coverflowEffect={{
-            rotate: 5,
+            rotate: 0,
             stretch: 0,
-            depth: 150,
+            depth: 200,
             scale: 1,
-            modifier: 2.5,
+            modifier: 3.5,
             slideShadows: true,
           }}
           pagination={{
@@ -63,19 +62,26 @@ function SwiperHome() {
           {items?.map((item) => (
             <SwiperSlide key={item.id}>
               {({ isActive }) => (
+                
                 <Link href={item.media_type === "tv" ? `/shows/${item.id}` : `/movie/${item.id}`}>
-                  <div className={isActive ? "shadow-green shadow-2xl bg-green pb-4 scale-105 transition-all cursor-pointer rounded-2xl my-Hover" : ""}>
+                  <div className={isActive ? "shadow-green shadow-2xl bg-green pb-4  cursor-pointer rounded-2xl " : 'cursor-pointer'}>
                     <div className='relative'>
-                      <div className="bg-gradient-to-r from-green to-yellow-200 rounded-full lg:px-3 lg:py-3 p-1 md:p-2 absolute md:bottom-[-3%] lg:bottom-[-5%] bottom-[-5%] right-[5%] md:border-4 border-2 border-main2 child2 transition-all">
+                  {
+                         isActive ?    <div className="bg-gradient-to-r from-green to-yellow-200 rounded-full lg:px-3 lg:py-3 p-1 md:p-2 absolute md:bottom-[-3%] lg:bottom-[-5%] bottom-[-5%] right-[5%] border-4 border-green ">
                         <p className='text-main text-[10px] font-bold'>
                           {item?.vote_average?.toString().slice(0, 3)}
                         </p>
-                      </div>
-                      <Image src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} alt={`${item.title}`} width={350} height={350} className='md:min-h-[350px] skeleton bg-gradient-to-tr from-green to-yellow-200 shadow-2xl rounded-2xl w-full hover:border-t-green hover:border-r-green hover:border-l-yellow-200 child-effect transition-all' />
+                      </div>: null}
+
+                  <Image src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} alt={`${item.title}`} width={350} height={350} className={isActive ? 'md:min-h-[350px]  rounded-2xl w-full  border-4 border-green  ' : 'md:min-h-[350px]  rounded-2xl w-full  '} />
                     </div>
+
+                    {
+                         isActive ?    <>
                     <div>
-                      <h3 className='mt-3 lg:ml-3 text-center lg:text-start text-white font-medium lg:text-base text-[12px] md:text-sm'>
-                        {item.title || item.name}
+                      <h3 className='py-3 lg:ml-3 text-center lg:text-start font-semibold lg:text-base text-main text-sm '>
+                            {item.title || item.name }
+
                       </h3>
                     </div>
                     <div className='flex justify-between items-center'>
@@ -86,6 +92,7 @@ function SwiperHome() {
                         {item?.adult === false ? "+13" : "+18"}
                       </p>
                     </div>
+                    </>: null}
                   </div>
                 </Link>
               )}

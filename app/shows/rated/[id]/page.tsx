@@ -12,7 +12,6 @@ export default async function page({params}:any) {
 
   return (
     <>
-<Navbar/>
     <section className='lg:pt-10'>
             <Sections data={data.results} nav={nav}  title={title} component={<ShowCounter value={data.page}/>}  />
         </section>

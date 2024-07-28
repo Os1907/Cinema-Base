@@ -12,7 +12,7 @@ export default function ShowCounter(props:any) {
 
   return (
     <>
-    <div className='flex justify-center items-center  w-full  relative z-50   '>
+    <div className='flex justify-center items-center  w-full  relative z-50  py-5 '>
      {
             decress >= 1 ? <Link  href={`/shows/rated/${decress}`}>
                     <TbArrowBigLeftLinesFilled 

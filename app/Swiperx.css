@@ -1,14 +1,14 @@
 
 
 .swiper-slide {
-  width:10rem;
+  width:15rem;
   height: 18%;
   
 }
 @media (min-width: 768px) {
   .swiper-slide {
-    width:15rem;
-    height: 15%;
+    width:16rem;
+    height: 18%;
     
   }
 }

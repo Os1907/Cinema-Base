@@ -12,7 +12,7 @@ export default function Sections(props: prop) {
   const  UrlImages: string = "https://image.tmdb.org/t/p/w500/";
     return (
         <>
-            <section  className=' min-h-screen bg- main   lg:pt-10 pt-5 lg:pb-16 pb-5  relative z-10  overflow-hidden '>
+            <section  className=' min-h-screen bg-    lg:pt-10 pt-5 lg:p b-16 pb -10  relative z-10  overflow -hidden '>
                 <Image src={bg} alt='texture' className='absolute opacity-15   top-20 z-[1] ' /> 
                 <Image src={bg} alt='texture2' className='absolute   opacity-15 lg:top-[50%] top-20 z-[1]  -rotate-180  ' />
                 <div className='lg:mx-24 mx-4 relative z-10 '>
@@ -28,7 +28,7 @@ export default function Sections(props: prop) {
 
                         data?.map((item: any) => <>
                         {
-                            // 
+                        
                            item.poster_path != null ? <> 
                             {
                                 nav ? <Link href={nav ? `/${nav}/${item.id}` :`/movie/${item.id}`}>
@@ -60,7 +60,7 @@ export default function Sections(props: prop) {
                                     </div>
                                 </div>
                                 </Link>: <Link href={item.media_type === "tv" ? `/shows/${item.id}` : `/movie/${item.id}`}>
-                            <div key={item.id} className="col-span-1  hover:shadow-green hover:shadow-2xl hover:bg-green hover:pb-4  hover:scale-105 transition-all cursor-pointer  hover:rounded-2xl   myHover">
+                            <div key={item.id} className="col-span-1  hover:shadow-green hover:shadow-2xl hover:bg-green hover:pb-4  hover:scale-105 transition-all cursor-pointer  hover:rounded-2xl relative   myHover hover:z-[999999999999]">
                                 <div className='relative'>
                                     <div className="bg-gradient-to-r from-green to-yellow-200 rounded-full lg:px-3 lg:py-3 p-1 md:p-2 absolute md:bottom-[-3%] lg:bottom-[-5%] bottom-[-5%] right-[5%] md:border-4 border-2  border-main2 child2 transition-all ">
                                         <p className='text-main text-[10px] font-bold  '>

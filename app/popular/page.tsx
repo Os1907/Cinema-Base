@@ -19,7 +19,7 @@ export default async function Popular({params}:IId ) {
 
         <section>
             <Sections data={data?.results} title={title}  />
-            <div className='flex justify-center relative z-50 lg:mt-[-50px] mt-[-20px]'>
+            <div className='flex justify-center relative z-50 '>
                 <Link href={`/popular/${data?.page}`} scroll={true}>
                  <Button value={btnCaption} component={<></>}/>
                  </Link>

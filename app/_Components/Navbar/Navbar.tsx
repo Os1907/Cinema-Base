@@ -14,7 +14,7 @@ export default function Navbar() {
   const Remo = useRef<any>();
   const pathnName: string = usePathname();
   
-  // console.log(pathnName.slice(0, 7).includes('/shows/'));
+  console.log(pathnName);
 
  
   useEffect(() => {
@@ -37,16 +37,16 @@ export default function Navbar() {
   }, [pathnName]);
 
 
-  if (pathnName.length > 7) {
+  if (pathnName.length > 7 && pathnName.includes("/rated/") != true && pathnName.includes("/popular/") != true  && pathnName.includes("/toprate/") != true && pathnName.includes("/explore/") != true|| pathnName.includes("/movie/")  ) {
     return   <>
-    <div onClick={() => router.back()} className=' naVglass size-auto p-3 absolute top-12 text-green z-[99999999990] left-4 lg:left-24 rounded-2xl transition-all hover:shadow-green hover:shadow-xl hover:scale-110'>
+    <div onClick={() => router.back()} className=' naVglass size-auto p-3 absolute top-5 text-green z-[99999999990] left-4 lg:left-24 rounded-2xl transition-all hover:shadow-green hover:shadow-xl hover:scale-110'>
    
   <PiArrowBendDoubleUpLeftBold className='text-2xl'/>
 
 
     {/* <Image src="https://ovtv.me/media/svg/Broken/Arrow%20-%20Left%202.svg" alt="logo" width={30} height={30} className='text-green' /> */}
     </div>
-    <div className='naVglass size-auto  p-3 absolute top-12 text-green z-[99999999990] right-4 lg:right-24 rounded-2xl transition-all hover:shadow-green hover:shadow-xl hover:scale-110'>
+    <div className='naVglass size-auto  p-3 absolute top-5 text-green z-[99999999990] right-4 lg:right-24 rounded-2xl transition-all hover:shadow-green hover:shadow-xl hover:scale-110'>
       <Link href={'/'} className="flex items-center gap-x-1 " scroll={true}>
     <TbSmartHome className='text-2xl inline  '/> 
     <span className="hidden lg:inline font-bold bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent uppercase">Home</span>
@@ -54,7 +54,7 @@ export default function Navbar() {
 
     </div>
   </>
-    }else{
+    }else {
       return   <>
           <div ref={scrollRef} className="hidden lg:navbar lg:top-2 z-[99999999990] top-3 fixed w-full lg:w-[80%] lg:right-[10%]">
             <div ref={Remo} className="absolute top-0 h-full w-full rounded-full left-0 "></div>

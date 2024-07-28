@@ -17,14 +17,13 @@ export default async function page({params}:any) {
 
   return (
     <>
-    <Navbar/>
     <div className="lg:pt-10">
 
         <Sections data={Trend?.results} title={title2} nav={nav} />
     
     <section className='pb-10'>
                 <Sections data={data?.results} title={title} nav={nav} />
-                <div className='flex justify-center relative z-50 lg:mt-[-50px] mt-[-20px]'>
+                <div className='flex justify-center relative z-50 '>
                 <Link href={`/shows/rated/${data.page}`} scroll={true}>
                 <Button value={btnCaption}/>
                  </Link>
