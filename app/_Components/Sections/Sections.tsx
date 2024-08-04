@@ -26,7 +26,7 @@ export default function Sections(props: prop) {
                         </h2>
 
                     </div>
-                    <div className="grid lg:grid-cols-4 xl:grid-cols-5 md:grid-cols-3 grid-cols-2 my-5 gap-x-4 gap-y-6">
+                     <div className="grid lg:grid-cols-4 xl:grid-cols-5 md:grid-cols-3 grid-cols-2 my-5 gap-x-4 gap-y-6">
                         {
 
                         data?.map((item: any) => <>
@@ -63,31 +63,21 @@ export default function Sections(props: prop) {
                                     </div>
                                 </div>
                                 </Link>: <Link href={item.media_type === "tv" ? `/shows/${item.id}` : `/movie/${item.id}`}>
-                            <div key={item.id} className="col-span-1  hov er:shadow-black hov er:shadow-2xl hover:bg -green hover:pb-4  hover:scale-105 transition-all cursor-pointer  hover:rounded-2xl relative   myHo ver hover:z-[999999999999]">
-                                {/* <div className='absolute top-0 w-full h-full backdrop-blur-[50px] rounded-2xl'>
-</div> */}
+                            <div key={item.id} className="col-span-1  hover:shadow-green hover:shadow-2xl hover:bg-green hover:pb-4  hover:scale-105 transition-all cursor-pointer  hover:rounded-2xl relative   myHover hover:z-[999999999999]">
                                 <div className='relative'>
-                                    {/* <div className="bg-gradient-to-r from-green to-yellow-200 rounded-full lg:px-3 lg:py-3 p-1 md:p-2 absolute md:bottom-[-3%] lg:bottom-[-5%] bottom-[-5%] right-[5%] md:border-4 border-2  border-main2 child2 transition-all ">
+                                    <div className="bg-gradient-to-r from-green to-yellow-200 rounded-full lg:px-3 lg:py-3 p-1 md:p-2 absolute md:bottom-[-3%] lg:bottom-[-5%] bottom-[-5%] right-[5%] md:border-4 border-2  border-main2 child2 transition-all ">
                                         <p className='text-main text-[10px] font-bold  '>
                                             {item?.vote_average?.toString().slice(0, 3)}
                                         </p>
-                                    </div> */}
+                                    </div>
 
                                     <Image src={UrlImages + item?.poster_path} alt={item.original_title || item.original_name } width={350} height={350} className='md:min-h-[350px] skeleton bg-gradient-to-tr from-green to-yellow-200   shadow-2xl rounded-2xl w-full     hover:border-t-green hover:border-r-green hover:border-l-yellow-200  child-effect transition-all ' />
                                 </div>
-                                <div className='lg:ml-3 mt-3'>
-                                    <h3 className='  text-center lg:text-start text-white font-medium  lg:text-base text-sm '>
+                                <div>
+                                    <h3 className='mt-3 lg:ml-3 text-center lg:text-start text-white font-medium  lg:text-base text-sm '>
                                         
                         {     item.title ||  item.name  }
                                     </h3>
-                                    <div className='flex mt-3 gap-x-2 text-sm '>
-
-                                    <IoIosStar  className='text-yellow-400  text-xl'/>
-                                     <p className='text-green  font-semibold   '>
-                                         {item?.vote_average?.toString().slice(0
-                                            , 3)}
-                                        </p>
-                                    </div>
                                 </div>
                                 <div className='flex justify-between items-center '>
                                     <p className='hoverChanger lg:text-start text-center text-main2 ml-4 text-[9px] font-semibold'>
