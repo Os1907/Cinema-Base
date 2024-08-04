@@ -54,7 +54,7 @@ export default function Sections(props: prop) {
                                         </div>
                                        
                                     </div>
-                                    <div className='flex justify-between items-center '>
+                                    {/* <div className='flex justify-between items-center '>
                                         <p className='hoverChanger lg:text-start text-center text-main2 ml-4 text-[9px] font-semibold'>
     
                                         {item?.release_date?.toString().slice(0, 4)
@@ -63,7 +63,7 @@ export default function Sections(props: prop) {
                                         <p className='hoverChanger mr-4 text-center text-main2  text-[9px] font-semibold'>
                                             {item?.adult === false ? "+13" : "+18"}
                                         </p>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 </Link>: <Link href={item.media_type === "tv" ? `/shows/${item.id}` : `/movie/${item.id}`}>
                             <div key={item.id} className="col-span-1  hover:shadow-green hover:shadow-2xl hover:bg-green hover:pb-4  hover:scale-105 transition-all cursor-pointer  hover:rounded-2xl relative   myHover hover:z-[999999999999]">
