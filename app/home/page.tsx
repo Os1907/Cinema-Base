@@ -26,7 +26,7 @@ console.log(background)
         {/* <HeaderConte /> */}
         {/* (${background}) */}
         {/* style={{ backgroundImage: `url('../../public/Images/b.jpg')` }} */}
-        {/* <div   className='bg-blur  backdrop-blur-2xl w-full bg-cover bg-center bg-fixed relative'> */}
+        <div   className='bg-blur  backdrop-blur-2xl w-full bg-cover bg-center bg-fixed relative'>
 {/* <div className='absolute top-0 w-full h-full backdrop-blur-[50px]'>
 </div> */}
         <MainHome/>
@@ -37,7 +37,7 @@ console.log(background)
       </div>
       <TopRate params={value} />
       <Trending />
-        {/* </div> */}
+        </div>
 
 
     </>

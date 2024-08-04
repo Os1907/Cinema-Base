@@ -37,11 +37,7 @@ export default function Sections(props: prop) {
                                 nav ? <Link href={nav ? `/${nav}/${item.id}` :`/movie/${item.id}`}>
                                 <div key={item.id} className="col-span-1  hover:shadow-green hover:shadow-2xl hover:bg-green hover:pb-4  hover:scale-105 transition-all cursor-pointer  hover:rounded-2xl   myHover">
                                     <div className='relative'>
-                                        <div className="bg-gradient-to-r from-green to-yellow-200 rounded-full lg:px-3 lg:py-3 p-1 md:p-2 absolute md:bottom-[-3%] lg:bottom-[-5%] bottom-[-5%] right-[5%] md:border-4 border-2  border-main2 child2 transition-all ">
-                                            <p className='text-main text-[10px] font-bold  '>
-                                                {item?.vote_average?.toString().slice(0, 3)}
-                                            </p>
-                                        </div>
+                                        
     
                                         <Image src={UrlImages + item?.poster_path} alt={item.original_title || item.original_name } width={350} height={350} className='md:min-h-[350px] skeleton bg-gradient-to-tr from-green to-yellow-200   shadow-2xl rounded-2xl w-full     hover:border-t-green hover:border-r-green hover:border-l-yellow-200  child-effect transition-all ' />
                                     </div>
@@ -50,6 +46,13 @@ export default function Sections(props: prop) {
                                             
                             {     item.title ||  item.name  }
                                         </h3>
+                                        <div className='flex gap-x-2'>
+                                            <IoIosStar className='text-yellow-200 text-xl'/>
+                                        <p className='text-white  text-sm font-semibold  '>
+                                                {item?.vote_average?.toString().slice(0, 3)}
+                                            </p>
+                                        </div>
+                                       
                                     </div>
                                     <div className='flex justify-between items-center '>
                                         <p className='hoverChanger lg:text-start text-center text-main2 ml-4 text-[9px] font-semibold'>
