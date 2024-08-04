@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { multiBySearch } from '../../Utilities/apis'
 import Sections from '../../_Components/Sections/Sections'
 import Navbar from '@/app/_Components/Navbar/Navbar';
+import { MovieData, resultsMovie } from '@/app/Utilities/Interface/interfaces';
 interface IId {
   params: {
     id: number
@@ -21,8 +22,7 @@ export default function Explore({ params }: IId) {
 
   // ========={...Dates}=============
   const { ref, inView } = useInView()
-  const [data, setData] = useState<Movie[]>([]);
-
+  const [data, setData] = useState<resultsMovie[]>([]);
   const [pageNumber, setPageNumber] = useState(1)
   const [search, setSearch] = useState("")
   const title = ""

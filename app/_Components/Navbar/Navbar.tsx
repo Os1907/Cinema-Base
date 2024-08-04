@@ -14,7 +14,6 @@ export default function Navbar() {
   const Remo = useRef<any>();
   const pathnName: string = usePathname();
   
-  console.log(pathnName);
 
  
   useEffect(() => {

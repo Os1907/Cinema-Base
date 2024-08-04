@@ -1,4 +1,3 @@
-
   const options = {
     method: 'GET',
     headers: {
@@ -163,3 +162,29 @@ export async function watchProvider(id: number , type: string) {
 }
 
 
+
+
+
+
+
+
+// eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMjk4ZDg4NTVkNDBkNTY4MjBlNDA1ZDY3MjkxZTEzZCIsInN1YiI6IjY1YzI1MDNhOGU4ZDMwMDE2Mjc4MjIxOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mSNy7xFnu7Uu5mqfDRbocxJ2Gtsc7aBZIfrgxcxT0do
+/**
+ * const options = {
+  method: 'POST',
+  headers: {
+    accept: 'application/json',
+    'content-type': 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMjk4ZDg4NTVkNDBkNTY4MjBlNDA1ZDY3MjkxZTEzZCIsIm5iZiI6MTcyMjE3NjEyNy44Njc2LCJzdWIiOiI2NWMyNTAzYThlOGQzMDAxNjI3ODIyMTkiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.Yi161dhHO34qc4yaqDWWlXr2mMe1N3MCm_uJirqE584'
+  },
+  body: JSON.stringify({media_type: 'tv', media_id: 76479, favorite: true})
+}
+
+fetch('https://api.themoviedb.org/3/account/21409360/favorite?session_id=669f82ad8ba4072dd14e40b3bb45309e9a535fce', options)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
+ *
+ */
+
+// TYPE , MOVIE ID
