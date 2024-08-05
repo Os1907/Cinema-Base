@@ -75,12 +75,12 @@ padding-right: 9rem;
 
 
 .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #4ae285;
-  --tw-shadow-color: #4ae285;
-  box-shadow: 0 25px 50px -12px #4ae285;
+  background-color: #ffffff;
+  --tw-shadow-color: #ffffff;
+  box-shadow: 0 25px 50px -12px #ffffff;
 }
 .swiper-pagination-bullet{
-  background-color: #4ae285 !important;
+  background-color: #ffffff !important;
 }
 .padding{
   padding-top: 5rem !important;

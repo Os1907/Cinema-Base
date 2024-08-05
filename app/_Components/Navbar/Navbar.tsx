@@ -19,11 +19,13 @@ export default function Navbar() {
   useEffect(() => {
     const changeNav = () => {
       if (window.scrollY >= 20) {
-        scrollRef?.current?.classList.remove("borderGlass");
-        scrollRef?.current?.classList.add("fixed", "lg:top-2", "lg:right-[10%]", "lg:w-[80%]");
-        Remo.current?.classList.add("borderGlass","mBlur");
+        scrollRef?.current?.classList.remove("borderGlass","lg:w-[80%]");
+        scrollRef?.current?.classList.add("fixed", "lg:top-2","lg:w-[50%]");
+        Remo.current?.classList.add("borderGlass","backdrop-blur-3xl");
       } else {
-        Remo.current?.classList.remove("borderGlass","mBlur");
+        Remo.current?.classList.remove("borderGlass","backdrop-blur-3xl");
+        scrollRef?.current?.classList.add("lg:w-[80%]");
+
       }
     };
 
@@ -43,7 +45,6 @@ export default function Navbar() {
   <PiArrowBendDoubleUpLeftBold className='text-2xl'/>
 
 
-    {/* <Image src="https://ovtv.me/media/svg/Broken/Arrow%20-%20Left%202.svg" alt="logo" width={30} height={30} className='text-green' /> */}
     </div>
     <div className='naVglass size-auto  p-3 absolute top-5 text-green z-[99999999990] right-4 lg:right-24 rounded-2xl transition-all hover:shadow-green hover:shadow-xl hover:scale-110'>
       <Link href={'/'} className="flex items-center gap-x-1 " scroll={true}>
@@ -55,12 +56,12 @@ export default function Navbar() {
   </>
     }else {
       return   <>
-          <div ref={scrollRef} className="hidden lg:navbar lg:top-2 z-[99999999990] top-3 fixed w-full lg:w-[80%] lg:right-[10%]">
-            <div ref={Remo} className="absolute top-0 h-full w-full rounded-full left-0 "></div>
+          <div ref={scrollRef} className="hidden lg:navbar lg:top-2 z-[99999999990] top-3 fixed w-full lg:w-[80%] -translate-x-1/2 left-1/2">
+            <div ref={Remo} className="absolute top-0 h-full w-full rounded-full left-0  "></div>
             <div className="navbar-start w-full lg:w-[50%] justify-between">
               <div className="flex justify-start">
                 <Link href={'/'} className="z-50" scroll={true}>
-                  <p className="bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent font-extrabold text-2xl lg:ml-28 ml-5">
+                  <p className="text-white font-extrabold text-2xl lg:ml-28 ml-5">
                     Cinema Base
                   </p>
                 </Link>

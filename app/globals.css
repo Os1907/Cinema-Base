@@ -2,19 +2,19 @@
   @tailwind components;
   @tailwind utilities;
 
-  body {
-  
-    /* background-color: #020420; */
-    background-color: #020420;
-
-   }
-   
+ 
    body {
-       --sb-track-color: #020420;
-       --sb-thumb-color: #00dc82;
+       --sb-track-color: #000000;
+       --sb-thumb-color: #ffffff;
        --sb-size: 5px;
      }
-     
+     body{
+      position: relative;
+     }
+     footer{
+      position: absolute;
+      bottom: 0;
+     }
      body::-webkit-scrollbar {
        width: var(--sb-size)
      }

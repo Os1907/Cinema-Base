@@ -5,11 +5,11 @@ export default function Footer() {
   return (
     <>
     
-<footer className="bg-gradient-to-b from-main to-main2  w-full border-green border-t ">
-  <div className="lg:mx-24  py-4 mx-4">
+<footer className=" border-white border-t  w-full   z-10">
+  <div className="lg:mx-24  py-3 mx-4">
     <div className="sm:flex sm:items-center sm:justify-between">
       <div className="flex items-center sm:items-start flex-col">
-      <p className=' bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent font-extrabold text-2xl '>
+      <p className='  font-extrabold text-2xl text-white '>
       Cinema Base
     </p>
    
@@ -17,7 +17,7 @@ export default function Footer() {
       <div className=' flex flex-col items-center '>
 
       <p className=" text-center font-medium lg:text-sm text-[12px] text-green mt-0 lg:text-right">
-      Developed by  Osama Mohamed. 
+      Developed by  Osama Mohamed 
       </p>
       </div>
     </div>

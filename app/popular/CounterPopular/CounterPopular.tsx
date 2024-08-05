@@ -1,9 +1,11 @@
 'use client'
-import { Link } from "next-view-transitions"
+// import { Link } from "next-view-transitions"
 
 import React, { useEffect, useState } from 'react'
-import { TbArrowBigLeftLinesFilled, TbArrowBigRightLinesFilled } from 'react-icons/tb' 
-
+import { TbArrowBigLeftLinesFilled } from 'react-icons/tb' 
+import { RxDoubleArrowRight } from "react-icons/rx";
+import { RxDoubleArrowLeft} from "react-icons/rx";
+import Link from 'next/link';
 export default function CounterPopular(props:any) {
     let pageCount: number = props?.value
   const [rateCount, setrateCount] = useState(pageCount+1)
@@ -16,23 +18,23 @@ export default function CounterPopular(props:any) {
     <>
     <div className='flex justify-center items-center  w-full  relative z-50   '>
      {
-            decress >= 1 ? <Link  href={`/popular/${decress}`}  scroll={true}>
-                    <TbArrowBigLeftLinesFilled 
+            decress >= 1 ? <Link  href={`/popular/${decress}`}  scroll={true}  className='glass px-3 py-1'>
+                    <RxDoubleArrowLeft 
                     className='text-green text-2xl cursor-pointer animate-pulse inline'/>
-            <p className='text-sm cursor-pointer inline  mx-2 font-bold bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent '>
+            <p className='text-sm cursor-pointer inline  mx-1 font-bold text-white '>
             Perv 
                     </p>
                     </Link>
                     : ""
         } 
-                        <p className='text-base lg:text-2xl mx-2 font-bold bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent '>
+                        <p className='text-base lg:text-3xl mx-3 font-bold text-white '>
                         {pageCount}
                         </p>
-                <Link  href={`/popular/${rateCount}`}  scroll={true}>
-                <p className='text-sm cursor-pointer inline  mx-2 font-bold bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent '>
+                <Link  href={`/popular/${rateCount}`}  scroll={true} className='glass px-3 py-1'>
+                <p className='text-sm cursor-pointer inline  mx-1 font-bold text-white '>
                             Next 
                         </p>
-                        <TbArrowBigRightLinesFilled 
+                        <RxDoubleArrowRight 
                         className='text-green text-2xl cursor-pointer animate-pulse inline'/>
                         </Link>
                         </div>

@@ -3,6 +3,7 @@ import React from 'react'
 import Sections from '../_Components/Sections/Sections'
 import Button from '../_Components/Button/Button';
 import { Link } from "next-view-transitions"
+import MainBack from '../_Components/mainBack/mainBack';
 
 
 interface id {
@@ -19,6 +20,7 @@ export default async function TopRate({params}:id) {
 
     return (
         <>
+
             <section >
                 <Sections data={data?.results} title={title}  />
                 <div className='flex justify-center relative z-50 '>

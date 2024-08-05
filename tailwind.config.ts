@@ -10,8 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       colors:{
-        green:"#ffff",
-        main:"#020420",
+        green:"#ffffff",
+        main:"#000000",
         main2:"#080d25"
        },
        animation: {

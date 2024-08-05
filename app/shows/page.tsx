@@ -4,6 +4,7 @@ import React from 'react'
 import Sections from '../_Components/Sections/Sections'
 import Button from '../_Components/Button/Button'
 import Navbar from '../_Components/Navbar/Navbar'
+import MainBack from '../_Components/mainBack/mainBack'
 
 
 export default async function page({params}:any) {
@@ -14,9 +15,12 @@ export default async function page({params}:any) {
     const btnCaption :string= "All Top Rated Series"
     const nav : string ="shows"
     const title2: string = "Trending Series"
+    let background = `https://image.tmdb.org/t/p/original/${data?.results[0].backdrop_path}`
 
   return (
     <>
+      <MainBack background={background}>
+
     <div className="lg:pt-10">
 
         <Sections data={Trend?.results} title={title2} nav={nav} />
@@ -30,7 +34,7 @@ export default async function page({params}:any) {
             </div>
           </section>
     </div>
-    
+    </MainBack>
     
     </>
   )

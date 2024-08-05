@@ -1,11 +1,8 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer';
-import bg from '../../../public/Images/bg.png'
-import Image from 'next/image'
 import { multiBySearch } from '../../Utilities/apis'
 import Sections from '../../_Components/Sections/Sections'
-import Navbar from '@/app/_Components/Navbar/Navbar';
 import { MovieData, resultsMovie } from '@/app/Utilities/Interface/interfaces';
 interface IId {
   params: {
@@ -26,6 +23,7 @@ export default function Explore({ params }: IId) {
   const [pageNumber, setPageNumber] = useState(1)
   const [search, setSearch] = useState("")
   const title = ""
+  // const background = `https://image.tmdb.org/t/p/original/${data[0]?.backdrop_path}`
 
   // ======={...Functions}====
 
@@ -58,21 +56,20 @@ export default function Explore({ params }: IId) {
 
   return (
     <>
-      <div className='lg:pt-20 pt-4 bg-main'>
 
-        <section className=' min-h-screen overflow-y-hidden  bg-main lg:pt-10 pt-5  pb-2 relative z-10  '>
-          <Image src={bg} alt='' className='absolute h-auto lg:top-[-30%] top-[50%] z-[2] opacity-10 -rotate-180  ' />
+      {/* <div className=' bg-blur bg-cover bg-center bg-fixed relative lg:pt-20 pt-4    '>
+        <section className=' min-h-screen overflow-y-hidden  lg:pt-10 pt-5  pb-2 relative z-10  '>
           <div className=' '>
-            <div className=' flex justify-center my-5'>
-              <p className='uppercase bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent hover:bg-gradient-to-r hover:from-yellow-200 hover:to-green hover:bg-clip-text hover:text-transparent cursor-pointer lg:text-3xl text-2xl font-extrabold transition-all text-center'>
-                Explore your  Movie or Series
+            <div className=' flex justify-start my-5 lg:mx-24 mx-4'>
+              <p className='uppercase text-white lg:text-5xl text-2xl font-extrabold transition-all '>
+               | Explore your  Movie or Series
               </p>
             </div>
             <div className='lg:mx-28 mx-4 z-[100] relative'>
               <input onKeyUp={(e: any) => {
                 userSearch(e.target.value)
                 setSearch(e.target.value)
-              }} type="text" placeholder="Search Movie or Series" className=" input border-green text-green text-sm lg:text-lg border-b border-t-0 border-l-0 border-r-0  w-full bg-transparent  rounded-none focus:outline-none focus:rounded-2xl  focus:border-green active:rounded-none focus-within:outline-none placeholder:text-[#09ff84b2]" />
+              }} type="text" placeholder="Search Movie or Series" className=" input border-white text-white text-sm lg:text-lg border-b border-t-0 border-l-0 border-r-0  w-full bg-transparent  rounded-none focus:outline-none focus:rounded-2xl  focus:border-white active:rounded-none focus-within:outline-none placeholder:text-white" />
             </div>
             <Sections data={data} title={title} />
             {data.length === 0 ? "" : <div ref={ref} className='flex justify-center items-center'>
@@ -80,7 +77,13 @@ export default function Explore({ params }: IId) {
             </div>}
           </div>
         </section>
-      </div>
+      </div> */}
+                    <input onKeyUp={(e: any) => {
+                userSearch(e.target.value)
+                setSearch(e.target.value)
+              }} type="text"
+               placeholder="Search Movie or Series" 
+               className=" input border-white text-white text-sm lg:text-lg border-b border-t-0 border-l-0 border-r-0  w-full bg-transparent  rounded-none focus:outline-none focus:rounded-2xl  focus:border-white active:rounded-none focus-within:outline-none placeholder:text-white" />
     </>
   )
 }

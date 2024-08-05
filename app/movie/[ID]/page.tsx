@@ -31,7 +31,9 @@ const Movie = async ({ params }: MovieProps) => {
   const title: string = "Recommendations"
 
   const photos = await image(params?.ID, "movie")
+// console.log(photos?.backdrops[0]. file_path)
 
+let background = `https://image.tmdb.org/t/p/original/${photos?.backdrops[0]. file_path}`
   let poster = photos.logos.filter((item: any) => item.iso_639_1 != "he").sort((a: any, b: any) => {
     if (a.iso_639_1?.startsWith("en") && !b.iso_639_1?.startsWith("en")) {
       return -1;
@@ -54,14 +56,15 @@ const Movie = async ({ params }: MovieProps) => {
 
 
 
-
+//  
   return (
     <>
-      <section className='    lg:p t-10  relative z-[70] h-auto lg:min-h-screen  '>
-        <div className=''>
+      <section  style={{ backgroundImage: `url(${background}) ` }} className=' lg:p t-10  relative z-[70] h-auto lg:min-h-screen bg-cover bg-center bg-fixed overflow-hidden'>
+
+        {/* <div className='absolute top-0 w-full h-full'>
 
           <Bg url={photos} />
-        </div>
+        </div> */}
         <div className='lg:mx-24 mx-4 relative z-[999999] pt-[15rem] md:pt-96 lg:pt-16 '>
 
 
@@ -70,7 +73,7 @@ const Movie = async ({ params }: MovieProps) => {
             <div className='flex justify-center  relative items-start flex-col  '>
               <div className='items-center  lg:items-start w-full flex flex-col my-3 '>
                 {
-                  poster[0]?.file_path ? <Image src={`https://image.tmdb.org/t/p/w500/${poster[0].file_path}`} alt='movies' width={350} height={350} className=' mt-10 h-auto lg:w-[20%] w-[35%] lg:h-auto' /> : <p className='text-3xl lg:text-5xl pt-2 3 pb-4     mBlur  borderGlass rounded-3xl inline-block    px-3 text-green font-extrabold lg:mt-10 '>
+                  poster[0]?.file_path ? <Image src={`https://image.tmdb.org/t/p/w500/${poster[0].file_path}`} alt='movies' width={350} height={350} className=' mt-10 h-auto lg:w-[20%] w-[35%] lg:h-auto' /> : <p className='text-3xl lg:text-5xl pt-2 3 pb-4     mBlur  borderGlass rounded-3xl inline-block    px-3 text-white font-extrabold lg:mt-10 '>
                     {
                       data?.original_name
                     }
@@ -81,7 +84,7 @@ const Movie = async ({ params }: MovieProps) => {
               {
                 data?.tagline ? <div className="w-full lg:w-auto  mb-3 text-center lg:text-start">
 
-                  <p className='text-[12px] lg:text-sm     mBlur  borderGlass rounded-3xl inline-block    px-3  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent font-medium '>
+                  <p className='text-[12px] lg:text-sm     mBlur  borderGlass rounded-3xl inline-block    px-3 text-white font-medium '>
                     {
                       data?.tagline
                     }
@@ -91,7 +94,7 @@ const Movie = async ({ params }: MovieProps) => {
 
               <div className="flex w-full flex-col lg:flex-row items-center justify-center lg:justify-start gap-y-2">
 
-                <p className=' text-[12px] lg:text-sm lg:text-start text-center font-semibold  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent  mBlur  borderGlass rounded-3xl px-3 py-1 '>
+                <p className=' text-[12px] lg:text-sm lg:text-start text-center font-semibold text-white  mBlur  borderGlass rounded-3xl px-3 py-1 '>
                   {
                     data?.release_date?.slice(0, 4) || data?.first_air_date?.slice(0, 4)
                   }
@@ -100,14 +103,14 @@ const Movie = async ({ params }: MovieProps) => {
                 <div className='flex justify-center mx-2  lg:justify-start items-center lg:items-start lg:flex-wrap flex-col my-1 xl:my-3  '>
                   <div className='lg:flex hidden  w-full justify-center lg:justify-start  flex-wrap gap-y-2 '>
                     {
-                      data?.genres.map((item: any) => <p key={item?.id} className='  font-medium mr-2  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent   mBlur  borderGlass   p-1 px-3 rounded-3xl text-[10px] lg:text-[12px]  transition-all'>
+                      data?.genres.map((item: any) => <p key={item?.id} className='  font-medium mr-2 text-white   mBlur  borderGlass   p-1 px-3 rounded-3xl text-[10px] lg:text-[12px]  transition-all'>
                         {item?.name}
                       </p>)
                     }
                   </div>
                   <div className='flex lg:hidden  w-full  justify-center lg:justify-start mb-1 xl:mb-2 flex-wrap gap-y-2'>
                     {
-                      data?.genres.map((item: any) => <p key={item?.id} className='font-medium mx-1  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent text-center   mBlur  borderGlass   p-1 px-3 rounded-3xl lg:text-[12px] text-[10px]  transition-all'>
+                      data?.genres.map((item: any) => <p key={item?.id} className='font-medium mx-1 text-white text-center   mBlur  borderGlass   p-1 px-3 rounded-3xl lg:text-[12px] text-[10px]  transition-all'>
                         {item?.name}
                       </p>)
                     }
@@ -118,7 +121,7 @@ const Movie = async ({ params }: MovieProps) => {
               <div className='flex items-center lg:items-start flex-col w-full  '>
                 <div className='lg:w-[50%] w-full  mBlur  borderGlass rounded-3xl p-3'>
 
-                  <p className='text-[12px] lg:text-start text-center xl:text-base font-medium  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
+                  <p className='text-[12px] lg:text-start text-center xl:text-base font-medium text-white'>
                     {
                       data?.overview
                     }
@@ -127,17 +130,17 @@ const Movie = async ({ params }: MovieProps) => {
 
                 <div className='flex   w-full justify-center lg:justify-start   rounded-3xl mt-2'>
                   <div className='flex  items-center   mBlur  borderGlass rounded-3xl px-3 py-1'>
-                    <p className=' bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent font-medium text-[12px] lg:text-sm'>
+                    <p className='text-white font-medium text-[12px] lg:text-sm'>
                       Status :
                     </p>
-                    <p className=' bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent ml-2 text-[12px] lg:text-sm'>
+                    <p className='text-white ml-2 text-[12px] lg:text-sm'>
                       {
                         data?.status
                       }
                     </p>
                   </div>
                   <div className=' mBlur  borderGlass rounded-3xl mx-2  flex items-center px-3 py-1 justify-center '>
-                    <p className='text-[12px] lg:text-sm  text-center lg:text-start font-medium bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
+                    <p className='text-[12px] lg:text-sm  text-center lg:text-start font-medium text-white'>
                       Country : {
                         data?.origin_country
                       }
@@ -146,7 +149,7 @@ const Movie = async ({ params }: MovieProps) => {
                 </div>
                 <div className=" mBlur  borderGlass rounded-3xl px-3 py-1 mt-2 flex items-center  ">
 
-                  <p className=' text-[12px] lg:text-sm text-center lg:text-start  font-medium bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
+                  <p className=' text-[12px] lg:text-sm text-center lg:text-start  font-medium text-white'>
                     Original language : {
                       data?.original_language
                     }
@@ -157,7 +160,7 @@ const Movie = async ({ params }: MovieProps) => {
                   {
                     value?.flatrate ? <div className=" mBlur  borderGlass rounded-3xl px-3 py-1 mt-2 flex items-center  ">
 
-                      <p className=' text-[12px] lg:text-sm text-center lg:text-start  font-medium bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent mr-1'>
+                      <p className=' text-[12px] lg:text-sm text-center lg:text-start  font-medium text-white mr-1'>
                         Stream
                       </p>
                       {
@@ -170,7 +173,7 @@ const Movie = async ({ params }: MovieProps) => {
                       }
                     </div> : <div className=" mBlur  borderGlass rounded-3xl px-3 py-1 mt-2 flex items-center  ">
 
-                      <p className=' text-[10px] lg:text-sm text-center lg:text-start  font-medium bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent mr-1'>
+                      <p className=' text-[10px] lg:text-sm text-center lg:text-start  font-medium text-white mr-1'>
                         there are no streaming services currently available for this in your country
                       </p>
                     </div>
@@ -178,7 +181,7 @@ const Movie = async ({ params }: MovieProps) => {
                   {
                     value?.buy ? <div className=" mBlur  borderGlass rounded-3xl px-3 py-1 mt-2 flex items-center  ">
 
-                      <p className=' text-[12px] lg:text-sm text-center lg:text-start  font-medium bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent mr-1'>
+                      <p className=' text-[12px] lg:text-sm text-center lg:text-start  font-medium text-white mr-1'>
                         Buy
                       </p>
                       {
@@ -196,7 +199,7 @@ const Movie = async ({ params }: MovieProps) => {
 
                 <div className='w-full ml-2 '>
 
-                  <p className='mt-3 text-center lg:text-start text-3xl xl:text-4xl font-semibold bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
+                  <p className='mt-3 text-center lg:text-start text-3xl xl:text-4xl font-semibold text-white'>
                     {
                       data?.vote_average.toString().slice(0, 3)
                     } <span className='ml-[-3px]  text-base font-medium'>/10</span>
@@ -229,8 +232,8 @@ const Movie = async ({ params }: MovieProps) => {
               <div className=' rounded-circle hover:shadow-green shadow-green lg:shadow-2xl  transition-all hover:shadow-lg group '>
 
                 <a target="_blank" href={`https://www.youtube.com/watch?v=${video.results[0]?.key}`} className=' flex items-center   group-hover:size-auto  px-3 py-2  mBlur  borderGlass rounded-3xl hover:scale-125   transition-all  justify-center hover:bg-green      '>
-                  <SiGradleplaypublisher className='text-green text-sm lg:text-lg group-hover:text-main  ' />
-                  <p className=' bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent text-[12px] lg:text-sm font-semibold  group-hover:text-main mx-1'>
+                  <SiGradleplaypublisher className='text-white text-sm lg:text-lg group-hover:text-main  ' />
+                  <p className='text-white text-[12px] lg:text-sm font-semibold  group-hover:text-main mx-1'>
                     Watch Trailer
                   </p>
                 </a>
@@ -248,18 +251,17 @@ const Movie = async ({ params }: MovieProps) => {
         </div>
 
 
-        <div className='absolute w-full h-full  top-0 bg-gradient-to-t from-main to-[#ffffff00] z-[3]  '>
-        </div>
-      </section>
-      <div className='w-full z-10 bg-main  '>
-        <h3 className='text-center bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent font-extrabold  text-3xl lg:text-5xl  my-3'>
-          Movie Cast
-        </h3>
-      </div>
+
+      
       <CastCarousel data={cast} />
       {
         recommendations?.results?.length > 0 ? <Sections data={recommendations?.results} title={title} /> : "No Recommendations"
       }
+        <div className='fixed top-full w-full h-full backdrop-blur-[5px]'>
+</div>
+        <div className='fixed w-full h-full  top-0 bg-gradient-to-t from-main to-[#ffffff00] z-[3]  '>
+        </div>
+      </section>
 
 
     </>

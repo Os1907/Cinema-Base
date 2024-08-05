@@ -5,6 +5,7 @@ import { TiMediaFastForwardOutline } from 'react-icons/ti'
 import Bg from '@/app/_Components/BackGround/Bg'
 import Sections from '@/app/_Components/Sections/Sections'
 import { BsGooglePlay } from 'react-icons/bs'
+import { IoIosStar } from 'react-icons/io'
 
 interface SeriesProps {
   params: {
@@ -21,6 +22,7 @@ const Series = async ({ params }:SeriesProps) => {
   const recommendations = await similar(params?.id , "tv")
   const title: string = "Recommendations"
   const nav : string ="shows"
+  let background = `https://image.tmdb.org/t/p/original/${photos?.backdrops[0]. file_path}`
 
   let poster = photos.logos.filter((item: any) => item.iso_639_1 != "he" ).sort((a:any, b:any) => {
     if (a.iso_639_1?.startsWith("en") && !b.iso_639_1?.startsWith("en")) {
@@ -45,8 +47,8 @@ const Series = async ({ params }:SeriesProps) => {
 
 return (
   <>
-    <section className='    lg:p t-10  relative z-[70] h-auto lg:min-h-screen  '>
-      <Bg url={photos} />
+       <section  style={{ backgroundImage: `url(${background}) ` }} className=' lg:p t-10  relative z-[70] h-auto lg:min-h-screen bg-cover bg-center bg-fixed overflow-hidden'>
+      {/* <Bg url={photos} /> */}
       <div className='lg:mx-24 mx-4 relative z-[999999] pt-80 lg:pt-16 '>
 
 
@@ -103,7 +105,7 @@ return (
             <div className='flex items-center lg:items-start flex-col w-full  '>
               <div className='lg:w-[50%] w-full  mBlur  borderGlass rounded-3xl p-3'>
 
-                <p className='text-[12px] lg:text-start text-center xl:text-base font-medium  bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
+                <p className='text-[12px] lg:text-start text-center xl:text-base font-medium   text-white'>
                   { 
                     data?.overview
                   }
@@ -122,7 +124,7 @@ return (
                   </p>
                 </div>
                 <div className=' mBlur  borderGlass rounded-3xl mx-2  flex items-center px-3 py-1 justify-center '>
-                  <p className='text-[12px] lg:text-sm  text-center lg:text-start font-medium bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
+                  <p className='text-[12px] lg:text-sm  text-center lg:text-start font-medium text-white'>
                     Country : {
                       data?.origin_country
                     }
@@ -131,7 +133,7 @@ return (
               </div>
               <div className=" mBlur  borderGlass rounded-3xl px-3 py-1 mt-2 flex items-center  ">
 
-                <p className=' text-[12px] lg:text-sm text-center lg:text-start  font-medium bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
+                <p className=' text-[12px] lg:text-sm text-center lg:text-start  font-medium text-white'>
                   Original language : {
                     data?.original_language
                   }
@@ -141,7 +143,7 @@ return (
                 {
                   value?.flatrate? <div className=" mBlur  borderGlass rounded-3xl px-3 py-1 mt-2 flex items-center  ">
 
-                  <p className=' text-[12px] lg:text-sm text-center lg:text-start  font-medium bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent mr-1'>
+                  <p className=' text-[12px] lg:text-sm text-center lg:text-start  font-medium text-white mr-1'>
                   Stream 
                   </p>
                   {
@@ -154,7 +156,7 @@ return (
                   }
                 </div> : <div className=" mBlur  borderGlass rounded-3xl px-3 py-1 mt-2 flex items-center  ">
 
-<p className=' text-[10px] lg:text-sm text-center lg:text-start  font-medium bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent mr-1'>
+<p className=' text-[10px] lg:text-sm text-center lg:text-start  font-medium text-white mr-1'>
 there are no streaming services currently available for this in your country
 </p>
 </div>
@@ -162,7 +164,7 @@ there are no streaming services currently available for this in your country
                 {
                   value?.buy? <div className=" mBlur  borderGlass rounded-3xl px-3 py-1 mt-2 flex items-center  ">
 
-                  <p className=' text-[12px] lg:text-sm text-center lg:text-start  font-medium bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent mr-1'>
+                  <p className=' text-[12px] lg:text-sm text-center lg:text-start  font-medium text-white mr-1'>
                     Buy  
                   </p>
                   {
@@ -180,7 +182,7 @@ there are no streaming services currently available for this in your country
              
               <div className='w-full ml-2 '>
 
-                <p className='mt-3 text-center lg:text-start text-3xl xl:text-4xl font-semibold bg-gradient-to-r from-green to-yellow-200 bg-clip-text text-transparent'>
+                <p className='mt-3 text-center lg:text-start text-3xl xl:text-4xl font-semibold text-white'>
                   {
                     data?.vote_average.toString().slice(0, 3)
                   } <span className='ml-[-3px]  text-base font-medium'>/10</span>
@@ -230,94 +232,107 @@ there are no streaming services currently available for this in your country
 
 
 
+   
       </div>
-      <div className='absolute w-full h-full  top-0 bg-gradient-to-t from-main to-[#ffffff00] z-[3]  '>
-      </div>
-    </section> 
-    <div className="lg:mx-20 mx-4">
+      <div className='lg:mx-24 mx-4 relative z-10 '> 
 
     
-    {
-            data?.seasons?.length === 1 ? "" : <> <div className=' mt-[-10px] lg:mt-5  '>
-              <p className='font-extrabold text-4xl xl:text-6xl bg-gradient-to-r from-yellow-200 to-green bg-clip-text text-transparent  text-center my-4'>
-                Seasons
-              </p>
-              <div className="grid lg:grid-cols-4 xl:grid-cols-5 md:grid-cols-3 grid-cols-2 my-5  gap-x-4 gap-y-6">
+{
+        data?.seasons?.length === 1 ? "" : <> <div className=' mt-[-10px] lg:mt-5 '>
+          <p className='font-bold text-3xl xl:text-5xl  text-white  text-start  my-4'>
+           | Seasons
+          </p>
+          <div className="grid lg:grid-cols-4 xl:grid-cols-5 md:grid-cols-3 grid-cols-2 my-5  gap-x-4 gap-y-6">
+            {
+              data?.seasons?.map((item: any) => {
+                return <>
                 {
-                  data?.seasons?.map((item: any) => {
-                    return <>
-                    {
-                      item?.poster_path != null ?  <div key={item.id} className="col-span-1 relative hover:overflow-y-scroll Scroll-Edit  hover:shadow-green hover:shadow-2xl hover:bg-green hover:pb-4  hover:scale-105 transition-all cursor-pointer  hover:rounded-2xl group   myHover z-[99999]">
-                      <div className='relative'>
-                          <div className="bg-gradient-to-r z-50 from-green to-yellow-200 rounded-full lg:px-3 lg:py-3 p-1 md:p-2 absolute md:bottom-[-3%] lg:bottom-[-5%] bottom-[-5%] right-[5%] md:border-4 border-2  border-main2 child2 transition-all ">
-                              <p className='text-main text-[10px] font-bold  '>
-                                  {item?.vote_average?.toString().slice(0, 3)}
-                              </p>
-                          </div>
-                          {
-                            item?.poster_path ? <Image 
-                            src={`https://image.tmdb.org/t/p/w500/${item?.poster_path}`} 
-                            alt={item.original_name }
-                             width={350} height={350} 
-                             className='md:min-h-[350px] group-hover:blur-2xl  skeleton bg-gradient-to-tr from-green to-yellow-200   shadow-2xl rounded-2xl w-full     hover:border-t-green hover:border-r-green hover:border-l-yellow-200  child-effect transition-all ' 
-                             /> : <p className='md:min-h-[350px] group-hover:blur-2xl h-72 glass skeleton  shadow-2xl rounded-2xl w-full ' 
-                              > </p>
-                          }
-                          
-                      </div>
-                      <div>
-                          <h3 className='mt-3 lg:ml-3 text-center lg:text-start text-white font-medium  lg:text-base text-sm '>
-              {       item.name  }
-                          </h3>
-                      </div>
-            <div className='w-full bg-green    min-h-full top-0  slide-in-bottom  group-hover:flex  z-[100] absolute py-5 rounded-2xl hidden justify-center flex-col'>
-              
-                          <div className='w-full my-2 '>
-
-                          <h3 className='  text-white font-bold  text-sm  lg:text-base text-center'>
-              {       item.name  }
-                          </h3>
-                          </div>
-                          <div className='w-full flex justify-between items-center'>
-
-                          <p className='hoverChanger lg:text-start text-center  ml-4 text-[12px] lg:text-sm  font-bold'>
-                          {item?.air_date?.slice(0, 4)}
+                  item?.poster_path != null ?  <div key={item.id} className="col-span-1 relative hover:overflow-y-scroll Scroll-Edit  hover:shadow-green hover:shadow-2xl hover:bg-green hover:pb-4  hover:scale-105 transition-all cursor-pointer  hover:rounded-2xl group   myHover z-[99999]">
+                  <div className='relative'>
+                      {/* <div className="bg-gradient-to-r z-50 from-green to-yellow-200 rounded-full lg:px-3 lg:py-3 p-1 md:p-2 absolute md:bottom-[-3%] lg:bottom-[-5%] bottom-[-5%] right-[5%] md:border-4 border-2  border-main2 child2 transition-all ">
+                          <p className='text-main text-[10px] font-bold  '>
+                              {item?.vote_average?.toString().slice(0, 3)}
                           </p>
-                          <p className='hoverChanger mr-4 text-center   text-[12px] lg:text-sm  font-bold'>
-                              {item?.adult === false ? "+13" : "+18"}
-                          </p>
-                          </div>
-                <p className='text-main font-bold my-2 text-center'>
-              Overview
-              </p>
-              <p className='text-main xl:text-sm text-[12px] mx-2 text-center '>
-                {
-                  item.overview
+                      </div> */}
+                      {
+                        item?.poster_path ? <Image 
+                        src={`https://image.tmdb.org/t/p/w500/${item?.poster_path}`} 
+                        alt={item.original_name }
+                         width={350} height={350} 
+                         className='md:min-h-[350px] group-hover:blur-2xl  skeleton bg-gradient-to-tr from-green to-yellow-200   shadow-2xl rounded-2xl w-full     hover:border-t-green hover:border-r-green hover:border-l-yellow-200  child-effect transition-all ' 
+                         /> : <p className='md:min-h-[350px] group-hover:blur-2xl h-72 glass skeleton  shadow-2xl rounded-2xl w-full ' 
+                          > </p>
+                      }
+                      
+                  </div>
+                  <div>
+                      <h3 className='mt-3 lg:ml-3 text-center lg:text-start text-white font-medium  lg:text-base text-sm '>
+          {       item.name  }
+                      </h3>
+                      <div className='flex gap-x-1 ml-3 mt-2'>
+                                                            <IoIosStar className='text-yellow-400 text-xl mb-2' />
+                                                            <p className='text-white  text-sm font-medium  '>
+                                                                {item?.vote_average?.toString().slice(0, 3)}
+                                                            </p>
+                                                            <p className='text-white  text-sm font-medium  '>
+                                                         |   {item?.air_date?.slice(0, 4)}
+                                                            </p>
+                                                        </div>
+                  </div>
+        <div className='w-full bg-green    min-h-full top-0  slide-in-bottom  group-hover:flex  z-[100] absolute py-5 rounded-2xl hidden justify-center flex-col'>
+          
+                      <div className='w-full my-2 '>
+
+                      <h3 className='  text-white font-bold  text-sm  lg:text-base text-center'>
+          {       item.name  }
+                      </h3>
+                      </div>
+                      <div className='w-full flex justify-between items-center'>
+
+                      <p className='hoverChanger lg:text-start text-center  ml-4 text-[12px] lg:text-sm  font-bold'>
+                      {item?.air_date?.slice(0, 4)}
+                      </p>
+                      <p className='hoverChanger mr-4 text-center   text-[12px] lg:text-sm  font-bold'>
+                          {item?.adult === false ? "+13" : "+18"}
+                      </p>
+                      </div>
+            <p className='text-main font-bold my-2 text-center'>
+          Overview
+          </p>
+          <p className='text-main xl:text-sm text-[12px] mx-2 text-center '>
+            {
+              item.overview
+            }
+          </p>
+
+        </div>
+              </div> : null
                 }
-              </p>
-
-            </div>
-                  </div> : null
-                    }
-                     
+                 
 
 
 
-                    </>
-                  })
-                }
-              </div>
+                </>
+              })
+            }
+          </div>
 
-            </div>
-            </>
-          }
+        </div>
+        </>
+      }
 
 </div>
 
 
-    {
-        recommendations?.results?.length > 0 ? <Sections data={recommendations?.results} title={title} nav={nav}  /> : null
-      }
+{
+    recommendations?.results?.length > 0 ? <Sections data={recommendations?.results} title={title} nav={nav}  /> : null
+  }
+      <div className='fixed top-full w-full h-full backdrop-blur-[5px]'>
+</div>
+        <div className='fixed w-full h-full  top-0 bg-gradient-to-t from-main to-[#ffffff00] z-[3]  '>
+        </div>
+    </section> 
+    
 
 
   </>
