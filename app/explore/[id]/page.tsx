@@ -57,7 +57,7 @@ export default function Explore({ params }: IId) {
   return (
     <>
 
-      {/* <div className=' bg-blur bg-cover bg-center bg-fixed relative lg:pt-20 pt-4    '>
+      <div className='bg-main relative lg:pt-20 pt-4    '>
         <section className=' min-h-screen overflow-y-hidden  lg:pt-10 pt-5  pb-2 relative z-10  '>
           <div className=' '>
             <div className=' flex justify-start my-5 lg:mx-24 mx-4'>
@@ -77,13 +77,7 @@ export default function Explore({ params }: IId) {
             </div>}
           </div>
         </section>
-      </div> */}
-                    <input onKeyUp={(e: any) => {
-                userSearch(e.target.value)
-                setSearch(e.target.value)
-              }} type="text"
-               placeholder="Search Movie or Series" 
-               className=" input border-white text-white text-sm lg:text-lg border-b border-t-0 border-l-0 border-r-0  w-full bg-transparent  rounded-none focus:outline-none focus:rounded-2xl  focus:border-white active:rounded-none focus-within:outline-none placeholder:text-white" />
+      </div>
     </>
   )
 }

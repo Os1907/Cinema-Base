@@ -20,12 +20,12 @@ const CastCarousel = (props: { data: ItemType[] }) => {
         </h3>
       </div>
     <div  className="embla overflow-hidden   relative z-50" ref={emblaRef}>
-      <div className="embla__container flex   ">
+      <div className="embla__container flex    ">
         
         
         {
           //hover:pb-2   hover:scale-105 transition-all  hover:rounded-3xl
-          data?.map((item: ItemType)=> item.profile_path === null ? null :   <div key={ typeof item === 'string' ? item : (item as any).id } className="embla__slide  flex-[0_0_10%] sm:flex-[0_0_8%] lg:flex-[0_1%_0] mx-2 justify-center items-center ">
+          data?.map((item: ItemType)=> item.profile_path === null ? null :   <div key={ typeof item === 'string' ? item : (item as any).id } className="embla__slide  flex-[0_0_12%] sm:flex-[0_0_12%] lg:flex-[0_0_6%] mx-2 justify-center items-center ">
             <div className='flex-col items-center flex justify-center  '>
         {
           typeof item === 'string' ? item : (item as any).profile_path ? <Image src={`https://image.tmdb.org/t/p/w500//${typeof item === 'string' ? item : (item as any).profile_path}`} alt={ typeof item === 'string' ? item : (item as any).name} width={80} height={130} className='  border-2 rounded-3xl    w-full  h-[3%] border-green  lg:h-[1%]  glass  my-2'/> : <div className='glass w-full skeleton my-2  h-20  lg:h-40 flex items-center xl:h-44  justify-center '>

@@ -7,6 +7,7 @@ import Sections from '../_Components/Sections/Sections';
 import { Iuser, MovieData, resultsMovie } from '../Utilities/Interface/interfaces';
 import { Movie } from '../explore/[id]/page';
 import Link from 'next/link';
+import Button from '../_Components/Button/Button';
 interface Iprop {
   children?: React.ReactNode;
 }
@@ -15,16 +16,16 @@ export default function Layout({ children }:Iprop) {
   let token = pathnName.slice(9)
   // console.log(token)
     const [info, setInfo] = useState<Iuser>()
-    const [movies, setMovies] = useState<MovieData>()
+    // const [movies, setMovies] = useState<MovieData>()
   async function User_Info(){
     const userInfo = await getUserInfo(localStorage.getItem('session_id')).then(data => setInfo(data))
-     const userMovies = await getUserFav(localStorage.getItem('session_id')).then(data => setMovies(data))
+    //  const userMovies = await getUserFav(localStorage.getItem('session_id') ,"movies").then(data => setMovies(data))
     
   }
   
-  
-  // getUserFav
-  // console.log(info)
+  const btnCaption1 :string= "Favorite Series"
+  const btnCaption2 :string= "Favorite Movies"
+ 
   useEffect(()=> {
     if( localStorage.getItem('session_id')){
       User_Info()
@@ -33,12 +34,11 @@ export default function Layout({ children }:Iprop) {
 
   return (
     <>
-    <div className='min-h-screen bg-main  overflow-hidden '>
-        {/* <MainHome/> */}
-        <div className="pt-24">
-{/* iso_639_1: "ar"
-iso_3166_1: "EG" */}
-        <h2 className="text-center bg-gradient-to-r from-yellow-200 to-green bg-clip-text text-transparent transition-all  text-7xl font-bold">
+    <div className='min-h-screen bg-main relative  overflow-hidden '>
+      
+      {
+      info ? <> <div className="pt-10 absolute top-0  z-50 w-full">
+        <h2 className="text-center text-white transition-all text-4xl lg:text-7xl font-bold">
         {info?.username.toUpperCase()}
         </h2>
         <div className="flex justify-center items-center  text-green mt-4  gap-2">
@@ -54,30 +54,36 @@ iso_3166_1: "EG" */}
         </p>
        
         </div>
-        </div>
+
         <div className='mt-4 lg:mx-24 mx-4 flex justify-center items-center  gap-x-3'>
           <Link href={'/profile/fav_movie'}>
           <div className=' '>
+          <Button value={btnCaption2}/>
              
-             <button className=" text-xl rounded-full py-2 px-20 font-medium bg-green text-main hover:bg-main hover:text-green transition-all hover:border-green  hover:border">Movies</button>
           </div>
           </Link>
-          <Link href={'/fav_movie'}>
+          <Link href={'/profile/fav_tv'}>
           <div className=' '>
+          <Button value={btnCaption1}/>
              
-             <button className="text-xl rounded-full py-2 px-20 font-medium bg-green text-main hover:bg-main hover:text-green transition-all hover:border-green  hover:border">Series</button>
           </div>
           </Link>
 
         </div>
+        </div>
+
           <div className="grid grid-cols-12 ">
 
-            <div className="col-span-12">
+            <div className="col-span-12 pb-16">
              {children}
-              {/* <Sections data ={movies?.results} title='Favortie movie' /> */}
             </div>
 
           </div>
+
+      </> : <span className="loader mt-20"></span>
+      }
+      
+        
     </div>
     
     

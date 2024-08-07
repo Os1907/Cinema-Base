@@ -40,7 +40,8 @@ export default function Sections(props: prop) {
                                                     <div className='relative'>
 
 
-                                                        <Image src={UrlImages + item?.poster_path} alt={item.original_title || item.original_name} width={350} height={150} className='md:min-h-[150px] skeleton bg-white rounded-3xl w-full      ' />
+                                                    <Image src={UrlImages + item?.poster_path} alt={item.original_title || item.original_name} width={350} height={350} className='md:min-h-[350px] skeleton    rounded-3xl backdrop-blur-3xl ' />
+
                                                     </div>
                                                     <div>
                                                         <h3 className='mt-3 ml-3 text-start text-white font-medium  lg:text-base text-sm '>
@@ -65,7 +66,7 @@ export default function Sections(props: prop) {
                                                     <div className='relative'>
 
 
-                                                        <Image src={UrlImages + item?.poster_path} alt={item.original_title || item.original_name} width={350} height={350} className='md:min-h-[350px] skeleton bg-gradient-to-tr from-green to-yellow-200   shadow-2xl rounded-3xl w-full     hover:border-t-green hover:border-r-green hover:border-l-yellow-200  child-effect transition-all ' />
+                                                        <Image src={UrlImages + item?.poster_path} alt={item.original_title || item.original_name} width={350} height={350} className='md:min-h-[350px] skeleton    rounded-3xl backdrop-blur-3xl ' />
                                                     </div>
                                                     <div>
                                                         <h3 className='mt-3 ml-3 text-start text-white font-medium  lg:text-base text-sm '>
@@ -101,6 +102,7 @@ export default function Sections(props: prop) {
                         props?.component
                     }
                 </div>
+                
             </section>
         </>
     )

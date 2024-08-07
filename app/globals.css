@@ -1,7 +1,7 @@
 @tailwind base;
   @tailwind components;
   @tailwind utilities;
-
+  @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
  
    body {
        --sb-track-color: #000000;
@@ -10,6 +10,7 @@
      }
      body{
       position: relative;
+      background-color: #000000;
      }
      footer{
       position: absolute;
@@ -35,6 +36,9 @@
        -moz-border-radius: 0px;
        -ms-border-radius: 0px;
        -o-border-radius: 0px;
+   }
+   .ar{
+    font-family: "Amiri", serif !important;
    }
      .mBlur{
       backdrop-filter: blur(25px);
@@ -292,6 +296,13 @@ border: 1px solid rgba(255, 255, 255, 0.12);
 
 .rounded-circle{ border-radius: 50% !important; -webkit-border-radius: 50% !important; -moz-border-radius: 50% !important; -ms-border-radius: 50% !important; -o-border-radius: 50% !important;
 }
+.rounded-4xl{
+  border-radius: 9999px !important;
+  -webkit-border-radius: 9999px !important;
+  -moz-border-radius: 9999px !important;
+  -ms-border-radius: 9999px !important;
+  -o-border-radius: 9999px !important;
+}
 .glassNo{
   background: rgba(255, 255, 255, 0.015);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -360,38 +371,46 @@ border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 
-
-   .loader {
-     width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    display: inline-block;
-    position: relative;
-    background: linear-gradient(0deg, #020420 33%, #00dc82 100%);
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="%2300DC82" stroke="%2300DC82" stroke-width="15" stroke-linejoin="round" width="30" height="30" x="85" y="85" rx="0" ry="0"><animate attributeName="rx" calcMode="spline" dur="0.7" values="15;15;5;15;15" keySplines=".5 0 .5 1;.8 0 1 .2;0 .8 .2 1;.5 0 .5 1" repeatCount="indefinite"></animate><animate attributeName="ry" calcMode="spline" dur="0.7" values="15;15;10;15;15" keySplines=".5 0 .5 1;.8 0 1 .2;0 .8 .2 1;.5 0 .5 1" repeatCount="indefinite"></animate><animate attributeName="height" calcMode="spline" dur="0.7" values="30;30;1;30;30" keySplines=".5 0 .5 1;.8 0 1 .2;0 .8 .2 1;.5 0 .5 1" repeatCount="indefinite"></animate><animate attributeName="y" calcMode="spline" dur="0.7" values="40;170;40;" keySplines=".6 0 1 .4;0 .8 .2 1" repeatCount="indefinite"></animate></rect></svg>');
-  }
-  .loader::after {
-    content: '';  
-    box-sizing: border-box;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: #00dc82;
-  }
-
+.loader {
+  width: 150px;
+  aspect-ratio: 1;
+  --c: linear-gradient(#ffffff 0 0);
+  --r1: radial-gradient(farthest-side at bottom,#ffffff 93%,#0000);
+  --r2: radial-gradient(farthest-side at top   ,#ffffff 93%,#0000);
+  background: 
+    var(--c) ,var(--r1),var(--r2),
+    var(--c) ,var(--r1),var(--r2),
+    var(--c) ,var(--r1),var(--r2);
+  background-repeat: no-repeat;
+  animation: l2 1s infinite alternate;
+}
+@keyframes l2 {
+  0%,25% {
+    background-size: 8px 0,8px 4px,8px 4px,8px 0,8px 4px,8px 4px,8px 0,8px 4px,8px 4px;
+    background-position: 0 50%,0 calc(50% - 2px),0 calc(50% + 2px),50% 50%,50% calc(50% - 2px),50% calc(50% + 2px),100% 50%,100% calc(50% - 2px),100% calc(50% + 2px);
+ }
+ 50% {
+    background-size: 8px 100%,8px 4px,8px 4px,8px 0,8px 4px,8px 4px,8px 0,8px 4px,8px 4px;
+    background-position: 0 50%,0 calc(0% - 2px),0 calc(100% + 2px),50% 50%,50% calc(50% - 2px),50% calc(50% + 2px),100% 50%,100% calc(50% - 2px),100% calc(50% + 2px);
+ }
+ 75% {
+    background-size: 8px 100%,8px 4px,8px 4px,8px 100%,8px 4px,8px 4px,8px 0,8px 4px,8px 4px;
+    background-position: 0 50%,0 calc(0% - 2px),0 calc(100% + 2px),50% 50%,50% calc(0% - 2px),50% calc(100% + 2px),100% 50%,100% calc(50% - 2px),100% calc(50% + 2px);
+ }
+ 95%,100% {
+    background-size: 8px 100%,8px 4px, 8px 4px,8px 100%,8px 4px,8px 4px,8px 100%,8px 4px,8px 4px;
+    background-position: 0 50%,0 calc(0% - 2px),0 calc(100% + 2px),50% 50%,50% calc(0% - 2px),50% calc(100% + 2px),100% 50%,100% calc(0% - 2px),100% calc(100% + 2px);
+ }
+}
 @keyframes l2 {
     100% {background-size:110%}
 }
 
 
 
-
+.bg{
+  color:#00000014
+}
 
   
   @keyframes rotation {
@@ -407,7 +426,7 @@ border: 1px solid rgba(255, 255, 255, 0.12);
   .loader2, .loader2:before {
     display: inline-block;
     border: 20px double transparent;
-    border-top-color: #00dc82;
+    border-top-color: #ffffff;
     border-radius: 50%;
     box-sizing: border-box;
   }
@@ -434,7 +453,7 @@ padding-bottom: 0.25rem;
   .dot::before{
     content: '';
     background: rgb(0,0,0);
-background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(74,226,133,1) 100%);
+background: linear-gradient(180deg, rgba(0,0,0,0) 50%, #ffffff 100%);
     background-repeat: repeat;
     background-size: cover;
     position: absolute;
@@ -445,7 +464,7 @@ background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(74,226,133,1) 100%);
 
 
   .liner{
-    background-image: radial-gradient(78.57% 78.57% at 50.65% .84%,#020420 0,#00dc82 0, #020420 100%);
+    background-image: radial-gradient(78.57% 78.57% at 50.65% .84%,#020420 0,#ffffff 0, #020420 100%);
   }
 
 
@@ -480,7 +499,7 @@ background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(74,226,133,1) 100%);
 
 
 .naVglass{
-background: rgb(255 255 255 / 5%);
+background: rgba(0, 0, 0, 0.137);
 /* border-radius: 16px; */
 /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
 backdrop-filter: blur(15px);

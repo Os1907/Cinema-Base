@@ -17,6 +17,7 @@ import { IoIosStar } from 'react-icons/io';
 
 function SwiperHome() {
   const [items, setItems] = useState<resultsMovie[]>([]);
+  const [swiperInitialized, setSwiperInitialized] = useState(false);
   const fetchData = async () => {
     try {
       const trendingMovies = await Trend();
@@ -29,17 +30,18 @@ function SwiperHome() {
   };
 
   useEffect(() => {
-    fetchData();
+    fetchData().then(()=> setSwiperInitialized(true) );
   }, []);
+
 
   return (
 
-    <div className="   relative overflow-hidden -m t-24 md:-m t-64  t op_up lg:p t-24 flex flex-col justify-center items-center min-h-[50vh]">
+    <div className="   relative overflow-hidden -m t-24 md:-m t-64  t op_up lg:p t-24 flex flex-col justify-center items-center min-h-[90vh]">
       <Image src={bg} alt='texture' className='absolute opacity-15 top-0 md:top-[-25%] z-[1]' />
       <Image src={bg} alt='texture2' className='absolute sm:hidden block opacity-15 top-[30%] z-[1] -rotate-180' />
       <div>
-       
-        <Swiper
+       {
+        swiperInitialized ?     <Swiper
           effect={'coverflow'}
           centeredSlides={true}
           slidesPerView={'auto'}
@@ -47,9 +49,9 @@ function SwiperHome() {
           coverflowEffect={{
             rotate: 0,
             stretch: 0,
-            depth: 200,
+            depth: 250,
             scale: 1,
-            modifier: 3.5,
+            modifier: 1.5,
             slideShadows: true,
           }}
           pagination={{
@@ -95,7 +97,8 @@ function SwiperHome() {
               )}
             </SwiperSlide>
           ))}
-        </Swiper>
+        </Swiper> : <span className="loader"></span>
+        }
       </div>
     </div>
   );

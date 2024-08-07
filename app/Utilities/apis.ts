@@ -153,7 +153,6 @@ export async function locationNow() {
 export async function watchProvider(id: number , type: string) {
   try {
     const response = await fetch(`https://api.themoviedb.org/3/${type}/${id}/watch/providers`, options);
-
     const data = await response.json();
     return data;
   } catch (err) {
@@ -163,7 +162,15 @@ export async function watchProvider(id: number , type: string) {
 
 
 
-
+export async function translate(id: number , type: string) {
+  try {
+    const response = await fetch(`https://api.themoviedb.org/3/${type}/${id}/translations`, options);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+}
 
 
 
