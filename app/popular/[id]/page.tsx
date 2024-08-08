@@ -11,7 +11,9 @@ export default async  function ChildPopular({params}:any ) {
     // console.log(data.results[0].backdrop_path)
     const UrlImages= urlImage
     const title :string = "What's Popular "
-    const background = `https://image.tmdb.org/t/p/original/${data.results[0].backdrop_path}`
+  let randomNumber = Math.floor(Math.random() * 20);
+    
+    const background = `https://image.tmdb.org/t/p/original/${data.results[randomNumber].backdrop_path}`
    
     return (
         <>

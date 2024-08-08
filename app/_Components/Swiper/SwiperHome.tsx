@@ -36,7 +36,7 @@ function SwiperHome() {
 
   return (
 
-    <div className="   relative overflow-hidden -m t-24 md:-m t-64  t op_up lg:p t-24 flex flex-col justify-center items-center min-h-[90vh]">
+    <div className="   relative overflow-hidden  flex flex-col justify-center items-center min-h-[30vh] lg:min-h-[90vh]">
       <Image src={bg} alt='texture' className='absolute opacity-15 top-0 md:top-[-25%] z-[1]' />
       <Image src={bg} alt='texture2' className='absolute sm:hidden block opacity-15 top-[30%] z-[1] -rotate-180' />
       <div>

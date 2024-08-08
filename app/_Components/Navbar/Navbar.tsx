@@ -19,14 +19,14 @@ const logo = useRef<any>()
   useEffect(() => {
     const changeNav = () => {
       if (window.scrollY >= 20) {
-        scrollRef?.current?.classList.remove("borderGlass","lg:w-[80%]");
-        scrollRef?.current?.classList.add("fixed", "lg:top-2","lg:w-[35%]");
+        scrollRef?.current?.classList.remove("borderGlass","lg:w-[90%]" ,"xl-w-[80%]");
+        scrollRef?.current?.classList.add("fixed", "lg:top-2","lg:w-[50%]","xl:w-[35%]");
         logo?.current?.classList.add("hidden")
         Remo.current?.classList.add("borderGlass","backdrop-blur-3xl", "bg-[#00000013]" , "rounded-4xl");
       } else {
         Remo.current?.classList.remove("borderGlass","backdrop-blur-3xl" ,"bg-[#00000013]" , "rounded-4xl");
-        scrollRef?.current?.classList.remove("lg:w-[35%]" );
-        scrollRef?.current?.classList.add("lg:w-[80%]");
+        scrollRef?.current?.classList.remove("lg:w-[50%]","xl:w-[35%]");
+        scrollRef?.current?.classList.add("lg:w-[90%]" ,"xl-w-[80%]");
         logo?.current?.classList.remove("hidden")
 
 
@@ -35,7 +35,6 @@ const logo = useRef<any>()
 
     window.addEventListener('scroll', changeNav);
 
-    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener('scroll', changeNav);
     };
@@ -61,7 +60,7 @@ const logo = useRef<any>()
   </>
     }else {
       return   <>
-          <div ref={scrollRef} className="hidden lg:navbar justify-center lg:top-2 z-[99999999990] top-3 fixed w-full lg:w-[80%] -translate-x-1/2 left-1/2 ">
+          <div ref={scrollRef} className="hidden lg:navbar justify-center lg:top-2 z-[99999999990] top-3 fixed w-full lg:w-[90%] xl-w-[80%] -translate-x-1/2 left-1/2 ">
             <div ref={Remo} className="absolute top-0 h-full w-full rounded-full left-0  "></div>
             <div ref={logo} className="navbar-start w-full lg:w-[50%] justify-between">
               <div className="flex justify-start">

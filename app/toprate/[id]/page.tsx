@@ -7,7 +7,8 @@ import MainBack from '@/app/_Components/mainBack/mainBack'
 export default async  function ChildRate({params}:any ) {
     const data = await topRated(params?.id > 0 && !undefined ? params.id : 1)
     const title :string = "Top Rated "
-    const background = `https://image.tmdb.org/t/p/original/${data.results[0].backdrop_path}`
+   let randomNumber = Math.floor(Math.random() * 20);
+    const background = `https://image.tmdb.org/t/p/original/${data.results[randomNumber].backdrop_path}`
 
     return (
         <>

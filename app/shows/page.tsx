@@ -10,12 +10,13 @@ import MainBack from '../_Components/mainBack/mainBack'
 export default async function page({params}:any) {
     const data = await topShows(params?.id > 0 && !undefined ? params.id : 1)
     const Trend = await TrendSeries()
-    // console.log(data);
+    // console.log(Trend);
     const title: string = "Top Rated Series"
     const btnCaption :string= "All Top Rated Series"
     const nav : string ="shows"
     const title2: string = "Trending Series"
-    let background = `https://image.tmdb.org/t/p/original/${data?.results[0].backdrop_path}`
+  let randomNumber = Math.floor(Math.random() * 20);
+    let background = `https://image.tmdb.org/t/p/original/${Trend?.results[randomNumber].backdrop_path}`
 
   return (
     <>

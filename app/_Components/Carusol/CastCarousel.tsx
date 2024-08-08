@@ -20,11 +20,10 @@ const CastCarousel = (props: { data: ItemType[] }) => {
         </h3>
       </div>
     <div  className="embla overflow-hidden   relative z-50" ref={emblaRef}>
-      <div className="embla__container flex    ">
+      <div className={data.length > 15 ? "embla__container flex    " : "embla__container flex  lg:justify-center  "}>
         
         
         {
-          //hover:pb-2   hover:scale-105 transition-all  hover:rounded-3xl
           data?.map((item: ItemType)=> item.profile_path === null ? null :   <div key={ typeof item === 'string' ? item : (item as any).id } className="embla__slide  flex-[0_0_12%] sm:flex-[0_0_12%] lg:flex-[0_0_6%] mx-2 justify-center items-center ">
             <div className='flex-col items-center flex justify-center  '>
         {

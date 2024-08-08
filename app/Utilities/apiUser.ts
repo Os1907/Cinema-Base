@@ -35,9 +35,8 @@ export async function getToken() {
 
  export async function getUserFav(SessionID:string | null , type:string) {
     try {
-      const response = await fetch(`https://api.themoviedb.org/3/account/20971868/favorite/${type}?language=en-US&page=1&api_key=${myKey}&session_id=68cd6c0e1555a7fc9777dba5c8b916e09b487557`);
+      const response = await fetch(`https://api.themoviedb.org/3/account/20971868/favorite/${type}?language=en-US&page=1&api_key=${myKey}&session_id=${SessionID}`);
       const data = await response.json();
-      
       return data;
     } catch (err) {
       console.error(err);

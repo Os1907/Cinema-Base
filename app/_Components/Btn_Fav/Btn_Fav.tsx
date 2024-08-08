@@ -1,25 +1,22 @@
 'use client'
 import { getToken, getUserFav, getUserInfo, myKey } from '@/app/Utilities/apiUser';
-import { MovieData } from '@/app/Utilities/Interface/interfaces';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
-import { IoIosHeart } from 'react-icons/io';
 import { RiHeartAddFill } from "react-icons/ri";
+import { MdDeleteForever } from "react-icons/md";
 interface Iprop {
     data: number
     type: string
 }
 export default function Btn_Fav(props: Iprop) {
     const [alert, setAlert] = useState("   Add to Favorite")
-    const [active, setactive] = useState(false)
-    const [status, setstatus] = useState(true)
+    const [available, setAvilable] = useState(true)
     const router = useRouter();
     const detalisMovie = {
         media_type: props.type,
         media_id: props.data,
-        favorite: status
+        favorite: available
     }
-
     const options = {
         method: 'POST',
         headers: {
@@ -29,51 +26,7 @@ export default function Btn_Fav(props: Iprop) {
         },
         body: JSON.stringify(detalisMovie)
     }
-    async function sendMovie(sesson: string | null) {
-        const send = await fetch(`https://api.themoviedb.org/3/account/20971868/favorite?api_key=${myKey}&session_id=${sesson}`, options)
-            .then(response => response.json())
-            .then(response => {
-                console.log(response)
-                 if(response.status_message === 'Success.'){
-                 tost(response.status_message)
-                } else {
-                  setAlert("Add to Favorite")
-            setstatus(!status)
-
-                }
-            })
-            .catch(err => console.error(err));
-
-    }
-    const log = () => {
-        if (localStorage.getItem('session_id')) {
-
-            sendMovie(localStorage.getItem('session_id'))
-        }
-        else {
-
-            (async function () {
-                const tokenInfo = await getToken()
-                    .then((token) => router.push(`https://www.themoviedb.org/authenticate/${token.request_token}?redirect_to=https://cinema-base.vercel.app/shows/${token.request_token}`)) // ===> First Step
-            })()
-
-        }
-
-    }
-    const tost = (status: string) => {
-
-        setTimeout(() => {
-            setAlert(`${status}`)
-            setactive(true)
-            setTimeout(() => {
-                setAlert(" Remove from Favorite ")
-                setactive(false)
-
-            }, 3000)
-        }, 200)
-    }
-
-
+    //first step if avilable 
     async function User_fav() {
         
         let types = props.type
@@ -82,12 +35,62 @@ export default function Btn_Fav(props: Iprop) {
         }
         const { results } = await getUserFav(localStorage.getItem('session_id'), `${types}`)
         const returns = results?.find((item: any) => item.id == props.data)
+        // console.log(results)
         if (returns?.id == props?.data) {
             setAlert("Remove from Favorite") 
-            setstatus(false)
+            setAvilable(false)
         }
     }
-    // getUserFav
+
+    // step two if not avilable to add movie or tv
+    const log = () => {
+        if (localStorage.getItem('session_id')) {
+            sendMovie(localStorage.getItem('session_id'))
+        }
+        else {
+            (async function () {
+                const tokenInfo = await getToken()
+                    .then((token) => router.push(`https://www.themoviedb.org/authenticate/${token.request_token}?redirect_to=https://cinema-base.vercel.app/shows/${token.request_token}`)) // ===> First Step
+            })()
+
+        }
+
+    }
+    //step three 
+    async function sendMovie(sesson: string | null) {
+        const send = await fetch(`https://api.themoviedb.org/3/account/20971868/favorite?api_key=${myKey}&session_id=${sesson}`, options)
+            .then(response => response.json())
+            .then(response => {
+                // console.log(response)
+                //step four if response true 
+                 if(response.status_message === 'Success.'){
+                 tost(response.status_message)
+                } else {
+                  setAlert("Add to Favorite")
+                  setAvilable(true)
+                //   router.refresh()
+
+                }
+            })
+            .catch(err => console.error(err));
+
+    }
+    
+    const tost = (status: string) => {
+
+        setTimeout(() => {
+            //step five to change button text 
+            setAlert(`${status}`)
+            // set Avilalbe with false to delete with another click  
+            setAvilable(false)
+            setTimeout(() => {
+                setAlert(" Remove from Favorite ")
+            }, 1000)
+        }, 200)
+    }
+
+
+ 
     useEffect(() => {
         if (localStorage.getItem('session_id')) {
             User_fav()
@@ -96,9 +99,12 @@ export default function Btn_Fav(props: Iprop) {
 
     return (
         <>
-<button onClick={() => log()} className={active ? ` flex flex-col gap-y-3 items-center    justify-center  mBlur  border mBlur  borderGlass  rounded-3xl py-3 px-5 lg:px-10 animate-pulse` : ` flex flex-col gap-y-3 items-center     justify-center  mBlur  border mBlur  borderGlass rounded-3xl py-3 px-5 lg:px-10  hover:shadow-black group hover:shadow-2xl transition-all hover:scale-105 scale-Btn-an`}>
+<button onClick={() => log()} className=' flex flex-col gap-y-3 items-center    justify-center  mBlur  border mBlur  borderGlass  rounded-3xl py-3 px-5 lg:px-8 hover:scale-105 transition-all'>
                     <p className=' text-white text-[12px] lg:text-sm font-semibold   '>
-                        <RiHeartAddFill className='text-green text-2xl inline  mx-1 ' />
+                       
+                        {
+                           available ?   <RiHeartAddFill className='text-green text-2xl inline  mx-1 ' /> :<MdDeleteForever className='text-green text-2xl inline  mx-1 ' />
+                        }
                         {alert}
                     </p>
                 </button>

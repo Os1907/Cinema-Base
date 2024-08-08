@@ -282,7 +282,7 @@
     background-color: #020420 !important;
   }
 .borderGlass{
-border: 1px solid rgba(255, 255, 255, 0.12) !important;
+border: 1px solid #ffffff1f !important;
 
 }
   .glass{
@@ -370,9 +370,13 @@ border: 1px solid rgba(255, 255, 255, 0.12);
   border-bottom: #00dc82 2px solid !important;
 }
 
-
+@media (min-width: 1024px) {
+  .loader {
+    width: 160px !important;
+  }
+}
 .loader {
-  width: 150px;
+  width: 80px;
   aspect-ratio: 1;
   --c: linear-gradient(#ffffff 0 0);
   --r1: radial-gradient(farthest-side at bottom,#ffffff 93%,#0000);
@@ -407,6 +411,20 @@ border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 
+.loaderwORD{
+  color: transparent;
+  overflow:hidden;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow:0 0 #FFF, 5em 0 #FFF;
+  animation:marquee 2s infinite ease;
+  -webkit-animation:marquee 2s infinite ease;
+}
+.loaderwORD:before {
+  content:"Loading...";
+}
+
+@keyframes marquee {to{text-shadow:-5em 0 #FFF, 0 0 #FFF}}
 
 .bg{
   color:#00000014

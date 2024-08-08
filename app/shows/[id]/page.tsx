@@ -201,8 +201,8 @@ const Series = async ({ params }: SeriesProps) => {
 
             </div>
 
-            <div className=" w-auto lg:absolute bottom-0 right-20 z-[999999] block my-2">
-              <div className='relative mBlur  border   borderGlass rounded-3xl p-3 lg:p-5 flex lg:flex-col flex-row items-center gap-y-3 justify-center gap-x-3  '>
+            <div className=" w-auto lg:absolute bottom-0 right-20 z-[999999]  my-2 flex justify-center">
+              <div className='relative mBlur w-full md:w-5/6 lg:w-full  border   borderGlass rounded-3xl p-3 lg:p-5 flex lg:flex-col flex-row items-center gap-y-3 justify-center gap-x-3  '>
                 <Image src={`https://image.tmdb.org/t/p/original/${photos?.posters[0]?.file_path} `} width={50} height={50} alt="poster_Movie" className='w-32 lg:w-48 rounded-3xl block     borderGlass ' />
                 <div className='flex flex-col gap-y-2'>
                   <Btn_Tra url={video?.results[0]} />

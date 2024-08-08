@@ -10,8 +10,7 @@ export default function FavTv() {
   const [info, setInfo] = useState()
     const [movies, setMovies] = useState<MovieData>()
     const nav : string ="shows"
-  let background = `https://image.tmdb.org/t/p/original/${movies?.results[0].backdrop_path}`
-console.log(movies)
+  let background = `https://image.tmdb.org/t/p/original/${movies?.results[0]?.backdrop_path}`
   async function User_fav(){
      const userMovies = await getUserFav(localStorage.getItem('session_id') ,"tv").then(data => setMovies(data))
   }
@@ -25,9 +24,9 @@ console.log(movies)
   return (
     <>
           <MainBack background={background}>
-            <div className='pt-52'>
+            <div className='pt-72'>
 
-              <Sections data ={movies?.results} title='Series'  nav={nav}/>
+              <Sections data ={movies?.results} title='Series'  nav={nav} favButton={true}/>
             </div>
 
     </MainBack>

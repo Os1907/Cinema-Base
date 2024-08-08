@@ -4,11 +4,12 @@ import bg from '../../../public/Images/bg.png'
 import Link from 'next/link';
 import { prop } from '@/app/Utilities/Interface/interfaces'
 import { IoIosStar } from "react-icons/io";
+import Btn_Fav from '../Btn_Fav/Btn_Fav';
 
 
 
 export default function Sections(props: prop) {
-    const { value, title, nav, component, data } = props;
+    const { value, title, nav, component, data , favButton} = props;
     const UrlImages: string = "https://image.tmdb.org/t/p/w500/";
     return (
         <>
@@ -35,8 +36,9 @@ export default function Sections(props: prop) {
 
                                     item.poster_path != null ? <>
                                         {
-                                            nav ? <Link href={nav ? `/${nav}/${item.id}` : `/movie/${item.id}`}>
+                                            nav ? 
                                                  <div key={item.id} className="col-span-1  hover:pb-4  hover:scale-105 transition-all cursor-pointer  hover:rounded-3xl relative    hover:z-[999999999999]">
+                                                    <Link href={nav ? `/${nav}/${item.id}` : `/movie/${item.id}`}>
                                                     <div className='relative'>
 
 
@@ -59,10 +61,12 @@ export default function Sections(props: prop) {
                                                             </p>
                                                         </div>
                                                     </div>
-                                             
+                                               </Link>
+                                               {favButton ? <Btn_Fav data={item.id} type='tv'  /> : null} 
                                                 </div>
-                                            </Link> : <Link href={item.media_type === "tv" ? `/shows/${item.id}` : `/movie/${item.id}`}>
+                                           : <> 
                                                 <div key={item.id} className="col-span-1  hover:shad ow-green hover :shadow-2xl ho ver:bg-green hover:pb-4  hover:scale-105 transition-all cursor-pointer  hover:rounded-3xl relative   myHo ver hover:z-[999999999999]">
+                                                    <Link href={item.media_type === "tv" ? `/shows/${item.id}` : `/movie/${item.id}`}>
                                                     <div className='relative'>
 
 
@@ -85,8 +89,10 @@ export default function Sections(props: prop) {
                                                         </div>
                                                     </div>
                                              
-                                                </div>
                                             </Link>
+                                            {favButton ? <Btn_Fav data={item.id} type='movie'  /> : null} 
+                                                </div>
+                                            </>
 
                                         }
 

@@ -7,7 +7,6 @@ import MainBack from '@/app/_Components/mainBack/mainBack'
 
 export default function Favmovie() {
   
-  // const [info, setInfo] = useState()
     const [movies, setMovies] = useState<MovieData>()
   let background = `https://image.tmdb.org/t/p/original/${movies?.results[0]?.backdrop_path}`
 
@@ -24,9 +23,9 @@ export default function Favmovie() {
   return (
     <>
           <MainBack background={background}>
-            <div className='pt-52'>
+            <div className='pt-72'>
 
-              <Sections data ={movies?.results} title=' Movies' />
+              <Sections data ={movies?.results} title=' Movies' favButton={true}/>
 
             </div>
 

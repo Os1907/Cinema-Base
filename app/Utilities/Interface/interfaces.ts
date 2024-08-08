@@ -8,6 +8,7 @@ export interface prop {
     nav?:string
     component?:React.JSX.Element
     data?:  resultsMovie[];
+    favButton?:boolean
 }
 export interface resultsMovie {
     adult: boolean;

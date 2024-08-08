@@ -1,10 +1,14 @@
 
-
 .swiper-slide {
+  width:10rem;
+  height: 14%;
+  
+}
+/* .swiper-slide {
   width:15rem;
   height: 18%;
   
-}
+} */
 @media (min-width: 768px) {
   .swiper-slide {
     width:16rem;
@@ -83,6 +87,5 @@ padding-right: 9rem;
   background-color: #ffffff !important;
 }
 .padding{
-  padding-top: 5rem !important;
-  padding-bottom: 5rem !important;
+  padding-bottom: 4rem !important;
 }
