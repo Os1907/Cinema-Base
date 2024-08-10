@@ -9,7 +9,7 @@ export default function CardSearch({data}: prop) {
 
     return (
         <>
-      <div className=' mBlur borderGlass    absolute top-[51px] z-[51] rounded-3xl  '>
+      <div className=' mBlur borderGlass  bg-[#00000023]  absolute top-[51px] z-[51] rounded-3xl  '>
             {
                data?.slice(0, 5)?.map((item) =>  <> 
                {
