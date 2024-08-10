@@ -5,7 +5,7 @@ import { Igenre } from '../Utilities/Interface/interfaces';
 
 
 
-export default async function MainExplore(props: Igenre) {
+export default async function ExploreParent(props: Igenre) {
     const media = await genre(`${props.type === "Movies" ? "movie" : "tv"}`);
 
     return (
