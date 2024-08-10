@@ -45,19 +45,3 @@ export async function getToken() {
 
 
    
-//   https://api.themoviedb.org/3/account/20971868/favorite/movies?language=en-US&page=1&api_key=${myKey}&session_id=68cd6c0e1555a7fc9777dba5c8b916e09b487557
-  
-  
-  /*
-  
-  {"media_type":"movie","media_id": 566525,"favorite": true}
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  */
