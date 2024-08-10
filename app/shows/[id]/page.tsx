@@ -9,6 +9,7 @@ import { IoIosStar } from 'react-icons/io'
 import Btn_Tra from '@/app/_Components/Btn_Tra/Btn_Tra'
 import Btn_Fav from '@/app/_Components/Btn_Fav/Btn_Fav'
 import { Ivideo } from '@/app/movie/[ID]/page'
+import Link from 'next/link'
 
 interface SeriesProps {
   params: {
@@ -85,10 +86,13 @@ const Series = async ({ params }: SeriesProps) => {
                   }
                 </p>
                 {
-                  data?.genres.map((item: any) => <p key={item?.id} className='  font-medium mr-2 text-white   mBlur  borderGlass   p-1 px-3 rounded-3xl text-[10px] lg:text-[12px]  transition-all'>
-                    {item?.name}
-                  </p>)
-                }
+                        
+                        data?.genres.map((item: any) => <> <Link href={`/explore/${item?.id}-${item?.name?.replace(/ /g, '-')}-tv`}>    <p key={item?.id} className='  font-medium mr-2 text-white   mBlur  borderGlass cursor-pointer   p-1 px-3 rounded-3xl text-[10px] lg:text-[12px]  transition-all'>
+                          {item?.name}
+                        </p> 
+                        </Link>
+                        </>)
+                      }
               </div>
 
               <div className='flex items-center lg:items-start flex-col w-full  '>

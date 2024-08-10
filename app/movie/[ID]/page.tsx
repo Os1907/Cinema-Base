@@ -12,6 +12,7 @@ import Btn_Tra from '@/app/_Components/Btn_Tra/Btn_Tra';
 import { Itralier, MovieData } from '@/app/Utilities/Interface/interfaces';
 import { Console } from 'console';
 import { getUserFav } from '@/app/Utilities/apiUser';
+import Link from 'next/link';
 interface MovieProps {
   params: {
     ID: number
@@ -97,9 +98,12 @@ const Movie = async ({ params }: MovieProps) => {
                   }
                 </p>
                     {
-                      data?.genres.map((item: any) => <p key={item?.id} className='  font-medium mr-2 text-white   mBlur  borderGlass   p-1 px-3 rounded-3xl text-[10px] lg:text-[12px]  transition-all'>
+                        
+                      data?.genres.map((item: any) => <> <Link href={`/explore/${item?.id}-${item?.name?.replace(/ /g, '-')}-movie`}>    <p key={item?.id} className='  font-medium mr-2 text-white   mBlur  borderGlass   p-1 px-3 rounded-3xl text-[10px] lg:text-[12px]  transition-all'>
                         {item?.name}
-                      </p>)
+                      </p> 
+                      </Link>
+                      </>)
                     }
                   </div>
              

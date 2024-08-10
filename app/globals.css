@@ -40,9 +40,10 @@
    .ar{
     font-family: "Amiri", serif !important;
    }
-     .mBlur{
-      backdrop-filter: blur(25px);
-     }
+   .mBlur{
+    -webkit-backdrop-filter: blur(25px);
+            backdrop-filter: blur(25px);
+   }
      @supports not selector(::-webkit-scrollbar) {
        body {
          scrollbar-color: var(--sb-thumb-color)
@@ -517,7 +518,7 @@ background: linear-gradient(180deg, rgba(0,0,0,0) 50%, #ffffff 100%);
 
 
 .naVglass{
-background: rgba(0, 0, 0, 0.137);
+background: #00000023;
 /* border-radius: 16px; */
 /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
 backdrop-filter: blur(15px);

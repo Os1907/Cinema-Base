@@ -41,7 +41,7 @@ const logo = useRef<any>()
   }, [pathnName]);
 
 
-  if (pathnName.length > 7 && pathnName.includes("/rated/") != true && pathnName.includes("/popular/") != true  && pathnName.includes("/toprate/") != true && pathnName.includes("/explore/") != true|| pathnName.includes("/movie/")  ) {
+  if (pathnName.length > 7 && pathnName.includes("/rated/") != true && pathnName.includes("/popular/") != true  && pathnName.includes("/toprate/") != true && pathnName.includes("/explore/123?") != true|| pathnName.includes("/movie/")  ) {
     return   <>
     <div onClick={() => router.back()} className=' naVglass size-auto p-3 absolute top-5 text-green z-[99999999990] left-4 lg:left-24 rounded-3xl transition-all hover:shadow-black hover:shadow-2xl hover:scale-105 cursor-pointer '>
    

@@ -8,7 +8,7 @@ interface Iprop {
 export default function MainBack({children ,background }:Iprop , ) {
     return (
         <>
-            <div style={{ backgroundImage: `url(${background}) ` }} className='w-full bg-cover bg-center bg-fixed relative pb-14'>
+            <div style={{ backgroundImage: `url(${background}) ` }} className='w-full bg-cover bg-center bg-fixed relative pb-14 min-h-screen'>
                 <div className='absolute top-0 w-full h-full backdrop-blur-[8px]'>
                 </div>
                 {children}

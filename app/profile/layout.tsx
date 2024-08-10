@@ -62,7 +62,6 @@ const router = useRouter();
               </Link>
                 <Link href={'/profile/fav_tv'}>
                   <div className=' '>
-                    {/* <Button value={btnCaption1} /> */}
                     <button  className={pathnName === '/profile/fav_tv' ? 'backdrop-blur-3xl text-white borderGlass rounded-full w-full px-10 py-2 hover:px-8 transition-all active:outline-none focus-within:outline-none focus:outline-none active:border-0 focus-within:border-0 focus:border-0' :' text-white w-full px-10 py-2 hover:px-8 transition-all active:outline-none focus-within:outline-none focus:outline-none active:border-0 focus-within:border-0 focus:border-0'}>
                     {btnCaption1}
                     </button>
@@ -74,16 +73,14 @@ const router = useRouter();
 
           </div>
         </div>
-        {
-        
-        info ? <>  <div className="grid grid-cols-12 ">
+        <div className="grid grid-cols-12 ">
 
           <div className="col-span-12 pb-16">
             {children}
           </div>
 
-        </div> </>: null
-      }
+        </div>
+       ء
 
         
 

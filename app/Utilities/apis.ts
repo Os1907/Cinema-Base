@@ -99,7 +99,7 @@ export  async function topShows(page: number) {
     console.error(err);
   }
 }
-// https://api.themoviedb.org/3/tv/1396?language=en-US
+
 export async function getSeries( id: number , page?: string) {
   try {
     const response = await fetch(`https://api.themoviedb.org/3/tv/${id}${page}?language=en-US`, options);
@@ -174,6 +174,41 @@ export async function translate(id: number , type: string) {
 
 
 
+export async function genre(type:string) {
+  try {
+    const response = await fetch(`https://api.themoviedb.org/3/genre/${type}/list?language=en`, options);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+}
+const noCash= {...options,'Cache-Control': 'no-cache'}
+export async function genreItem(type:string , genreId: number , pageNum:number) {
+  try {
+    const response = await fetch(`https://api.themoviedb.org/3/discover/${type}?include_adult=false&include_video=false&language=en-US&page=${pageNum}&sort_by=vote_count.desc&with_genres=${genreId}`, noCash );
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+}
+/**
+ * export async function genreItem(type:string , genreId: number) {
+  try {
+    const response = await fetch(`https://api.themoviedb.org/3/discover/${type}?include_adult=false&include_video=false&language=en-US&page=1&sort_by=vote_count.desc&with_genres=${genreId}`, options);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+}
+ * https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=vote_count.desc&with_genres=10759
+ * /
+
+
+
+//'
 
 // eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMjk4ZDg4NTVkNDBkNTY4MjBlNDA1ZDY3MjkxZTEzZCIsInN1YiI6IjY1YzI1MDNhOGU4ZDMwMDE2Mjc4MjIxOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mSNy7xFnu7Uu5mqfDRbocxJ2Gtsc7aBZIfrgxcxT0do
 /**

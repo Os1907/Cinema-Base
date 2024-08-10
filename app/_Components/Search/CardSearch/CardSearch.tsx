@@ -15,8 +15,8 @@ export default function CardSearch({data}: prop) {
                {
                       item.poster_path != null ?
                       <Link href={item.media_type === "tv" ? `/shows/${item.id}` : `/movie/${item.id}`}>
-                    <div className=' flex gap-x-2 px-3  border-b border-[#ffffff1f] py-2 items-center '>
-                        <Image src={`https://image.tmdb.org/t/p/w500/${item?.poster_path}`} width={50} height={50} alt='' className='rounded-lg  ' />
+                    <div className=' flex gap-x-2 px-3 rounded-b-3xl border-b border-[#ffffff1f] py-2 items-center '>
+                        <Image src={`https://image.tmdb.org/t/p/w500/${item?.poster_path}`} width={50} height={50} alt={`${item?.original_title || item?.name}`} className='rounded-lg  ' />
                         <div className="flex flex-col justify-center items-start flex-wrap gap-x-2">
                             <p className='text-white text-[12px]'> {item?.original_title || item?.name}</p>
                             <div className="flex items-center justify-center gap-x-1">
