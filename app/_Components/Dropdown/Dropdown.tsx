@@ -34,7 +34,7 @@ export default function Dropdown(props: Iprop) {
     return (
         <div className='absolute top-6 lg:top-10 xl:top-12 right-0 z-50 flex justify-end lg:mx-24 mx-4'>
             <details className="dropdown mt-14">
-                <summary className="backdrop-blur-3xl borderGlass uppercase cursor-pointer  bg-[#00000023] font-medium rounded-full px-2 md:px-5 lg:px-10 py-2 text-white text-[10px] lg:text-[12px]">
+                <summary className="mBlur borderGlass uppercase cursor-pointer  bg-[#00000023] font-medium rounded-full px-2 md:px-5 lg:px-10 py-2 text-white text-[10px] lg:text-[12px]">
                     Choose your type
                 </summary>
                 <ul className="menu dropdown-content mBlur borderGlass font-medium bg-[#00000023] uppercase rounded-3xl w-full px-2 md:px-5 lg:px-10 py-1 mt-[3px] z-[1] shadow text-white  overflow-scroll scrollbar-hide ">
