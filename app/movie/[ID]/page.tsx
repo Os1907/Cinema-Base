@@ -63,7 +63,7 @@ const Movie = async ({ params }: MovieProps) => {
 
   return (
     <>
-      <section style={{ backgroundImage: `url(${background}) ` }} className='  relative z-[70] h-auto lg:min-h-screen bg-cover bg-center bg-fixed overflow-hidden '>
+      <section style={{ backgroundImage: `url(${background}) ` }} className=' bg-cover  relative z-[70] w-full h-full lg:min-h-screen  bg-center bg-fixed overflow-hidden '>
         <div className='lg:mx-24 mx-4 relative z-[999999] pt-[15rem] md:pt-96 lg:pt-16 '>
 
 

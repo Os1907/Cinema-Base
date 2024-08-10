@@ -103,7 +103,7 @@ export default function Btn_Fav(props: Iprop) {
                     <p className=' text-white text-[12px] lg:text-sm font-semibold   '>
                        
                         {
-                           available ?   <RiHeartAddFill className='text-green text-2xl inline  mx-1 ' /> :<MdDeleteForever className='text-green text-2xl inline  mx-1 ' />
+                           available ?   <RiHeartAddFill className='text-white text-sm lg:text-2xl inline  mx-1 ' /> :<MdDeleteForever className='text-white text-base lg:text-2xl inline  mx-1 ' />
                         }
                         {alert}
                     </p>
@@ -116,19 +116,3 @@ export default function Btn_Fav(props: Iprop) {
         </>
     )
 }
-/**
- * 
-        // https://api.themoviedb.org/3/account/20971868/favorite?session_id=68cd6c0e1555a7fc9777dba5c8b916e09b487557
- * 
- *   // router.push("https://www.google.com")
-        // window.location.pathname="www.google.com" 
-
-        // console.log(JSON.stringify(detalisMovie))
-
-  // https://www.themoviedb.org/authenticate/1785554a657af123f8e13aeac0261824355a05e0/redirect_to=https://cinema-base.vercel.app
-    //Create Season ID https://api.themoviedb.org/3/authentication/session/new?api_key=${myKey}&request_token=${token.request_token}
-    // 1785554a657af123f8e13aeac0261824355a05e0
-    // https://www.themoviedb.org/authenticate/{REQUEST_TOKEN}?redirect_to=http://www.yourapp.com/approved
-    // https://www.themoviedb.org/authenticate/${token.request_token}
-        // console.log(tokenInfo)
- */
