@@ -1,12 +1,9 @@
 import React from 'react';
 import { genre } from '../Utilities/apis';
 import Link from 'next/link';
+import { Igenre } from '../Utilities/Interface/interfaces';
 
-interface IProp {
-    type: string;
-}
-
-export default async function Explore(props: IProp) {
+export default async function Explore(props: Igenre) {
     const media = await genre(`${props.type === "Movies" ? "movie" : "tv"}`);
 
     return (

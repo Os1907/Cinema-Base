@@ -118,4 +118,6 @@ export interface ItemType {
         original_name:string | null
         first_air_date: string | null
       }
-      
+      export interface Igenre {
+        type: string;
+    }
