@@ -50,7 +50,7 @@ export default function Btn_Fav(props: Iprop) {
         else {
             (async function () {
                 const tokenInfo = await getToken()
-                    .then((token) => router.push(`https://www.themoviedb.org/authenticate/${token.request_token}?redirect_to=https://cinema-base.vercel.app/shows/${token.request_token}`)) // ===> First Step
+                    .then((token) => router.push(`https://www.themoviedb.org/authenticate/${token.request_token}?redirect_to=https://cinema-base.vercel.app/profile/${token.request_token}`)) // ===> First Step
             })()
 
         }
