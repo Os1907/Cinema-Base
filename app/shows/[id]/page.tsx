@@ -51,7 +51,10 @@ const Series = async ({ params }: SeriesProps) => {
 
   return (
     <>
-      <section style={{ backgroundImage: `url(${background}) ` }} className=' lg:p t-10  relative z-[70] h-auto lg:min-h-screen bg-cover bg-center bg-fixed overflow-hidden '>
+      <section  className=' lg:p t-10  relative z-[70] lg:min-h-screen overflow-hidden '>
+      <Image src={`https://image.tmdb.org/t/p/original/${photos?.backdrops[0].file_path}`} alt="" width={1920} height={1080} className='w-full h-full object-cover fixed hidden lg:block' />
+      <Image src={`https://image.tmdb.org/t/p/original/${photos?.posters[0].file_path}`} alt="" width={1920} height={1080} className='w-full h-full object-cover fixed  lg:hidden' />
+
         <div className='lg:mx-24 mx-4 relative z-[999999] pt-80 lg:pt-16 '>
 
 
