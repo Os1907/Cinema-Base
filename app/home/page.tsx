@@ -8,7 +8,7 @@ import SwiperHome from '../_Components/Swiper/SwiperHome'
 import { Trend } from '../Utilities/apis';
 import MainBack from '../_Components/mainBack/mainBack';
 import Search from '../_Components/Search/Search';
-import ExploreParent from '../explore/page';
+import ExploreGenre from '../_Components/ExploreGen/Exploregen';
 
 
 export default async function HomeComponents() {
@@ -31,7 +31,7 @@ export default async function HomeComponents() {
         <div className='relative z-4'>
           <SwiperHome />
         </div>
-       <ExploreParent type="Movies"/>
+       <ExploreGenre type="Movies"/>
         <div className="">
 
           <Popular params={value} />
