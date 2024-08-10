@@ -5,7 +5,7 @@ import Sections from '../_Components/Sections/Sections'
 import Button from '../_Components/Button/Button'
 import Navbar from '../_Components/Navbar/Navbar'
 import MainBack from '../_Components/mainBack/mainBack'
-import Explore from '../explore/page'
+import ExploreParent from '../explore/page'
 
 
 export default async function page({params}:any) {
@@ -26,7 +26,7 @@ export default async function page({params}:any) {
     <div className="lg:pt-10">
       <div className="pt-10">
 
-    <Explore type="tv"/>
+    <ExploreParent type="tv"/>
       </div>
 
         <Sections data={Trend?.results} title={title2} nav={nav} />
