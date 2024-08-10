@@ -8,7 +8,7 @@ export default function SmallNav() {
     <>
     <div className="fixed  -translate-x-1/2 left-1/2  lg:hidden bottom-4 w-[80%] md:w-[70%] z-[999999] ">
         <ul className="flex gap-x-2 justify-around   rounded-full text-[12px] font-semibold uppercase ">
-          <div className="absolute top-0 h-full w-full rounded-full  backdrop-blur-3xl  borderGlass"></div>
+          <div className="absolute top-0 h-full w-full rounded-full  mBlur  borderGlass"></div>
           <li className="relative  rounded-full  ">
             <Link href="/">
               <p className="p-3  font-semibold text-white z-50 relative">
