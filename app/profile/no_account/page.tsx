@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation';
 export default function No_Account() {
     const router = useRouter();
     const log = async () => {
-        const tokenInfo = await getToken().then((token) => router.push(`https://www.themoviedb.org/authenticate/${token.request_token}?redirect_to=https://cinema-base.vercel.app/shows/${token.request_token}`)) // ===> First Step
+        const tokenInfo = await getToken().then((token) => router.push(`https://www.themoviedb.org/authenticate/${token.request_token}?redirect_to=https://cinema-base.vercel.app/profile/${token.request_token}`)) // ===> First Step
     }
     useEffect(() => {
         if (localStorage?.getItem('session_id')) {
