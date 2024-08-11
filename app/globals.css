@@ -518,7 +518,7 @@ background: linear-gradient(180deg, rgba(0,0,0,0) 50%, #ffffff 100%);
 .maxBlur{
   backdrop-filter: blur(80px) !important;
 -webkit-backdrop-filter: blur(80px) !important;
-background-color: rgba(48, 48, 48, 0.318); 
+/* background-color: rgba(48, 48, 48, 0.318);  */
 
 }
 

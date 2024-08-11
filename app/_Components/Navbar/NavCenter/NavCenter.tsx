@@ -34,7 +34,6 @@ function NavCenter() {
       <div  className={pathnName === "/profile"  ? "bg-white h-[2px] w-full transition-all duration-500 " : "bg-white h-[2px] w-0 group-hover:w-full transition-all duration-500"}></div>
       </Link>
       </li>
-      {/* <CgProfile /> */}
     </ul>
     <Search/>
   </div>
