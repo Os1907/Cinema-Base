@@ -9,7 +9,7 @@ export default function MainHome() {
           <h1 className=' text-white  xl:text-9xl lg:text-8xl  md:text-7xl sm:text-5xl text-4xl py-2 font-extrabold transition-all '> <span className=''>Cinema</span>  Base</h1>
 
           <p className=' text-white uppercase lg:text-base  text-[12px] font-medium'>
-            All information about your night movie
+            All information about your movie night!
           </p>
     
      </div>
