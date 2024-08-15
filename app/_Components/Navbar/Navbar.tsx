@@ -32,9 +32,7 @@ const logo = useRef<any>()
 
       }
     };
-
     window.addEventListener('scroll', changeNav);
-
     return () => {
       window.removeEventListener('scroll', changeNav);
     };

@@ -17,7 +17,7 @@ export default async function page({params}:any) {
     <>
       <MainBack background={background}>
 
-    <section className='lg:pt-10'>
+    <section className='pb-10 lg:py-10'>
             <Sections data={data.results} nav={nav}  title={title} component={<ShowCounter value={data.page}/>}  />
         </section>
         </MainBack>

@@ -9,8 +9,8 @@ export default function CardSearch({data}: prop) {
 
     return (
         <>
-      <div className=' maxBlur borderGlass    absolute top-[55px] z-[51] rounded-3xl  '>
-      <div className="absolute top-0 h-full w-full   mBlur rounded-3xl   borderGlass"></div>
+      <div className='    absolute top-[55px] z-[51] rounded-3xl  '>
+      <div className="absolute top-0 h-full w-full   maxBlur rounded-3xl   borderGlass"></div>
 
             {
                data?.slice(0, 5)?.map((item) =>  <> 

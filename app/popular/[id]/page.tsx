@@ -19,7 +19,7 @@ export default async  function ChildPopular({params}:any ) {
         <>
         <MainBack background={background} >
 
-        <section className='lg:py-10'>
+        <section className='pb-10 lg:py-10'>
             <Sections data={data.results} title={title} component={<CounterPopular value={data.page}/>}  />
         </section>
       </MainBack>

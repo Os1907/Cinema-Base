@@ -29,7 +29,6 @@ export default function No_Account() {
                         Create Account
                     </button>
                 </div>
-                {/* <Image src={bg} alt='texture2' className='absolute top-64  lg:top-10 z-[1] opacity-15 ' /> */}
             </div>
 
 
