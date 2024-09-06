@@ -1,1 +1,0 @@
-This website offers a database of movies and films. It provides movie search, ratings, and recommendations It also gives you updates on new and upcoming movies, box office collections, and memorials for actors
