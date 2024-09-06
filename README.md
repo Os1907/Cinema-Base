@@ -4,6 +4,11 @@
 CinemaBase is a web application that allows users to explore and discover a vast collection of movies, TV shows, and more. Built using Next.js, it provides a seamless user experience with efficient server-side rendering, fast navigation, and optimized performance.
 
 
+## Demo 🔗
+
+https://cinema-base.vercel.app/
+
+
 # Features ✨
 
 - #### Browse Movies
