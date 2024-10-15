@@ -63,19 +63,18 @@ const Movie = async ({ params }: MovieProps) => {
 
   return (
     <>
-      <section  className=' lg:p t-10  relative z-[70] lg:min-h-screen overflow-hidden '>
-      <Image src={`https://image.tmdb.org/t/p/original/${photos?.backdrops[0].file_path}`} alt="" width={1920} height={1080} className='w-full h-full object-cover fixed hidden lg:block' />
-      <Image src={`https://image.tmdb.org/t/p/original/${photos?.posters[0].file_path}`} alt="" width={1920} height={1080} className='w-full h-full object-cover fixed  lg:hidden' />
+      <section  className='  relative z-[70] lg:min-h-screen overflow-hidden '>
+      <Image src={`https://image.tmdb.org/t/p/original/${photos?.backdrops[0]?.file_path}`} alt="" width={1920} height={1080} className='w-full h-full object-cover fixed hidden lg:block' />
+      <Image src={`https://image.tmdb.org/t/p/original/${photos?.posters[0]?.file_path}`} alt="" width={1920} height={1080} className='w-full h-full object-cover fixed  lg:hidden' />
 
-        <div className='lg:mx-24 mx-4 relative z-[999999] pt-[15rem] md:pt-96 lg:pt-16 '>
+        <div className='lg:mx-24 mx-4 relative z-[999999] pt-[15rem] md:pt-96 lg:pt-16 lg:min-h-screen  flex items-center'>
 
 
-          <div className="w-full  h-auto flex flex-col justify-center mt-32 lg:mt-5 ">
-
-            <div className='flex justify-center  relative items-start flex-col  '>
+          <div className="w-full  h-auto flex flex-col justify-center    ">
+            <div className='flex justify-center  relative items-start flex-col '>
               <div className='items-center  lg:items-start w-full flex flex-col my-3 '>
                 {
-                  poster[0]?.file_path !=undefined ? <Image src={`https://image.tmdb.org/t/p/w500/${poster[0].file_path}`} alt='movies' width={350} height={350} className=' mt-10 h-auto lg:w-[20%] w-[35%] lg:h-auto' /> : <p className='text-3xl lg:text-5xl pt-2 3 pb-4     mBlur  borderGlass rounded-3xl inline-block    px-3 text-white font-extrabold lg:mt-10 '>
+                  poster[0]?.file_path !=undefined ? <Image src={`https://image.tmdb.org/t/p/w500/${poster[0].file_path}`} alt='movies' width={350} height={350} className=' h-auto lg:w-[20%] w-[35%] lg:h-auto' /> : <p className='text-3xl lg:text-5xl pt-2 3 pb-4     mBlur  borderGlass rounded-3xl inline-block    px-3 text-white font-extrabold lg:mt-10 '>
                     {
                       data?.original_name
                     }
@@ -221,7 +220,7 @@ const Movie = async ({ params }: MovieProps) => {
 
             </div>
 
-            <div className=" w-auto lg:absolute bottom-0 right-20 z-[999999]  my-2 flex justify-center">
+            <div className=" w-auto lg:absolute lg:top-1/2 lg:-translate-y-1/2 right-20 z-[999999]  my-2 flex justify-center ">
               <div className='relative mBlur w-full md:w-5/6 lg:w-full  border   borderGlass rounded-3xl p-3 lg:p-5 flex lg:flex-col flex-row items-center gap-y-3 justify-center gap-x-3  '>
                 <Image src={`https://image.tmdb.org/t/p/original/${photos?.posters[0]?.file_path} `} width={50} height={50} alt="poster_Movie" className='w-32 lg:w-48 rounded-3xl block     borderGlass ' />
                 <div className='flex flex-col gap-y-2'>

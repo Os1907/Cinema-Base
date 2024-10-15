@@ -10,7 +10,7 @@ interface IId {
   }
 export default async function Popular({params}:IId ) {
     
-    const data = await popular(params?.id > 0 && !undefined ? params.id : 1)
+    const data = await popular(params?.id > 0  ? params.id : 1)
     const title :string = "What's Popular "
     const btnCaption :string= "All Popular Movies"
 

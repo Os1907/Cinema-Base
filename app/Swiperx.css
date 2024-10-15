@@ -4,11 +4,7 @@
   height: 14%;
   
 }
-/* .swiper-slide {
-  width:15rem;
-  height: 18%;
-  
-} */
+
 @media (min-width: 768px) {
   .swiper-slide {
     width:16rem;
@@ -55,6 +51,10 @@
 padding-left: 9rem;
 padding-right: 9rem;
 }
+.padding{
+  padding-bottom: 4rem !important;
+
+}
 .swiper-pagination {
   position: relative ;
   bottom: 1rem;
@@ -86,6 +86,8 @@ padding-right: 9rem;
 .swiper-pagination-bullet{
   background-color: #ffffff !important;
 }
+
 .padding{
-  padding-bottom: 4rem !important;
+  padding-bottom: none;
+  
 }

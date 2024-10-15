@@ -13,7 +13,7 @@ export default function Sections(props: prop) {
     const UrlImages: string = "https://image.tmdb.org/t/p/w500/";
     return (
         <>
-            <section className=' min-h-screen     lg:pt-10 pt-5   relative z-10  overflow-h idden '>
+            <section className=' min-h-screen     lg:pt-10 pt-5   relative z-10   '>
       <Image src={bg} alt='texture2' className='absolute sm:hidden lg:block opacity-15 top-[30%] z-[1] -rotate-180' />
 
                 <div className='lg:mx-24 mx-4 relative z-10 '>
@@ -35,16 +35,16 @@ export default function Sections(props: prop) {
       nav ? (
         <div
           key={item.id}
-          className="col-span-1 hover:pb-4 hover:scale-105 transition-all cursor-pointer hover:rounded-3xl relative hover:z-[999999999999]"
+          className="col-span-1  group hover:scale-105 transition-all cursor-pointer relative hover:z-[999999999999] duration-300"
         >
           <Link href={nav ? `/${nav}/${item.id}` : `/movie/${item.id}`}>
-            <div className="relative">
+            <div className="relative group">
               <Image
                 src={UrlImages + item?.poster_path}
                 alt={item.original_title || item.original_name}
                 width={350}
                 height={350}
-                className="md:min-h-[350px] skeleton rounded-3xl backdrop-blur-3xl"
+                className="md:min-h-[350px] skeleton rounded-3xl backdrop-blur-3xl group-hover:shadow-2xl group-hover:shadow-black duration-300"
               />
             </div>
             <div>
@@ -67,7 +67,7 @@ export default function Sections(props: prop) {
       ) : (
         <div
           key={item.id}
-          className="col-span-1 hover:pb-4 hover:scale-105 transition-all cursor-pointer hover:rounded-3xl relative hover:z-[999999999999]"
+          className="col-span-1 group hover:scale-105 transition-all cursor-pointer relative hover:z-[999999999999] duration-300"
         >
           <Link href={item.media_type === "tv" ? `/shows/${item.id}` : `/movie/${item.id}`}>
             <div className="relative">

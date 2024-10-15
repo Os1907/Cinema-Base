@@ -36,7 +36,7 @@ function SwiperHome() {
 
   return (
 
-    <div className="   relative overflow-hidden  flex flex-col justify-center items-center min-h-[30vh] lg:min-h-[90vh]">
+    <div className="  relative overflow-hidden  flex flex-col justify-center items-center min-h-[50vh] lg:h-[90vh]">
       <Image src={bg} alt='texture' className='absolute opacity-15 top-0 md:top-[-25%] z-[1]' />
       <Image src={bg} alt='texture2' className='absolute sm:hidden block opacity-15 top-[30%] z-[1] -rotate-180' />
       <div>
@@ -49,10 +49,11 @@ function SwiperHome() {
           coverflowEffect={{
             rotate: 0,
             stretch: 0,
-            depth: 250,
+            depth: 150,
             scale: 1,
-            modifier: 1.5,
+            modifier: 2.5,
             slideShadows: true,
+           
           }}
           pagination={{
             clickable: true,
@@ -61,13 +62,13 @@ function SwiperHome() {
             delay: 4000,
           }}
           modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
-          className=" padding " >
+          className=" padding" >
           {items?.map((item) => (
             <SwiperSlide key={item.id}>
               {({ isActive }) => (
                 
                 <Link href={item.media_type === "tv" ? `/shows/${item.id}` : `/movie/${item.id}`}>
-                  <div className='cursor-pointer'>
+                  <div className='cursor-pointer  '>
                     <div className='relative'>
 
                   <Image src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} alt={`${item.title}`} width={350} height={350} className={isActive ? 'md:min-h-[350px]  rounded-2xl w-full  ' : 'md:min-h-[350px]  rounded-2xl w-full  backdrop-blur-2xl'} />
@@ -75,7 +76,7 @@ function SwiperHome() {
 
                     {
                          isActive ?    <>
-                            <div>
+                            {/* <div className='h-28 lg:h-32' >
                                                         <h3 className='mt-3 ml-3 text-start text-white font-medium  lg:text-base text-sm '>
 
                                                             {item.title || item.name}
@@ -90,7 +91,7 @@ function SwiperHome() {
                                                                     || item?.first_air_date?.toString().slice(0, 4)}
                                                             </p>
                                                         </div>
-                                                    </div>
+                                                    </div> */}
                     </>: null}
                   </div>
                 </Link>
