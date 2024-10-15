@@ -51,8 +51,8 @@ function SwiperHome() {
             stretch: 0,
             depth: 150,
             scale: 1,
-            modifier: 2.5,
-            slideShadows: true,
+            modifier: 2,
+            slideShadows: false,
            
           }}
           pagination={{
