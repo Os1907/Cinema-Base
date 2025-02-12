@@ -1,10 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
-// import { TiMediaFastForwardOutline } from "react-icons/ti";
 import { crew, getMovie, similar, videoLink, image, locationNow, watchProvider, translate } from '@/app/Utilities/apis';
 import Sections from '@/app/_Components/Sections/Sections';
 import CastCarousel from '@/app/_Components/Carusol/CastCarousel';
-
+import { FiAirplay } from "react-icons/fi";
 // import { MdOutlinePlayDisabled } from "react-icons/md";
 import { SiGradleplaypublisher } from "react-icons/si";
 import Btn_Fav from '@/app/_Components/Btn_Fav/Btn_Fav';
@@ -13,6 +12,7 @@ import { Itralier, MovieData } from '@/app/Utilities/Interface/interfaces';
 import { Console } from 'console';
 import { getUserFav } from '@/app/Utilities/apiUser';
 import Link from 'next/link';
+import { MdSlowMotionVideo } from 'react-icons/md';
 interface MovieProps {
   params: {
     ID: number
@@ -28,8 +28,7 @@ const Movie = async ({ params }: MovieProps) => {
   const video: Ivideo = await videoLink(params?.ID, "movie")
   const Translate = await translate(params?.ID, "movie")
   const arabic = Translate?.translations?.find((item : {iso_3166_1: string}) => item.iso_3166_1 == "SA")
-  // console.log(data)
-
+  const torrentLink = `https://p2all.pro/find/?imdb=${data?.imdb_id}&year=${data?.release_date.split("-")[0]}&background=https://image.tmdb.org/t/p/w500/${data.backdrop_path}&poster=https://image.tmdb.org/t/p/w342/${data?.poster_path}&type=movie&tmdb=${data.id}&name=${data?.original_title}&title=${data?.title}&callback=http://localhost:3000/movie/${params?.ID}/watch&callback_paramater=source_link`;
   const { cast } = await crew(params?.ID)
   const recommendations = await similar(params?.ID, "movie")
   const title: string = "Recommendations"
@@ -226,6 +225,16 @@ const Movie = async ({ params }: MovieProps) => {
                 <div className='flex flex-col gap-y-2'>
                   <Btn_Tra url={video?.results[0]} />
                   <Btn_Fav data={data?.id} type={"movie"} />
+                  <div className=' mBlur  border   borderGlass rounded-3xl py-3 px-5 lg:px-10 '>
+
+                  <Link target="_blank" href={`${torrentLink}`} className=' flex flex-col gap-y-3 items-center     justify-center '>
+                    <p  className='  text-white text-[12px] lg:text-sm font-semibold   '>
+                      <FiAirplay className='text-green  inline  mx-2 ' />
+                      Watch Now
+                    </p>
+                  </Link>
+
+                </div>
                   <div className='lg:hidden   ml-2 mBlur borderGlass rounded-3xl px-3 py-1 mt-2 '>
 
                     <p className=' text-center lg:text-start text-3xl xl:text-4xl font-semibold text-white'>
@@ -234,6 +243,7 @@ const Movie = async ({ params }: MovieProps) => {
                       } <span className='ml-[-3px]  text-base font-medium'>/10</span>
                     </p>
                   </div>
+
                 </div>
               </div>
             </div>

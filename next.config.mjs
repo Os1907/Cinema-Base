@@ -4,5 +4,6 @@ const nextConfig = {
         domains: ['image.tmdb.org'],
         unoptimized: true
       },
+      
 };
 export default nextConfig;

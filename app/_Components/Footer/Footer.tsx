@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <>
     
-<footer className=" border-white border-t  w-full   z-10">
+<footer className=" border-white border-t  w-full   z-[999999999999999]  relative">
   <div className="lg:mx-24  py-3 mx-4">
     <div className="sm:flex sm:items-center sm:justify-between">
       <div className="flex items-center sm:items-start flex-col">

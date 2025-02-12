@@ -14,7 +14,7 @@ interface id {
   }
 
 export default async function TopRate({params}:id) {
-    const data = await topRated(params?.id > 0 && !undefined ? params.id : 1)
+    const data = await topRated(params?.id > 0  ? params.id : 1)
     const title: string = "Top Rated"
     const btnCaption :string= "All Top Rated Movies"
 
@@ -24,7 +24,7 @@ export default async function TopRate({params}:id) {
             <section >
                 <Sections data={data?.results} title={title}  />
                 <div className='flex justify-center relative z-50 '>
-                <Link href={`/toprate/${data.page}`} scroll={true}>
+                <Link href={`/toprate/${data?.page}`} scroll={true}>
                  <Button value={btnCaption}/>
                  </Link>
             </div>
