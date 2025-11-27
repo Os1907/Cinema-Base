@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "./_Components/Navbar/Navbar";
 import Footer from "./_Components/Footer/Footer";
 import { ViewTransitions } from "next-view-transitions";
+import { QueryProvider } from "./Providers/QueryProvider";
+
 const Vietnam = Poppins({ subsets: ["latin"] ,
 weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"] ,
 });
@@ -19,14 +21,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ViewTransitions>
-    <html lang="en">
-      <body className={Vietnam.className} >
-        <Navbar/>
-        {children}
-        <Footer/>
-        </body>
-    </html>
-    </ViewTransitions>
+    <QueryProvider>
+      <ViewTransitions>
+      <html lang="en">
+        <body className={Vietnam.className} >
+          <Navbar/>
+          {children}
+          <Footer/>
+          </body>
+      </html>
+      </ViewTransitions>
+    </QueryProvider>
   );
 }

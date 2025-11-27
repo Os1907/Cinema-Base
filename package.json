@@ -12,6 +12,7 @@
     "@nextui-org/button": "^2.0.31",
     "@nextui-org/modal": "^2.0.33",
     "@nextui-org/react": "^2.3.6",
+    "@tanstack/react-query": "^5.90.11",
     "embla-carousel-autoplay": "^8.0.2",
     "embla-carousel-react": "^8.0.2",
     "framer-motion": "^11.1.7",

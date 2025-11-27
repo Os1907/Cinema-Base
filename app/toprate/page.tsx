@@ -14,7 +14,7 @@ interface id {
   }
 
 export default async function TopRate({params}:id) {
-    const data = await topRated(params?.id > 0 && !undefined ? params.id : 1)
+    const data = await topRated(params?.id && params.id > 0 ? params.id : 1)
     const title: string = "Top Rated"
     const btnCaption :string= "All Top Rated Movies"
 
