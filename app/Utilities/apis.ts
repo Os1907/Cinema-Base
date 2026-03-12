@@ -5,12 +5,10 @@
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMjk4ZDg4NTVkNDBkNTY4MjBlNDA1ZDY3MjkxZTEzZCIsInN1YiI6IjY1YzI1MDNhOGU4ZDMwMDE2Mjc4MjIxOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mSNy7xFnu7Uu5mqfDRbocxJ2Gtsc7aBZIfrgxcxT0do'
     }
   };
-const noCash= {...options,'Cache-Control': 'no-cache'}
-
 export  async function popular(page: number) {
 
   try {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/popular?language=en-US&page=${page}`, noCash);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/popular?language=en-US&page=${page}`, options);
     const data = await response.json();
     return data;
   } catch (err) {
@@ -20,7 +18,7 @@ export  async function popular(page: number) {
 
 export  async function topRated(page: number) {
   try {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${page}`, noCash);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${page}`, options);
     const data = await response.json();
     return data;
   } catch (err) {
@@ -29,7 +27,7 @@ export  async function topRated(page: number) {
 }
 export  async function Trend() {
   try {
-    const response = await fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US', noCash);
+    const response = await fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US', options);
     const data = await response.json();
     return data;
   } catch (err) {
@@ -39,7 +37,7 @@ export  async function Trend() {
 
 export async function getMovie( id: number) {
   try {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, noCash);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, options);
     const data = await response.json();
     return data;
   } catch (err) {
@@ -48,7 +46,7 @@ export async function getMovie( id: number) {
 }
 export async function videoLink(id: number, type:string) {
   try {
-    const response = await fetch(`https://api.themoviedb.org/3/${type}/${id}/videos?language=en-US`, noCash);
+    const response = await fetch(`https://api.themoviedb.org/3/${type}/${id}/videos?language=en-US`, options);
     const data = await response.json();
     return data;
   } catch (err) {
@@ -57,7 +55,7 @@ export async function videoLink(id: number, type:string) {
 }
 export async function similar(id: number , type:string) {
   try {
-    const response = await fetch(`https://api.themoviedb.org/3/${type}/${id}/recommendations?language=en-US`, noCash);
+    const response = await fetch(`https://api.themoviedb.org/3/${type}/${id}/recommendations?language=en-US`, options);
     const data = await response.json();
     return data;
   } catch (err) {
@@ -66,7 +64,7 @@ export async function similar(id: number , type:string) {
 }
 export async function moviesList() {
   try {
-    const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?language=en`, noCash);
+    const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?language=en`, options);
     const data = await response.json();
     return data;
   } catch (err) {
@@ -75,7 +73,7 @@ export async function moviesList() {
 }
 export async function multiBySearch(name:string , page: number) {
   try {
-    const response = await fetch(`https://api.themoviedb.org/3/search/multi?query=${name}&include_adult=false&language=en-US&page=${page}`, noCash);
+    const response = await fetch(`https://api.themoviedb.org/3/search/multi?query=${name}&include_adult=false&language=en-US&page=${page}`, options);
     const data = await response.json();
     return data;
   } catch (err) {
@@ -85,7 +83,7 @@ export async function multiBySearch(name:string , page: number) {
 
 export async function crew( id: number) {
   try {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/credits?language=en-US`, noCash);
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/credits?language=en-US`, options);
     const data = await response.json();
     return data;
   } catch (err) {
@@ -94,7 +92,7 @@ export async function crew( id: number) {
 }
 export  async function topShows(page: number) {
   try {
-    const response = await fetch(`https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=${page}`, noCash);
+    const response = await fetch(`https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=${page}`, options);
     const data = await response.json();
     return data;
   } catch (err) {
@@ -104,7 +102,7 @@ export  async function topShows(page: number) {
 
 export async function getSeries( id: number , page?: string) {
   try {
-    const response = await fetch(`https://api.themoviedb.org/3/tv/${id}${page}?language=en-US`, noCash);
+    const response = await fetch(`https://api.themoviedb.org/3/tv/${id}${page}?language=en-US`, options);
     const data = await response.json();
     return data;
   } catch (err) {
@@ -113,7 +111,7 @@ export async function getSeries( id: number , page?: string) {
 }
 export async function seriesBySearch(name:string , page: number) {
   try {
-    const response = await fetch(`https://api.themoviedb.org/3/search/tv?query=${name}&include_adult=false&language=en-US&page=${page}`, noCash);
+    const response = await fetch(`https://api.themoviedb.org/3/search/tv?query=${name}&include_adult=false&language=en-US&page=${page}`, options);
     const data = await response.json();
     return data;
   } catch (err) {
@@ -122,7 +120,7 @@ export async function seriesBySearch(name:string , page: number) {
 }
 export  async function TrendSeries() {
   try {
-    const response = await fetch('https://api.themoviedb.org/3/trending/tv/day?language=en-US', noCash);
+    const response = await fetch('https://api.themoviedb.org/3/trending/tv/day?language=en-US', options);
     const data = await response.json();
     return data;
   } catch (err) {
@@ -131,7 +129,7 @@ export  async function TrendSeries() {
 }
 export async function image(id: number , type: string) {
   try {
-    const response = await fetch(`https://api.themoviedb.org/3/${type}/${id}/images`, noCash);
+    const response = await fetch(`https://api.themoviedb.org/3/${type}/${id}/images`, options);
     const data = await response.json();
     return data;
   } catch (err) {
@@ -185,6 +183,7 @@ export async function genre(type:string) {
     console.error(err);
   }
 }
+const noCash= {...options,'Cache-Control': 'no-cache'}
 export async function genreItem(type:string , genreId: number , pageNum:number) {
   try {
     const response = await fetch(`https://api.themoviedb.org/3/discover/${type}?include_adult=false&include_video=false&language=en-US&page=${pageNum}&sort_by=vote_count.desc&with_genres=${genreId}`, noCash );
